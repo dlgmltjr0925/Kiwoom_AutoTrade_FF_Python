@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>기능</string>
+    </property>
+    <addaction name="actionLogin"/>
+    <addaction name="actionLogout"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>설정</string>
+    </property>
+    <addaction name="actionItemList"/>
+    <addaction name="actionTradeInit"/>
+    <addaction name="actionAutoTrade"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>도움말</string>
+    </property>
+    <addaction name="actionVersion"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <action name="actionVersion">
+   <property name="text">
+    <string>버전</string>
+   </property>
+  </action>
+  <action name="actionLogin">
+   <property name="text">
+    <string>로그인</string>
+   </property>
+  </action>
+  <action name="actionLogout">
+   <property name="text">
+    <string>로그아웃</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>종료</string>
+   </property>
+  </action>
+  <action name="actionItemList">
+   <property name="text">
+    <string>거래종목설정</string>
+   </property>
+  </action>
+  <action name="actionTradeInit">
+   <property name="text">
+    <string>초기거래설정</string>
+   </property>
+  </action>
+  <action name="actionAutoTrade">
+   <property name="text">
+    <string>자동매매설정</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

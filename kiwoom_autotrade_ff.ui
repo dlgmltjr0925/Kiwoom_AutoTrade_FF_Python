@@ -75,7 +75,7 @@
     <property name="title">
      <string>관심종목 및 실시간 계좌 현황</string>
     </property>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="twStatusBoard">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -322,17 +322,17 @@
   </action>
   <action name="actionLogin">
    <property name="text">
-    <string>Login</string>
+    <string>서버 접속</string>
    </property>
   </action>
   <action name="actionLogout">
    <property name="text">
-    <string>Logout</string>
+    <string>접속 해제</string>
    </property>
   </action>
   <action name="actionExit">
    <property name="text">
-    <string>Exit</string>
+    <string>종료</string>
    </property>
   </action>
   <action name="actionSetItemList">

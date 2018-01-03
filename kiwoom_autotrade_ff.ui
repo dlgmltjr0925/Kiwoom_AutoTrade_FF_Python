@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>KIWOOM FOREIGN DERIVATIVES AUTO TRADING SYSTEM</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="gbAccount">
@@ -84,6 +84,56 @@
        <height>111</height>
       </rect>
      </property>
+     <column>
+      <property name="text">
+       <string>구 분</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>종목코드</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>현재가</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>포지션</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>보유수량</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>진입가</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>청산가</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>손절가</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>평가손익</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>통화코드</string>
+      </property>
+     </column>
     </widget>
    </widget>
    <widget class="QGroupBox" name="gbItemInfo">
@@ -294,7 +344,7 @@
     </property>
     <addaction name="actionLogin"/>
     <addaction name="actionLogout"/>
-    <addaction name="actionExit"/>
+    <addaction name="actionClose"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -330,7 +380,7 @@
     <string>접속 해제</string>
    </property>
   </action>
-  <action name="actionExit">
+  <action name="actionClose">
    <property name="text">
     <string>종료</string>
    </property>

@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QAxContainer import QAxWidget
 from PyQt5.QtCore import QEventLoop
-from PyQt5.QtWidgets import QApplication
+from PyQt5.QtWidgets import QApplication, QMessageBox
 
 class KFOpenAPI(QAxWidget):
     def __init__(self):
@@ -14,6 +14,8 @@ class KFOpenAPI(QAxWidget):
         self.orderNo = ""
         self.inquiry = 0
         self.msg = ""
+        self.screenNo = 0
+        self.dicScrNo = {}
         self.OnReceiveTrData.connect(self.ReceiveTrData)
         self.OnReceiveRealData.connect(self.ReceiveRealData)
         self.OnReceiveMsg.connect(self.ReceiveMsg)
@@ -69,17 +71,18 @@ class KFOpenAPI(QAxWidget):
 
         if not (isinstance(sRQName, str)
                 and isinstance(sTrCode, str)
-                and isinstance(sPrevNext, int)
+                and isinstance(sPrevNext, str)
                 and isinstance(sScreenNo, str)):
             print("Error : ParameterTypeError by CommRqData")
             raise ParameterTypeError()
 
-        errorCode = self.dynamicCall("CommRqData(QString, QString, int, QString)", sRQName, sTrCode, sPrevNext, sScreenNo)
+        errorCode = self.dynamicCall('CommRqData(QString, QString, QString, QString)', sRQName, sTrCode, sPrevNext, sScreenNo)
         if errorCode != ErrorCode.OP_ERR_NONE:
-            raise KiwoomProcessingError("commRqData(): " + ErrorCode.CAUSE[errorCode])
+            raise KiwoomProcessingError("CommRqData(): " + ErrorCode.CAUSE[errorCode])
+        else:
+            self.requestLoop = QEventLoop()
+            self.requestLoop.exec_()
 
-        self.requestLoop = QEventLoop()
-        self.requestLoop = exec_()
 
     def SetInputValue(self, sID, sValue):
         """
@@ -258,7 +261,7 @@ class KFOpenAPI(QAxWidget):
                 “FIREW_SECGB” – 방화벽 설정 여부. 0:미설정, 1:설정, 2:해지
                 Ex) openApi.GetLoginInfo(“ACCOUNT_CNT”);
         """
-        if not GetConnectState():
+        if not self.GetConnectState():
             print("Error : KiwoomConnectError by GetLoginInfo")
             raise KiwoomConnectError()
 
@@ -524,6 +527,14 @@ class KFOpenAPI(QAxWidget):
 
         return self.dynamicCall("GetCommFullData(QString, QString", strTrCode, strRecordName)
 
+    def GetScreenNumber(self):
+        ret = "{0:04d}".format(self.screenNo)
+        if self.screenNo == 9999:
+            raise MaxScreenNumber()
+        self.dicScrNo.update({ret:self.screenNo})
+        self.screenNo += 1
+        return ret
+
     ###############################################################
     # Event
     # 각종 수신 Event를 처리
@@ -608,6 +619,17 @@ class KFOpenAPI(QAxWidget):
         """
         print("OnEventConnect")
         self.loginEventLoop.exit()
+
+    # def PreventRequestOver(self): # 초당 5회 이상 방지
+
+class MaxScreenNumber(Exception):
+    """ 스크린 넘거 개수가 9999개를 초과할 경우 발생하는 예외"""
+
+    def __init__(self, msg="Screen Number를 생성할 수 없습니다."):
+        self.msg = msg
+
+    def __str__(self):
+        return self.msg
 
 class ParameterTypeError(Exception):
     """ 파라미터 타입이 일치하지 않을 경우 발생하는 예외 """
@@ -902,59 +924,78 @@ class TrList(object):
         "TR_OPC10005" : "opc10005" # 해외선물옵션월차트조회
     }
 class AccountInfo(KFOpenAPI):
-    def __init__(self):
+    def __init__(self, KFOpenAPI):
         super().__init__()
         self.loginInfo = LoginInfo()
+        self.KFOpenAPI = KFOpenAPI
+
+    def SetConnectState(self, bState):
+        if bState:
+            self.loginInfo.connectState = bState
+        else:
+            self.loginInfo = LoginInfo()
+    def GetConnectState(self):
+        return self.loginInfo.connectState
 
     def SetLoginInfo(self):
         # EventConnect 함수 내에서 동작
         self.loginInfo.accountCnt = self.GetLoginInfo(self.loginInfo.setList[0])
-        self.loginInfo.accNo = self.GetLoginInfo(self.loginInfo.setList[1])
+        self.loginInfo.accNo = self.GetLoginInfo(self.loginInfo.setList[1]).split(';')
         self.loginInfo.userId = self.GetLoginInfo(self.loginInfo.setList[2])
         self.loginInfo.userName = self.GetLoginInfo(self.loginInfo.setList[3])
         self.loginInfo.keySecGb = self.GetLoginInfo(self.loginInfo.setList[4])
         self.loginInfo.fwSecGb = self.GetLoginInfo(self.loginInfo.setList[5])
 
     def GetLoginInfo(self, sTag):
-        return self.dynamicCall("GetLoginInfo(QString)", sTag)
+        return self.KFOpenAPI.dynamicCall("GetLoginInfo(QString)", sTag)
 
 class LoginInfo(object):
-        accountCnt = 0
-        accNo = None
-        userId = None
-        userName = None
-        keySecGb = 0      # 0 : 정상,   1 : 해지
-        fwSecGb = 0       # 0 : 미설정, 1 : 설정, 2 : 해지
-        setList = ["ACCOUNT_CNT", "ACCNO", "USER_ID", "USER_NAME", "KEY_BSECGB", "FIREW_SECGB"]
-
-class ItemInfo(KFOpenAPI):
     def __init__(self):
-        super().__init__()
+        self.connectState = False
+        self.accountCnt = 0
+        self.accNo = []
+        self.userId = None
+        self.userName = None
+        self.keySecGb = 0      # 0 : 정상,   1 : 해지
+        self.fwSecGb = 0       # 0 : 미설정, 1 : 설정, 2 : 해지
+        self.setList = ["ACCOUNT_CNT", "ACCNO", "USER_ID", "USER_NAME", "KEY_BSECGB", "FIREW_SECGB"]
+
+class ItemInfo(object):
+    def __init__(self):
+        self.sCode = None
+        self.dicCode = None
         self.dicSingleData = {}
         self.dicMultiData = {}
         self.singleData = []
         self.multiData = []
         self._SetData()
 
+    def SetCode(self, sCode, nIndex):
+        self.sCode = sCode
+        self.dicCode = nIndex
+
+    def GetCode(self):
+        return self.sCode
+
     def _SetData(self):
-        singleList = ("현재가", "대비기호", "전일대비", "등락률", "거래량", "거래량대비", "종목명", "행사가",
+        singleList = ("현재가", "대비기호", "전일대비", "등락율", "거래량", "거래량대비", "종목명", "행사가",
                     "시가", "고가", "저가", "2차저항", "1차저항", "피봇", "1차저지", "2차저지", "호가시간",
-                    "매도수량대비5", "매도건수5", "매도수량5", "매도호가5", "매도등락률5",
-                    "매도수량대비4", "매도건수4", "매도수량4", "매도호가4", "매도등락률4",
-                    "매도수량대비3", "매도건수3", "매도수량3", "매도호가3", "매도등락률3",
-                    "매도수량대비2", "매도건수2", "매도수량2", "매도호가2", "매도등락률2",
-                    "매도수량대비1", "매도건수1", "매도수량1", "매도호가1", "매도등락률1",
-                    "매수호가1", "매수등략율1", "매수수량1", "매수건수1", "매수수량대비1",
-                    "매수호가2", "매수등략율2", "매수수량2", "매수건수2", "매수수량대비2",
-                    "매수호가3", "매수등략율3", "매수수량3", "매수건수3", "매수수량대비3",
-                    "매수호가4", "매수등략율4", "매수수량4", "매수건수4", "매수수량대비4",
-                    "매수호가5", "매수등략율5", "매수수량5", "매수건수5", "매수수량대비5",
+                    "매도수량대비5", "매도건수5", "매도수량5", "매도호가5", "매도등락율5",
+                    "매도수량대비4", "매도건수4", "매도수량4", "매도호가4", "매도등락율4",
+                    "매도수량대비3", "매도건수3", "매도수량3", "매도호가3", "매도등락율3",
+                    "매도수량대비2", "매도건수2", "매도수량2", "매도호가2", "매도등락율2",
+                    "매도수량대비1", "매도건수1", "매도수량1", "매도호가1", "매도등락율1",
+                    "매수호가1", "매수등락율1", "매수수량1", "매수건수1", "매수수량대비1",
+                    "매수호가2", "매수등락율2", "매수수량2", "매수건수2", "매수수량대비2",
+                    "매수호가3", "매수등락율3", "매수수량3", "매수건수3", "매수수량대비3",
+                    "매수호가4", "매수등락율4", "매수수량4", "매수건수4", "매수수량대비4",
+                    "매수호가5", "매수등락율5", "매수수량5", "매수건수5", "매수수량대비5",
                     "매도호가총건수", "매도호가총잔량", "순매수잔량", "매수호가총잔량", "매수호가총건수",
                     "매도호가총잔량직전대비", "매수호가총잔량직전대비", "상장중최고가", "상장중최고대비율",
-                    "상장중최고일", "상장중최저가", "상장중최저대비율", "상장중최저일", "결제통화", "품목구분"
-                    "틱단위", "틱가치", "시작시간", "종료시간", "전일종가", "정산가", "영업일자", "최종거래"
-                    "잔존만기", "결제구분", "실물인수도", "레버리지", "옵션타입", "거래소")
-        multiList = ("체결시간n", "현재가n", "대비기호n", "전일대비n", "등락률n", "체결량n", "누적거래량")
+                    "상장중최고일", "상장중최저가", "상장중최저대비율", "상장중최저일", "결제통화", "품목구분",
+                    "틱단위", "틱가치", "시작시간", "종료시간", "전일종가", "정산가", "영업일자", "최종거래",
+                    "잔존만기", "결제구분", "레버리지", "옵션타입", "거래소")
+        multiList = ("체결시간n", "현재가n", "대비기호n", "전일대비n", "등락율n", "체결량n", "누적거래량")
         for i in range(len(singleList)):
             self.dicSingleData.update({singleList[i]:i})
             self.singleData.append([singleList[i], ""])
@@ -970,12 +1011,10 @@ class ItemInfo(KFOpenAPI):
 
         try:
             index = self.dicSingleData[sKey]
+            self.singleData[index][1] = sValue
         except KeyError as e:
             print("[KeyError]", e , "is wrong value by ItemInfo.SetData")
-        else:
-            print("Not Error")
-            self.singleData[index][1] = sValue
-
+            raise e
 
     def GetSingleData(self, sKey):
         if not (isinstance(sKey, str)):
@@ -984,12 +1023,10 @@ class ItemInfo(KFOpenAPI):
 
         try:
             index = self.dicSingleData[sKey]
+            return self.singleData[index][1]
         except KeyError as e:
             print("[KeyError]", e , "is wrong value by ItemInfo.GetData")
-            return e
-        else:
-            print("Not Error")
-            return self.singleData[index][1]
+            raise e
 
 if __name__ == "__main__":
     kfo = KFOpenAPI()

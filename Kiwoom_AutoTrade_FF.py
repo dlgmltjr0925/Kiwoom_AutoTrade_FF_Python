@@ -2,6 +2,7 @@ import sys, os.path, configparser, time
 from KFOpenAPI import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 from PyQt5 import uic
 
 rootDir = os.getcwd() # 작업 최상위 디렉토리
@@ -11,24 +12,28 @@ configDir = rootDir + '\Kiwoom_AutoTrade_FF.ini'
 class AutoTradeMain(QMainWindow, AutoTradeMainForm):
     def __init__(self):
         super().__init__()
-        self.setupUi(self) # QT Creater로 생성된 기본 프레임
-        self._SetConfig()
-        self._SetupUi() # 버튼값 설정
         self.logCounter = 0 # 로그 카운터 초기화
+        self._SetupUi() # User Interface 초기화
+        self._SetConfig()
         self.kiwoom = KFOpenAPI() # 키움증권 OPEN_API-W
         self.accountInfo = AccountInfo(self.kiwoom) # 계좌정보
         self.sScrNo = self.kiwoom.GetScreenNumber() # 화면번호
         self.kiwoom.OnReceiveTrData.connect(self.ReceiveTrData)
         self.kiwoom.OnReceiveRealData.connect(self.ReceiveRealData)
+        # self.kiwoom.OnReceiveMsg.connect(self.ReceiveMsg)
+        # self.kiwoom.OnReceiveChejanData.connect(self.ReceiveChejanData)
         self.kiwoom.OnEventConnect.connect(self.EventConnect)
 
     def _SetConfig(self):
         self.config = configparser.ConfigParser()
         self.config.read('Kiwoom_AutoTrade_FF.ini')
 
+    # User Interface 초기화
     def _SetupUi(self):
         # QTableWidget Setting
+        self.setupUi(self) # QT Creater로 생성된 기본 프레임
         self._InitButton()
+        self._InitTableWidget()
         self.show()
 
     # 변수 값 설정
@@ -56,7 +61,7 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
         self.actionLogin.setShortcut('Ctrl+L')
         self.actionLogin.setStatusTip('Open Login pannel')
         self.actionLogin.triggered.connect(self._OpenLoginPannel)
-        # 메뉴(기능 - 로그아웃) 안됨...
+        # 메뉴(기능 - 로그아웃) 기능을 지원하지 않음
         self.actionLogout.setShortcut('Ctrl+O')
         self.actionLogout.setStatusTip('Disconnect')
         self.actionLogout.triggered.connect(self._Disconnect)
@@ -68,6 +73,27 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
         self.btnSearchMyAccount.clicked.connect(self._ClickedSearchMyAccount)
         # test 버튼
         self.btnTest.clicked.connect(self.ClickedTest)
+
+    # QTableWidget 초기화
+    def _InitTableWidget(self):
+        # twRealState
+        rowCount = 4
+        columnCount = 10
+        self.twRealState.setRowCount(rowCount) # 4행
+        self.twRealState.setColumnCount(columnCount) # 10열
+        # 행 높이, 열 너비 설정
+        for i in range(rowCount):
+            self.twRealState.setRowHeight(i, 21)
+        for i in range(columnCount):
+            if not i == 1:
+                self.twRealState.setColumnWidth(i, 103)
+            else:
+                self.twRealState.setColumnWidth(i, 108)
+            self.twRealState.setHorizontalHeaderItem(i, QTableWidgetItem().setBackground(Qt.red))
+        # Header 설정
+        columnLables = ['구 분', '종목코드', '현재가', '포지션', '보유수량', '진입가', '청산가',
+                    '손절가', '평가손익', '통화코드']
+        self.twRealState.setHorizontalHeaderLabels(columnLables) # QTableWidget.setHorizontalHeaderLabels(self, QStringList lables)
 
     def _OpenLoginPannel(self):
         # 로그인
@@ -107,7 +133,9 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
         sRQName = '종목정보조회'
         sTrCode = TrList.OPT['TR_OPT10001']
         sScrNo = self.sScrNo
+        items = ''
         for item in self.itemInfo:
+            items += item.GetCode() + ';'
             try:
                 self.Logging('Requesting [{}] infomation'.format(item.GetCode()))
                 self.kiwoom.SetInputValue('종목코드', item.GetCode())
@@ -118,6 +146,16 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
                 self.Logging('Requested [{}] infomation'.format(item.GetCode()))
             except Exception as error:
                 self.Logging('[Exception] {} in _SetItemInfo'.format(error))
+        self.SettwRealState()
+        try:
+            sRQName = '관심종목조회'
+            sTrCode = TrList.OPT['TR_OPT10005']
+            self.kiwoom.SetInputValue('종목코드', items)
+            errorCode = self.kiwoom.CommRqData(sRQName, sTrCode, '', sScrNo)
+            if errorCode:
+                self.Logging('[Error] Code = {} in_SetItemInfo'.format(errorCode))
+        except Exception as error:
+            self.Logging('[Exception] {} in _SetItemInfo'.format(error))
 
     def ReceiveTrData(self, sScrNo, sRQName, sTrCode, sRecordName, sPrevNext):
         self.Logging("[Event] OnReceiveTrData")
@@ -160,6 +198,7 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
                     sValue = self.kiwoom.GetCommRealData(sRealType, realFid).strip()
                     self.itemInfo[nIndex].SetRealMarketPrice(realFid, sValue)
                     # self.Logging("[{0}] : {1}".format(realFid, self.itemInfo[nIndex].GetRealMarketPrice(realFid))) # 입력 확인
+                self.SettwRealState(nIndex)
             except Exception as error:
                 self.Logging("[해외옵션선물시세][Exception] {} in ReceiveRealData".format(error))
 
@@ -195,6 +234,51 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
                 self.loginEventLoop.exit()
             except AttributeError:
                 pass
+
+    # 관심종목 및 실시간 거래 내역을 확인하는 테이블 설정
+    def SettwRealState(self, nIndex = -1):
+        self.Logging("setting twRealState")
+        # 프로그램 실행 및 설정이 변경 되었을 경우 초기화과정
+        try:
+            if nIndex < 0 or nIndex > 3:
+                for i in range(10):
+                    for key in self.dicItemInfo.keys():
+                        if not (i == 0 or i == 1 or i == 9):
+                            self.twRealState.setItem(nIndex, i, QTableWidgetItem(''))
+                        else:
+                            row = self.dicItemInfo[key]
+                            self.twRealState.setItem(row, 0, QTableWidgetItem('시세감시'))
+                            self.twRealState.setItem(row, 1, QTableWidgetItem(key))
+                            self.twRealState.setItem(row, 9, QTableWidgetItem('USD'))
+                for i in range(10):
+                    if i == 0 or i == 1 or i == 9:
+                        continue
+                    else:
+                        if i == 2:
+                            for key in self.dicItemInfo.keys():
+                                row = self.dicItemInfo[key]
+                                currentPrice = self.itemInfo[row].GetSingleData("현재가")
+                                color, price = self.GetPriceForm(currentPrice)
+                                self.twRealState.setItem(row, 2, QTableWidgetItem(price))
+                                self.twRealState.item(row, 2).setForeground(QBrush(color))
+            else:
+                for i in range(10):
+                    if i == 2:
+                        currentPrice = self.itemInfo[nIndex].GetSingleData("현재가(진법)")
+                        color, price = self.GetPriceForm(currentPrice)
+                        if self.twRealState.item(nIndex, 2) != currentPrice:
+                            self.twRealState.setItem(nIndex, 2, QTableWidgetItem(price))
+                            self.twRealState.item(nIndex, 2).setForeground(QBrush(color))
+        except Exception as error:
+            self.Logging("[Exception] {} in SettwRealState".format(error))
+
+    def GetPriceForm(self, sValue):
+        if sValue[0:1] == '-':
+            return Qt.blue, sValue[1:]
+        elif sValue[0:1] == '+':
+            return Qt.red, sValue[1:]
+        else:
+            return Qt.black, sValue
 
     def Logging(self, strData):
         # 각종 데이터 처리 과정을 메론 로그에 남김
@@ -233,5 +317,7 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    app.setStyle(QStyleFactory.create('fusion'))  # 어플리케이션 기본 디자인 설정 "Fusion"
+
     autoTradeMain = AutoTradeMain()
     sys.exit(app.exec_())

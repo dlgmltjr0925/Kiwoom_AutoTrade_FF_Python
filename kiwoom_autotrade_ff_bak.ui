@@ -13,9 +13,6 @@
   <property name="windowTitle">
    <string>KIWOOM FOREIGN DERIVATIVES AUTO TRADING SYSTEM</string>
   </property>
-  <property name="toolButtonStyle">
-   <enum>Qt::ToolButtonIconOnly</enum>
-  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="gbAccount">
     <property name="geometry">
@@ -33,7 +30,7 @@
      <property name="geometry">
       <rect>
        <x>18</x>
-       <y>30</y>
+       <y>22</y>
        <width>56</width>
        <height>12</height>
       </rect>
@@ -46,7 +43,7 @@
      <property name="geometry">
       <rect>
        <x>76</x>
-       <y>24</y>
+       <y>16</y>
        <width>131</width>
        <height>22</height>
       </rect>
@@ -56,7 +53,7 @@
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>24</y>
+       <y>15</y>
        <width>51</width>
        <height>23</height>
       </rect>
@@ -78,23 +75,26 @@
     <property name="title">
      <string>관심종목 및 실시간 계좌 현황</string>
     </property>
-    <widget class="QTableWidget" name="twRealState">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
+    <widget class="QTableWidget" name="twStatusBoard">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>25</y>
+       <y>20</y>
        <width>1040</width>
-       <height>108</height>
+       <height>109</height>
       </rect>
      </property>
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>1040</width>
+       <height>109</height>
+      </size>
      </property>
      <property name="maximumSize">
       <size>
@@ -102,11 +102,8 @@
        <height>109</height>
       </size>
      </property>
-     <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
+     <property name="midLineWidth">
+      <number>0</number>
      </property>
      <property name="verticalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -115,43 +112,22 @@
       <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
      <property name="autoScroll">
-      <bool>false</bool>
-     </property>
-     <property name="editTriggers">
-      <set>QAbstractItemView::NoEditTriggers</set>
+      <bool>true</bool>
      </property>
      <property name="tabKeyNavigation">
       <bool>false</bool>
      </property>
      <property name="showDropIndicator" stdset="0">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="dragDropOverwriteMode">
       <bool>false</bool>
      </property>
-     <property name="selectionMode">
-      <enum>QAbstractItemView::NoSelection</enum>
-     </property>
-     <property name="showGrid">
-      <bool>true</bool>
-     </property>
-     <property name="gridStyle">
-      <enum>Qt::SolidLine</enum>
-     </property>
-     <property name="wordWrap">
-      <bool>false</bool>
-     </property>
-     <property name="cornerButtonEnabled">
-      <bool>false</bool>
-     </property>
-     <attribute name="horizontalHeaderCascadingSectionResizes">
-      <bool>false</bool>
-     </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>103</number>
+      <number>104</number>
      </attribute>
      <attribute name="horizontalHeaderMinimumSectionSize">
-      <number>103</number>
+      <number>30</number>
      </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
@@ -159,9 +135,102 @@
      <attribute name="verticalHeaderDefaultSectionSize">
       <number>21</number>
      </attribute>
-     <attribute name="verticalHeaderMinimumSectionSize">
-      <number>21</number>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>true</bool>
      </attribute>
+     <attribute name="verticalHeaderMinimumSectionSize">
+      <number>20</number>
+     </attribute>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>구 분</string>
+      </property>
+      <property name="background">
+       <color>
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>종목코드</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>현재가</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>포지션</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>보유수량</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>진입가</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>청산가</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>손절가</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>평가손익</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>통화코드</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsEditable|ItemIsEnabled</set>
+      </property>
+     </item>
     </widget>
    </widget>
    <widget class="QGroupBox" name="gbItemInfo">
@@ -180,7 +249,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>23</y>
+       <y>20</y>
        <width>431</width>
        <height>291</height>
       </rect>
@@ -219,7 +288,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>23</y>
+       <y>20</y>
        <width>571</width>
        <height>291</height>
       </rect>

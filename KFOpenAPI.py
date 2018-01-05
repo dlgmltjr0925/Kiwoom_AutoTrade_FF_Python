@@ -14,7 +14,7 @@ class KFOpenAPI(QAxWidget):
         self.orderNo = ""
         self.inquiry = 0
         self.msg = ""
-        self.screenNo = 0
+        self.screenNo = 1000
         self.dicScrNo = {}
         self.OnReceiveTrData.connect(self.ReceiveTrData)
         self.OnReceiveRealData.connect(self.ReceiveRealData)
@@ -175,7 +175,7 @@ class KFOpenAPI(QAxWidget):
         반환값  수신 데이터
         비고    Ex) 현재가출력 - openApi.GetCommRealData(“해외선물시세”, 10);
         """
-        if not (isinstance(strRealType, str) and isinstance(nFid, str)):
+        if not (isinstance(strRealType, str) and isinstance(nFid, int)):
             print("Error : ParameterTypeError by GetCommRealData")
             raise ParameterTypeError()
 
@@ -718,7 +718,7 @@ class RealFidList(object):
             27 : "매도호가",
             28 : "매수호가",
             15 : "체결량",
-            13 : "누적거래량",
+            13 : "거래량",
             16 : "시가",
             17 : "고가",
             18 : "저가",
@@ -726,74 +726,74 @@ class RealFidList(object):
             26 : "대비",
             30 : "전일거래량등락율",
             22 : "체결일자",
-            761 : "영업일"
+            761 : "영업일자"
         },
         "해외선물옵션호가" : {
             21 : "호가시간",
-            27 : "최우선매도호가",
-            28 : "최우선매수호가",
+            27 : "매도호가",
+            28 : "매수호가",
             41 : "매도호가1",
-            61 : "매도호가잔량1",
-            81 : "매도호가대비1",
-            101 : "매도호가건수1",
+            61 : "매도수량1",
+            81 : "매도수량대비1",
+            101 : "매도건수1",
             51 : "매수호가1",
-            71 : "매수가잔량1",
-            91 : "매수호가대비1",
-            111 : "매수호가건수1",
+            71 : "매수수량1",
+            91 : "매수수량대비1",
+            111 : "매수건수1",
             42 : "매도호가2",
-            62 : "매도호가잔량2",
-            82 : "매도호가대비2",
-            102 : "매도호가건수2",
+            62 : "매도수량2",
+            82 : "매도수량대비2",
+            102 : "매도건수2",
             52 : "매수호가2",
-            72 : "매수가잔량2",
-            92 : "매수호가대비2",
-            112 : "매수호가건수2",
+            72 : "매수수량2",
+            92 : "매수수량대비2",
+            112 : "매수건수2",
             43 : "매도호가3",
-            63 : "매도호가잔량3",
-            83 : "매도호가대비3",
-            103 : "매도호가건수3",
+            63 : "매도수량3",
+            83 : "매도수량대비3",
+            103 : "매도건수3",
             53 : "매수호가3",
-            73 : "매수가잔량3",
-            93 : "매수호가대비3",
-            113 : "매수호가건수3",
+            73 : "매수수량3",
+            93 : "매수수량대비3",
+            113 : "매수건수3",
             44 : "매도호가4",
-            64 : "매도호가잔량4",
-            84 : "매도호가대비4",
-            104 : "매도호가건수4",
+            64 : "매도수량4",
+            84 : "매도수량대비4",
+            104 : "매도건수4",
             54 : "매수호가4",
-            74 : "매수가잔량4",
-            94 : "매수호가대비4",
-            114 : "매수호가건수4",
+            74 : "매수수량4",
+            94 : "매수수량대비4",
+            114 : "매수건수4",
             45 : "매도호가5",
-            65 : "매도호가잔량5",
-            85 : "매도호가대비5",
-            105 : "매도호가건수5",
+            65 : "매도수량5",
+            85 : "매도수량대비5",
+            105 : "매도건수5",
             55 : "매수호가5",
-            75 : "매수가잔량5",
-            95 : "매수호가대비5",
-            115 : "매수호가건수5",
-            121 : "매도호가 총잔량",
-            122 : "매도호가 총잔량 대비",
-            123 : "매도호가 총건수",
-            125 : "매수호가 총잔량",
-            126 : "매수호가 총잔량 대비",
-            127 : "매수호가 총건수",
+            75 : "매수수량5",
+            95 : "매수수량대비5",
+            115 : "매수건수5",
+            121 : "매도호가총잔량",
+            122 : "매도호가총잔량직전대비",
+            123 : "매도호가총건수",
+            125 : "매수호가총잔량",
+            126 : "매수호가총잔량직전대비",
+            127 : "매수호가총건수",
             137 : "호가순잔량",
             128 : "순매수잔량",
-            600 : "매도 1호가 등락율",
-            601 : "매도 2호가 등락율",
-            602 : "매도 3호가 등락율",
-            603 : "매도 4호가 등락율",
-            604 : "매도 5호가 등락율",
-            610 : "매수 1호가 등락율",
-            611 : "매수 2호가 등락율",
-            612 : "매수 3호가 등락율",
-            613 : "매수 4호가 등락율",
-            614 : "매수 5호가 등락율"
+            600 : "매도등락율1",
+            601 : "매도등락율2",
+            602 : "매도등락율3",
+            603 : "매도등락율4",
+            604 : "매도등락율5",
+            610 : "매수등락율1",
+            611 : "매수등락율2",
+            612 : "매수등락율3",
+            613 : "매수등락율4",
+            614 : "매수등락율5"
         },
         "해외선물옵션주문" : {
-            9201 : "계좌번호 (/r)",
-            9203 : "주문번호 (이하 /t)",
+            9201 : "계좌번호",
+            9203 : "주문번호",
             9001 : "종목코드",
             907 : "매도수구분",
             905 : "주문구분",
@@ -814,8 +814,8 @@ class RealFidList(object):
             908 : "주문시"
         },
         "해외선물옵션 체결" : {
-            9201 : "계좌번호 (/r)",
-            9203 : "주문번호 (이하 /t)",
+            9201 : "계좌번호",
+            9203 : "주문번호",
             9001 : "종목코드",
             907 : "매도수구분",
             905 : "주문체결구분",
@@ -826,18 +826,18 @@ class RealFidList(object):
             906 : "주문유형",
             900 : "주문수량",
             901 : "주문가격",
-            13330 : "주문표시 가격",
-            13333 : "조건 가격",
-            13332 : "조건표시 가격",
-            909 : "체결 번호",
-            911 : "체결 수량",
-            910 : "체결 가격",
-            13331 : "체결표시 가격",
-            13329 : "체결 금액",
-            13326 : "거부 수량",
+            13330 : "주문표시가격",
+            13333 : "조건가격",
+            13332 : "조건표시가격",
+            909 : "체결번호",
+            911 : "체결수량",
+            910 : "체결가격",
+            13331 : "체결표시가격",
+            13329 : "체결금액",
+            13326 : "거부수량",
             913 : "주문상태",
-            902 : "주문 잔량",
-            935 : "체결 수수료",
+            902 : "주문잔량",
+            935 : "체결수수료",
             13327 : "신규수량",
             13328 : "청산수량",
             8018 : "실현손익",
@@ -848,9 +848,9 @@ class RealFidList(object):
             908 : "체결수신시간"
         },
         "해외선물옵션마진콜" : {
-            9201 : "계좌번호 (/r)",
-            8054 : "경고구분 (1:1차 경고, 2:2차경고) (이하 \t)",
-            8055 : "발생일시 YYYYMMDDHHMMSSMS",
+            9201 : "계좌번호",
+            8054 : "경고구분", #  (1:1차 경고, 2:2차경고)
+            8055 : "발생일시", # YYYYMMDDHHMMSSMS
             8053 : "마진콜율",
             8043 : "통화코드"
         }
@@ -966,6 +966,8 @@ class ItemInfo(object):
         self.dicCode = None
         self.dicSingleData = {}
         self.dicMultiData = {}
+        self.dicRealHoga = {}
+        self.dicRealMarketPrice = {}
         self.singleData = []
         self.multiData = []
         self._SetData()
@@ -978,6 +980,7 @@ class ItemInfo(object):
         return self.sCode
 
     def _SetData(self):
+        # 종목 정보 조회시
         singleList = ("현재가", "대비기호", "전일대비", "등락율", "거래량", "거래량대비", "종목명", "행사가",
                     "시가", "고가", "저가", "2차저항", "1차저항", "피봇", "1차저지", "2차저지", "호가시간",
                     "매도수량대비5", "매도건수5", "매도수량5", "매도호가5", "매도등락율5",
@@ -994,7 +997,9 @@ class ItemInfo(object):
                     "매도호가총잔량직전대비", "매수호가총잔량직전대비", "상장중최고가", "상장중최고대비율",
                     "상장중최고일", "상장중최저가", "상장중최저대비율", "상장중최저일", "결제통화", "품목구분",
                     "틱단위", "틱가치", "시작시간", "종료시간", "전일종가", "정산가", "영업일자", "최종거래",
-                    "잔존만기", "결제구분", "레버리지", "옵션타입", "거래소")
+                    "잔존만기", "결제구분", "레버리지", "옵션타입", "거래소", # 조회 데이터
+                    "매도호가", "매수호가", "매도호가총잔량대비", "매수호가총잔량대비", "호가순잔량", # 실시간 호가
+                    "체결시간", "현재가(진법)", "체결량", "전일대비기호", "체결일자")
         multiList = ("체결시간n", "현재가n", "대비기호n", "전일대비n", "등락율n", "체결량n", "누적거래량")
         for i in range(len(singleList)):
             self.dicSingleData.update({singleList[i]:i})
@@ -1002,6 +1007,21 @@ class ItemInfo(object):
         for i in range(len(multiList)):
             self.dicMultiData.update({multiList[i]:i})
             self.multiData.append([multiList[i], ""])
+
+        # 실시간 조회시
+        realHogaList = (21, 27, 28, 41, 61, 81, 101, 51, 71, 91, 111, 42, 62, 82, 102, 52, 72, 92, 112,
+                        43, 63, 83, 103, 53, 73, 93, 113, 44, 64, 84, 104, 54, 74, 94, 114, 45, 65, 85, 105,
+                        55, 75, 95, 115, 121, 122, 123, 125, 126, 127, 137, 128, 600, 601, 602, 603, 604,
+                        610, 611, 612, 613, 614)
+        realMarketPrice = (20, 10, 140, 11, 12, 27, 28, 15, 13, 16, 17, 18, 25, 26, 30, 22, 761)
+        try:
+            for fid in realHogaList:
+                self.dicRealHoga.update({fid:RealFidList.FIDLIST["해외선물옵션호가"][fid]})
+            for fid in realMarketPrice:
+                self.dicRealMarketPrice.update({fid:RealFidList.FIDLIST["해외선물옵션시세"][fid]})
+        except Exception as error:
+            print("[KeyError]", error , "is wrong value by ItemInfo._SetData")
+            raise error
 
     def SetSingleData(self, sKey, sValue):
         if not (isinstance(sKey, str)
@@ -1027,6 +1047,34 @@ class ItemInfo(object):
         except KeyError as e:
             print("[KeyError]", e , "is wrong value by ItemInfo.GetData")
             raise e
+
+    def SetRealHoga(self, nKey, sValue):
+        try:
+            sKey = self.dicRealHoga[nKey]
+            self.SetSingleData(sKey, sValue)
+        except Exception as error:
+            raise error
+
+    def GetRealHoga(self, nKey):
+        try:
+            sKey = self.dicRealHoga[nKey]
+            return self.GetSingleData(sKey)
+        except Exception as error:
+            raise error
+
+    def SetRealMarketPrice(self, nKey, sValue):
+        try:
+            sKey = self.dicRealMarketPrice[nKey]
+            self.SetSingleData(sKey, sValue)
+        except Exception as error:
+            raise error
+
+    def GetRealMarketPrice(self, nKey):
+        try:
+            sKey = self.dicRealMarketPrice[nKey]
+            return self.GetSingleData(sKey)
+        except Exception as error:
+            raise error
 
 if __name__ == "__main__":
     kfo = KFOpenAPI()

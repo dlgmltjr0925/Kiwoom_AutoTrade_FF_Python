@@ -1,11 +1,8 @@
-import sys, io, os.path, configparser, time
+import sys, os.path, configparser, time
 from KFOpenAPI import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5 import uic
-
-# sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
-# sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 
 rootDir = os.getcwd() # 작업 최상위 디렉토리
 AutoTradeMainForm = uic.loadUiType(rootDir + '\kiwoom_autotrade_ff.ui')[0]
@@ -36,19 +33,22 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
 
     # 변수 값 설정
     def _InitItemInfo(self, loginStatus): # 종목 정보 초기화
-        if loginStatus:
-            self.itemInfo = []
-            self.dicItemInfo = {}
-            for i in range(int(self.config['DEFAULT']['ItemsCount'])):
-                sections = 'ItemProperty' + str(i)
-                self.itemInfo.append(ItemInfo())
-                self.itemInfo[i].SetCode(self.config[sections]['Code'], i)
-                self.dicItemInfo.update({self.config[sections]['Code']:i})
-                # self.Logging('Create {0} infomation, Index = {1}'.format(self.config[sections]['Code'], i))
-                # Check : 코드 정보를 정확히 불러오는지 확인
-            self._SetItemInfo()
-        else:
-            self.ItemInfo.clear()
+        try:
+            if loginStatus:
+                self.itemInfo = []
+                self.dicItemInfo = {}
+                for i in range(int(self.config['DEFAULT']['ItemsCount'])):
+                    sections = 'ItemProperty' + str(i)
+                    self.itemInfo.append(ItemInfo())
+                    self.itemInfo[i].SetCode(self.config[sections]['Code'], i)
+                    self.dicItemInfo.update({self.config[sections]['Code']:i})
+                    self.Logging('Create {0} infomation, Index = {1}'.format(self.config[sections]['Code'], i))
+                    # Check : 코드 정보를 정확히 불러오는지 확인
+                self._SetItemInfo() # 종목별 상세 조건
+            else:
+                self.ItemInfo.clear()
+        except Exception as error:
+            self.Logging("[Exception] {} in _InitItemInfo".format(error))
 
     # 버튼 기능을 초기화
     def _InitButton(self):
@@ -104,21 +104,20 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
             self._InitItemInfo(True)
 
     def _SetItemInfo(self): # 종목별 초기 데이터 조회
-        sRQName = "종목정보조회"
-        sTrCode = TrList.OPT["TR_OPT10001"]
+        sRQName = '종목정보조회'
+        sTrCode = TrList.OPT['TR_OPT10001']
         sScrNo = self.sScrNo
         for item in self.itemInfo:
             try:
-                self.Logging("Requesting [{}] infomation".format(item.GetCode()))
+                self.Logging('Requesting [{}] infomation'.format(item.GetCode()))
                 self.kiwoom.SetInputValue('종목코드', item.GetCode())
                 self.Logging('[Input Value] sRQName = {0}, sTrCode = {1}, sScrNo = {2}'.format(sRQName, sTrCode, sScrNo))
                 errorCode = self.kiwoom.CommRqData(sRQName, sTrCode, '', sScrNo)
                 if errorCode:
-                    self.Logging("[Error] Code = {} in_SetItemInfo".format(errorCode))
-                self.Logging("Requested [{}] infomation".format(item.GetCode()))
+                    self.Logging('[Error] Code = {} in_SetItemInfo'.format(errorCode))
+                self.Logging('Requested [{}] infomation'.format(item.GetCode()))
             except Exception as error:
-                self.Logging("[Exception] {} in_SetItemInfo".format(error))
-
+                self.Logging('[Exception] {} in _SetItemInfo'.format(error))
 
     def ReceiveTrData(self, sScrNo, sRQName, sTrCode, sRecordName, sPrevNext):
         self.Logging("[Event] OnReceiveTrData")
@@ -127,21 +126,43 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
         self.Logging("sTrCode : {}".format(sTrCode))
         self.Logging("sRecordName : {}".format(sRecordName))
         self.Logging("sPrevNext : {}".format(sPrevNext))
-        self.kiwoom.requestLoop.exit()
         self.Logging("MainWindow")
         if sRQName == '종목정보조회':
-            try:
-                nIndex = self.dicItemInfo[sPrevNext.split(' ')[0][2:8]]
-                for singleData in self.itemInfo[nIndex].singleData:
-                    strData = self.kiwoom.GetCommData(sTrCode, sRQName, 0, singleData[0]).strip()
-                    self.itemInfo[nIndex].SetSingleData(singleData[0], strData) # 종목별 SingleData 입력
-                    self.Logging("{} : {}".format(singleData[0], self.itemInfo[nIndex].GetSingleData(singleData[0])))
-            except Exception as error:
-                self.Logging("[Exception][종목정보조회] {} in ReceiveTrData ".format(error))
+            if sTrCode == TrList.OPT["TR_OPT10001"]:
+                try:
+                    nIndex = self.dicItemInfo[sPrevNext.split(' ')[0][2:8]]
+                    for singleData in self.itemInfo[nIndex].singleData:
+                        sValue = self.kiwoom.GetCommData(sTrCode, sRQName, 0, singleData[0]).strip()
+                        self.itemInfo[nIndex].SetSingleData(singleData[0], sValue) # 종목별 SingleData 입력
+                        # self.Logging("{} : {}".format(singleData[0], self.itemInfo[nIndex].GetSingleData(singleData[0])))
+                except Exception as error:
+                    self.Logging("[Exception][종목정보조회] {} in ReceiveTrData ".format(error))
 
 
     def ReceiveRealData(self, sJongmokCode, sRealType, sRealData):
-        self.Logging("OnReceiveRealData")
+        self.Logging("[Event] ReceiveRealData")
+        self.Logging("sJongmokCode : {}".format(sJongmokCode))
+        self.Logging("sRealType : {}".format(sRealType))
+        self.Logging("sRealData : {}".format(sRealData))
+        if sRealType == "해외옵션호가" or sRealType == "해외선물호가":
+            try:
+                nIndex = self.dicItemInfo[sJongmokCode]
+                for realFid in self.itemInfo[nIndex].dicRealHoga.keys():
+                    sValue = self.kiwoom.GetCommRealData(sRealType, realFid).strip()
+                    self.itemInfo[nIndex].SetRealHoga(realFid, sValue)
+                    # self.Logging("[{0}] : {1}".format(realFid, self.itemInfo[nIndex].GetRealHoga(realFid))) # 입력 확인
+            except Exception as error:
+                self.Logging("[해외옵션선물호가][Exception] {} in ReceiveRealData".format(error))
+        elif sRealType == "해외옵션시세" or sRealType == "해외선물시세":
+            try:
+                nIndex = self.dicItemInfo[sJongmokCode]
+                for realFid in self.itemInfo[nIndex].dicRealMarketPrice.keys():
+                    sValue = self.kiwoom.GetCommRealData(sRealType, realFid).strip()
+                    self.itemInfo[nIndex].SetRealMarketPrice(realFid, sValue)
+                    # self.Logging("[{0}] : {1}".format(realFid, self.itemInfo[nIndex].GetRealMarketPrice(realFid))) # 입력 확인
+            except Exception as error:
+                self.Logging("[해외옵션선물시세][Exception] {} in ReceiveRealData".format(error))
+
 
     def EventConnect(self, nErrCode):
         # 서버와 연결되거나 해제되었을 경우 발생되는 이벤트 처리 메소드
@@ -155,8 +176,7 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
                 for i in range(len(self.accountInfo.loginInfo.accNo)-1):
                     self.cbAccountNum.addItem(self.accountInfo.loginInfo.accNo[i])
                 # self._InitItemInfo(True)
-                self.Logging('Completed!')
-
+                self.Logging('Completed Login!')
             else:
                 try:
                     self.accountInfo.SetConnectState(False)

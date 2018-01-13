@@ -137,6 +137,7 @@ class ChartData(object):
         self.countUnit = 1 # 틱단위
         self.timeUnit = 1 # 분단위
         self.nVolume = 0
+        self.expend = False # 차트 데이터를 축적 할 것인지 판단(최초 600개 데이터를 수신하였다면, False : 600개 유지, True : 추가)
         self.InitChartData()
         self.SetDate()
 
@@ -216,14 +217,15 @@ class ChartData(object):
                 self.tickChartData[self.dicTickChartData['저가']] = sPrice
                 self.tickChartData[self.dicTickChartData['거래량']] = sVolume
                 self.tickChartData[self.dicTickChartData['체결시간']] = tNow.strftime('%Y%m%d%H%M%S')
-                self.multiData.pop()
+                if not extend:
+                    self.multiData.pop()
                 self.multiData.insert(self.tickChartData)
             else:
                 self.tickCount += 1
                 self.nVolume += int(sVolume)
-                self.tickCh1artData[self.dicTickChartData['거래량']] = str(nVolume)
+                self.tickChartData[self.dicTickChartData['거래량']] = str(nVolume)
 
-        elif self.timeSize == '분': # 분단위 데이터도 틱차트 데이터 사
+        elif self.timeSize == '분': # 분단위 데이터도 틱차트 데이터 사용
             self.tickChartData = self.multiChartData[0]
             self.tickChartData[self.dicTickChartData['현재가']] = sPrice
             if tNow.minute % self.timeUnit == 0 and self.tDateTime.minute != tNow.minute:
@@ -233,9 +235,29 @@ class ChartData(object):
                 self.tickChartData[self.dicTickChartData['저가']] = sPrice
                 self.tickChartData[self.dicTickChartData['거래량']] = sVolume
                 self.tickChartData[self.dicTickChartData['체결시간']] = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
-                self.multiData.pop()
+                if not extend:
+                    self.multiData.pop()
                 self.multiData.insert(self.tickChartData)
+            else:
+                self.nVolume += int(sVolume)
+                self.tickChartData[self.dicTickChartData['거래량']] = str(nVolume)
 
+        else: # 일, 주, 월단위 데이터
+            self.dayChartData = self.multiChartData[0]
+            self.dayChartData[self.dicDayChartData['현재가']] = sPrice
+            if self.tDateTime.day != tNow.day:
+                self.nVolume = int(sVolume)
+                self.dayChartData[self.dicDayChartData['시가']] = sPrice
+                self.dayChartData[self.dicDayChartData['고가']] = sPrice
+                self.dayChartData[self.dicDayChartData['저가']] = sPrice
+                self.dayChartData[self.dicDayChartData['누적거래량']] = sVolume
+                self.dayChartData[self.dicDayChartData['일자']] = datetime.datetime.now().strftime('%Y%m%d')
+                if not extend:
+                    self.multiData.pop()
+                self.multiData.insert(self.tickChartData)
+            else:
+                self.nVolume += int(sVolume)
+                self.tickChartData[self.dicDayChartData['누적거래량']] = str(nVolume)
 
         self.SetDate()
 

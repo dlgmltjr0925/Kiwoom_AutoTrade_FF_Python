@@ -197,10 +197,24 @@ class ChartData(object):
 
             if sTrCode == TrList.OPC['TR_OPC10001'] or sTrCode == TrList.OPC['TR_OPC10002']:
                 seIndex = self.dicTickChartData[sKey]
-                self.multiChartData[nIndex][seIndex][1] = sValue
+                if seIndex == 0 or seIndex == 1 or seIndex == 2 or seIndex == 3:
+                    chartData = float(sValue)
+                elif seIndex == 4:
+                    chartData = int(sValue)
+                elif seIndex == 5:
+                    chartData = datetime.datetime.strptime(sValue, '%Y%m%d%H%M%S')
+                else:
+                    charData = datetime.datetime.strptime(sValue, '%Y%m%d')
+                self.multiChartData[nIndex][seIndex][1] = chartData
             else:
                 seIndex = self.dicDayChartData[sKey]
-                self.multiChartData[nIndex][seIndex][1] = sValue
+                if seIndex == 0 or seIndex == 1 or seIndex == 2 or seIndex == 3:
+                    chartData = float(sValue)
+                elif seIndex == 4:
+                    chartData = int(sValue)
+                else:
+                    charData = datetime.datetime.strptime(sValue, '%Y%m%d')
+                self.multiChartData[nIndex][seIndex][1] = charData
         except Exception as error:
             raise error
 
@@ -208,57 +222,59 @@ class ChartData(object):
         tNow = datetime.datetime.now()
         if self.timeSize == '틱':
             self.tickChartData = self.multiChartData[0]
-            self.tickChartData[self.dicTickChartData['현재가']] = sPrice
+            fPrice = float(sPrice)
+            self.tickChartData[self.dicTickChartData['현재가']] = fPrice
             if self.tickCount == self.countUnit:
                 self.tickCount = 0
                 self.nVolume = int(sVolume)
-                self.tickChartData[self.dicTickChartData['시가']] = sPrice
-                self.tickChartData[self.dicTickChartData['고가']] = sPrice
-                self.tickChartData[self.dicTickChartData['저가']] = sPrice
-                self.tickChartData[self.dicTickChartData['거래량']] = sVolume
-                self.tickChartData[self.dicTickChartData['체결시간']] = tNow.strftime('%Y%m%d%H%M%S')
+                self.tickChartData[self.dicTickChartData['시가']] = fPrice
+                self.tickChartData[self.dicTickChartData['고가']] = fPrice
+                self.tickChartData[self.dicTickChartData['저가']] = fPrice
+                self.tickChartData[self.dicTickChartData['거래량']] = int(sVolume)
+                self.tickChartData[self.dicTickChartData['체결시간']] = tNow
                 if not extend:
                     self.multiData.pop()
                 self.multiData.insert(self.tickChartData)
             else:
                 self.tickCount += 1
                 self.nVolume += int(sVolume)
-                self.tickChartData[self.dicTickChartData['거래량']] = str(nVolume)
+                self.tickChartData[self.dicTickChartData['거래량']] = nVolume
 
         elif self.timeSize == '분': # 분단위 데이터도 틱차트 데이터 사용
             self.tickChartData = self.multiChartData[0]
-            self.tickChartData[self.dicTickChartData['현재가']] = sPrice
+            fPrice = float(sPrice)
+            self.tickChartData[self.dicTickChartData['현재가']] = fPrice
             if tNow.minute % self.timeUnit == 0 and self.tDateTime.minute != tNow.minute:
                 self.nVolume = int(sVolume)
-                self.tickChartData[self.dicTickChartData['시가']] = sPrice
-                self.tickChartData[self.dicTickChartData['고가']] = sPrice
-                self.tickChartData[self.dicTickChartData['저가']] = sPrice
-                self.tickChartData[self.dicTickChartData['거래량']] = sVolume
-                self.tickChartData[self.dicTickChartData['체결시간']] = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+                self.tickChartData[self.dicTickChartData['시가']] = fPrice
+                self.tickChartData[self.dicTickChartData['고가']] = fPrice
+                self.tickChartData[self.dicTickChartData['저가']] = fPrice
+                self.tickChartData[self.dicTickChartData['거래량']] = int(sVolume)
+                self.tickChartData[self.dicTickChartData['체결시간']] = tNow
                 if not extend:
                     self.multiData.pop()
                 self.multiData.insert(self.tickChartData)
             else:
                 self.nVolume += int(sVolume)
-                self.tickChartData[self.dicTickChartData['거래량']] = str(nVolume)
+                self.tickChartData[self.dicTickChartData['거래량']] = nVolume
 
         else: # 일, 주, 월단위 데이터
             self.dayChartData = self.multiChartData[0]
-            self.dayChartData[self.dicDayChartData['현재가']] = sPrice
+            fPrice = float(sPrice)
+            self.dayChartData[self.dicDayChartData['현재가']] = fPrice
             if self.tDateTime.day != tNow.day:
                 self.nVolume = int(sVolume)
-                self.dayChartData[self.dicDayChartData['시가']] = sPrice
-                self.dayChartData[self.dicDayChartData['고가']] = sPrice
-                self.dayChartData[self.dicDayChartData['저가']] = sPrice
-                self.dayChartData[self.dicDayChartData['누적거래량']] = sVolume
-                self.dayChartData[self.dicDayChartData['일자']] = datetime.datetime.now().strftime('%Y%m%d')
+                self.dayChartData[self.dicDayChartData['시가']] = fPrice
+                self.dayChartData[self.dicDayChartData['고가']] = fPrice
+                self.dayChartData[self.dicDayChartData['저가']] = fPrice
+                self.dayChartData[self.dicDayChartData['누적거래량']] = int(sVolume)
+                self.dayChartData[self.dicDayChartData['일자']] = tNow.date()
                 if not extend:
                     self.multiData.pop()
                 self.multiData.insert(self.tickChartData)
             else:
                 self.nVolume += int(sVolume)
-                self.tickChartData[self.dicDayChartData['누적거래량']] = str(nVolume)
-
+                self.tickChartData[self.dicDayChartData['누적거래량']] = nVolume
         self.SetDate()
 
     def SetOption(self, sTrCode, nUnit = datetime.datetime.now().strftime('%Y%m%d')):
@@ -300,7 +316,7 @@ class ChartData(object):
         else:
             raise ReturnValueError()
 
-    def GetDaykChartData(self, nIndex):
+    def GetDayChartData(self, nIndex):
         if len(multiChartData) != 0:
             for i in range(len(self.dayChartData)):
                 self.dayChartData[i][1] = self.multiChartData[nIndex][i][1]

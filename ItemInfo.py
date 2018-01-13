@@ -1,4 +1,5 @@
 from KFOpenAPI import *
+import datetime
 
 class ItemInfo(object):
     def __init__(self):
@@ -10,6 +11,7 @@ class ItemInfo(object):
         self.dicRealMarketPrice = {}
         self.singleData = []
         self.multiData = []
+        self.chart = ChartData()
         self._SetData()
 
     def SetCode(self, sCode, nIndex):
@@ -63,6 +65,8 @@ class ItemInfo(object):
             print("[KeyError]", error , "is wrong value by ItemInfo._SetData")
             raise error
 
+
+
     def SetSingleData(self, sKey, sValue):
         if not (isinstance(sKey, str)
                 and isinstance(sValue, str)):
@@ -70,11 +74,11 @@ class ItemInfo(object):
             raise ParameterTypeError()
 
         try:
-            index = self.dicSingleData[sKey]
-            self.singleData[index][1] = sValue
-        except KeyError as e:
-            print("[KeyError]", e , "is wrong value by ItemInfo.SetData")
-            raise e
+            nIndex = self.dicSingleData[sKey]
+            self.singleData[nIndex][1] = sValue
+        except KeyError as error:
+            print("[KeyError]", error , "is wrong value by ItemInfo.SetData")
+            raise error
 
     def GetSingleData(self, sKey):
         if not (isinstance(sKey, str)):
@@ -88,6 +92,7 @@ class ItemInfo(object):
             print("[KeyError]", e , "is wrong value by ItemInfo.GetData")
             raise e
 
+    # 실시간 호가(호가 주문이 변경되었을 때 반영)
     def SetRealHoga(self, nKey, sValue):
         try:
             sKey = self.dicRealHoga[nKey]
@@ -102,6 +107,7 @@ class ItemInfo(object):
         except Exception as error:
             raise error
 
+    # 현재 시세(거래가 발생할 때 갱신)
     def SetRealMarketPrice(self, nKey, sValue):
         try:
             sKey = self.dicRealMarketPrice[nKey]
@@ -115,3 +121,193 @@ class ItemInfo(object):
             return self.GetSingleData(sKey)
         except Exception as error:
             raise error
+
+
+
+# chart형 클래스 사용하지 않음
+class ChartData(object):
+    def __init__(self):
+        self.tickChartData = []
+        self.dicTickChartData = {}
+        self.dayChartData = []
+        self.dicDayChartData = {}
+        self.multiChartData = []
+        self.timeSize = ''
+        self.tickCount = 0 # 틱 카운터 초기화
+        self.countUnit = 1 # 틱단위
+        self.timeUnit = 1 # 분단위
+        self.nVolume = 0
+        self.InitChartData()
+        self.SetDate()
+
+    def InitChartData(self):
+        chartDataList = ("현재가", "시가", "고가", "저가", "거래량", "체결시간", "영업일자")
+        for i in range(len(chartDataList)):
+            self.dicTickChartData.update({chartDataList[i]:i})
+            self.tickChartData.append([chartDataList[i], ""])
+        chartDataList = ("현재가", "시가", "고가", "저가", "누적거래량", "일자", "영업일자")
+        for i in range(len(chartDataList)):
+            self.dicDayChartData.update({chartDataList[i]:i})
+            self.dayChartData.append([chartDataList[i], "")
+
+    def ResetChartData(self, sTrCode, nCount):
+        '''
+        sTrCode : 차트데이터 요청 틱, 분, 일, 주, 월
+        nCount : 반환되는 카운터 개수(메모리 할당)
+        '''
+        try:
+            if not (isinstance(sTrCode, str)
+                    and isinstance(nCount, int)):
+                print("Error : ParameterTypeError by ResetChartData")
+                raise ParameterTypeError()
+
+            self.multiChartData.clear()
+
+            if sTrCode == TrList.OPC['TR_OPC10001'] or sTrCode == TrList.OPC['TR_OPC10002']:
+                for i in range(len(self.tickChartData)):
+                    self.tickChartData[i][1] = ''
+                for i in range(nCount):
+                    self.multiChartData.append(self.tickChartData)
+            else:
+                for i in range(len(self.dayChartData)):
+                    self.dayChartData[i][1] = ''
+                for i in range(nCount):
+                    self.multiChartData.append(self.dayChartData)
+
+        except Exception as error:
+            raise error
+
+    def SetChartData(self, sTrCode, nIndex, sKey, sValue):
+        '''
+        nIndex = 단위별 차트 구분 번호 0 : 가장 최신
+        sKey =  (tickChartData) 현재가, 시가, 고가, 저가, 거래량, 체결시간, 영업일자
+                (dayChartData) 현재가, 시가, 고가, 저가, 누적거래량, 일자, 영업일자
+        sValue = 입력 데이터(String)
+        '''
+        try:
+            if not (isinstance(sTrCode, str)
+                    and isinstance(nIndex, int)
+                    and isinstance(sKey, str)
+                    and isinstance(sValue, str)):
+                print("Error : ParameterTypeError by SetChartData")
+                raise ParameterTypeError()
+
+            self.SetDate() # 시간 설정
+
+            if sTrCode == TrList.OPC['TR_OPC10001'] or sTrCode == TrList.OPC['TR_OPC10002']:
+                seIndex = self.dicTickChartData[sKey]
+                self.multiChartData[nIndex][seIndex][1] = sValue
+            else:
+                seIndex = self.dicDayChartData[sKey]
+                self.multiChartData[nIndex][seIndex][1] = sValue
+        except Exception as error:
+            raise error
+
+    def SetRealChartData(self, sPrice, sVolume):
+        tNow = datetime.datetime.now()
+        if self.timeSize == '틱':
+            self.tickChartData = self.multiChartData[0]
+            self.tickChartData[self.dicTickChartData['현재가']] = sPrice
+            if self.tickCount == self.countUnit:
+                self.tickCount = 0
+                self.nVolume = int(sVolume)
+                self.tickChartData[self.dicTickChartData['시가']] = sPrice
+                self.tickChartData[self.dicTickChartData['고가']] = sPrice
+                self.tickChartData[self.dicTickChartData['저가']] = sPrice
+                self.tickChartData[self.dicTickChartData['거래량']] = sVolume
+                self.tickChartData[self.dicTickChartData['체결시간']] = tNow.strftime('%Y%m%d%H%M%S')
+                self.multiData.pop()
+                self.multiData.insert(self.tickChartData)
+            else:
+                self.tickCount += 1
+                self.nVolume += int(sVolume)
+                self.tickCh1artData[self.dicTickChartData['거래량']] = str(nVolume)
+
+        elif self.timeSize == '분': # 분단위 데이터도 틱차트 데이터 사
+            self.tickChartData = self.multiChartData[0]
+            self.tickChartData[self.dicTickChartData['현재가']] = sPrice
+            if tNow.minute % self.timeUnit == 0 and self.tDateTime.minute != tNow.minute:
+                self.nVolume = int(sVolume)
+                self.tickChartData[self.dicTickChartData['시가']] = sPrice
+                self.tickChartData[self.dicTickChartData['고가']] = sPrice
+                self.tickChartData[self.dicTickChartData['저가']] = sPrice
+                self.tickChartData[self.dicTickChartData['거래량']] = sVolume
+                self.tickChartData[self.dicTickChartData['체결시간']] = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+                self.multiData.pop()
+                self.multiData.insert(self.tickChartData)
+
+
+        self.SetDate()
+
+    def SetOption(self, sTrCode, nUnit = datetime.datetime.now().strftime('%Y%m%d')):
+        '''
+        차트의 종류를 설정함
+        sTrCode : 틱, 분, 일, 주, 월
+        nUnit : 틱, 분(시간 단위), 일, 주, 월(조회 일자)
+        '''
+        if sTrCode == TrList.OPC['TR_OPC10001']: # 틱단위
+            if not (isinstance(sTrCode, str) and isinstance(nUnit, int)):
+                print("Error : ParameterTypeError by SetOption tick")
+                raise ParameterTypeError()
+            self.timeSize = '틱'
+            self.tickCount = 0
+            self.countUnit = nUnit
+        elif sTrCode == TrList.OPC['TR_OPC10002']: # 분단위
+            if not (isinstance(sTrCode, str) and isinstance(nUnit, int)):
+                print("Error : ParameterTypeError by SetOption minute")
+                raise ParameterTypeError()
+            self.timeSize = '분'
+            self.timeUnit = nUnit
+        else:
+            if not (isinstance(sTrCode, str) and isinstance(nUnit, datetime.datetime)):
+                print("Error : ParameterTypeError by SetOption day, month, year")
+                raise ParameterTypeError()
+            if sTrCode == TrList.OPC['TR_OPC10003']: #일단위
+                self.timeSize = '일'
+                self.lastDate = nUnit
+            elif sTrCode == TrList.OPC['TR_OPC10004']: #주단위
+                self.timeSize = '주'
+            elif sTrCode == TrList.OPC['TR_OPC10005']: #월단위
+                self.timeSize = '월'
+
+    def GetTickChartData(self, nIndex):
+        if len(multiChartData) != 0:
+            for i in range(len(self.tickChartData)):
+                self.tickChartData[i][1] = self.multiChartData[nIndex][i][1]
+            return self.tickChartData
+        else:
+            raise ReturnValueError()
+
+    def GetDaykChartData(self, nIndex):
+        if len(multiChartData) != 0:
+            for i in range(len(self.dayChartData)):
+                self.dayChartData[i][1] = self.multiChartData[nIndex][i][1]
+            return self.tickChartData
+        else:
+            raise ReturnValueError()
+
+    def SetDate(self, tDateTime = datetime.datetime.now()):
+        # 시간값을 설정해주는 메소드
+        if type(tDateTime) == datetime.datetime:
+            self.tDateTime = tDateTime
+            self.sDateTime = tDateTime.strftime('%Y%m%d%H%M%S')
+            self.sDate = tDateTime.strftime('%Y%m%d')
+            self.sTime = tDateTime.strftime('%H%M%S')
+        elif type(tDateTime) == str:
+            if len(tDateTime) == 14:
+                self.tDate = datetime.datetime.strptime(tDateTime, '%Y%m%d%H%M%S')
+            elif len(tDateTime) == 8: # YYYYMMDD
+                self.tDate = datetime.datetime.strptime(tDateTime, '%Y%m%d')
+            elif len(tDateTime) == 6: # HHMMSS
+                self.sTime = datetime.datetime.strptime(tDateTime, '%H%M%S')
+            else:
+                raise ParameterValueError()
+
+class ReturnValueError(Exception):
+    """ 리턴값이 없을 경우 발생하는 에러 """
+
+    def __init__(self, msg="등록된 차트 데이터가 없습니다."):
+        self.msg = msg
+
+    def __str__(self):
+        return self.msg

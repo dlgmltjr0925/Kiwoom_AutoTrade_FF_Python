@@ -194,7 +194,7 @@ class KFOpenAPI(QAxWidget):
             print("Error : ParameterTypeError by GetChejanData")
             raise ParameterTypeError()
 
-        return self.dynamicCall("GetChjanData(int)", nFid)
+        return self.dynamicCall("GetChejanData(int)", nFid)
 
     def SendOrder(self, sRQName, sScreenNo, sAccNo, nOrderType, sCode, nQty, sPrice, sStop, sHogaGb, sOrgOrderNo):
         """
@@ -507,7 +507,7 @@ class KFOpenAPI(QAxWidget):
         """
         return self.dynamicCall("GetGlobalFutureItemTypelist()")
 
-    def GetCommFullData(self, strTrCode, strRecordName):
+    def GetCommFullData(self, strTrCode, strRecordName, nGubun):
         """
         28) GetCommFullData
         원형    BSTR GetCommFullData(BSTR strTrCode, BSTR strRecordName, LONG nGubun )
@@ -570,7 +570,7 @@ class KFOpenAPI(QAxWidget):
         반환값  없음
         비고
         """
-        print("OnReceiveRealData")
+        #print("OnReceiveRealData")
 
     # OnReceiveMsg
     def ReceiveMsg(self, sScrNo, sRQName, sTrCode, sMsg):
@@ -605,6 +605,10 @@ class KFOpenAPI(QAxWidget):
                 sFidList – 데이터 구분은 ‘;’ 이다
         """
         print("OnReceiveChejanData")
+        if self.requestLoop:
+            self.requestLoop.exit()
+        if self.orderLoop:
+            self.orderLoop.exit()
 
     # 로그인 이벤트 응답
     def EventConnect(self, nErrCode):
@@ -813,7 +817,7 @@ class RealFidList(object):
             8043 : "통화코드",
             908 : "주문시"
         },
-        "해외선물옵션 체결" : {
+        "해외선물옵션체결" : {
             9201 : "계좌번호",
             9203 : "주문번호",
             9001 : "종목코드",

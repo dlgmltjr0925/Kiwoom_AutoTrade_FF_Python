@@ -66,7 +66,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="gbAccountInfo">
+   <widget class="QGroupBox" name="gbAccountItem">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -78,7 +78,7 @@
     <property name="title">
      <string>관심종목 및 실시간 계좌 현황</string>
     </property>
-    <widget class="QTableWidget" name="twRealState">
+    <widget class="QTableWidget" name="tbAcountItem">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -213,7 +213,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>계좌 세부 정보</string>
+     <string>거래 내역</string>
     </property>
     <widget class="QTabWidget" name="tbAccountDetail">
      <property name="geometry">

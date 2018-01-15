@@ -12,6 +12,9 @@ class AccountInfo(KFOpenAPI):
         # 계좌 정보 조회 (금액 정보)
         self.myBalance = []
         self.dicBalance = {}
+        # 주문 정보 조회
+        self.orderInfo = {} # 주문 번호에 맞는 주문 정보
+
         self._InitBalance()
 
     # 보유 종목 초기화
@@ -87,6 +90,40 @@ class AccountInfo(KFOpenAPI):
              print("[KeyError]", error , "is wrong value by AccountInfo.GetMyBalance")
              raise error
 
+    def InitOrderInfo(self):
+        self.orderInfo.clear()
+
+    def AddOrderInfo(self, sOrderNo, sOriginalOrderNo = '000000000000000'):
+        try:
+            if not sOrderNo in self.orderInfo.keys():
+                # 원주문 번호가 0이면 신규
+                if sOriginalOrderNo == '000000000000000':
+                    self.orderInfo.update({sOrderNo:OrderInfo()})
+                else: # 원주문 번호에 번호가 있다면..
+                    if sOriginalOrderNo in self.orderInfo.keys(): # 등록된 정보가 있다면
+                        self.orderInfo.pop(sOriginalOrderNo)
+                    self.orderInfo.update({sOrderNo:OrderInfo()})
+        except KeyError as error:
+            print("[KeyError]", error , "is wrong value by AccountInfo.SetOrderInfo")
+            raise error
+
+    def SetOrderInfo(self, sOrderNo, sKey, sValue):  # 주문 정보를 입력
+        try:
+            self.orderInfo[sOrderNo].SetOrderData(sKey, sValue)
+        except KeyError as error:
+            print("[KeyError]", error , "is wrong value by AccountInfo.SetOrderData")
+            raise error
+
+    def GetOrderInfo(self, sOrderNo, sKey = None):   # 주문 정보(세부정보)를 반환
+        try:
+            if sKey == None:
+                return self.orderInfo[sOrderNo]
+            else:
+                return self.orderInfo[sOrderNo].GetOrderData(sKey)
+        except Exception as error:
+            print("[KeyError]", error , "is wrong value by AccountInfo.GetOrderInfo")
+            raise error
+
 
 class LoginInfo(object):
     def __init__(self):
@@ -99,6 +136,7 @@ class LoginInfo(object):
         self.fwSecGb = 0       # 0 : 미설정, 1 : 설정, 2 : 해지
         self.setList = ["ACCOUNT_CNT", "ACCNO", "USER_ID", "USER_NAME", "KEY_BSECGB", "FIREW_SECGB"]
 
+# 보유 정보 \
 class MyItemInfo(ItemInfo):
     def __init__(self, ItemInfo):
         self.itemInfo = ItemInfo
@@ -220,10 +258,97 @@ class MyItemInfo(ItemInfo):
         return ret
 
     def HasItem(self):
-        if (self.itemPosition == -1 or 1) and self.itemInsertPrice != None and self.itemQuantity != 0:
+        if (self.itemPosition == -1 or self.itemPosition == 1) and self.itemInsertPrice != None and self.itemQuantity != 0:
             return True
         else:
             return False
+
+class OrderInfo(object):
+    def __init__(self):                          # 주석 매수 신규 주문 기준
+        self.orderNo = ''                        # 주문번호 = 000000002011364
+        self.code = ''                           # 종목코드 = 6EH18
+        self.orderType = ''                      # 주문유형 = 2 (2: 지정가)
+        self.position = ''                       # 매도수구분 = 2 (1 : 매도, 2: 매수)
+        self.orderCount = 0                      # 주문수량 = 000000001
+        self.conclusionOrder = 0                 # 체결수량 = 000000000
+        self.outstandingOrder = 0                # 미체결수량 = 000000001
+        self.orderPrice = 0.0                    # 주문표시가격 = 1.22550
+        self.orderPriceInt = 0                   # 주문가격 = 00000000122550
+        self.conditionPrice = 0                  # 조건표시가격 =
+        self.conditionType = 0                   # 상태구분 = 1(1: 신규, 2: 정정)
+        self.currencyCode = 'USD'                # 통화코드 = USD
+        self.orderTime = datetime.datetime.now() # 주문시각 = 01/15 16:57:10
+        self.originalOrderNo = ''                # 원주문번호 = 000000000000000
+        self.orderData = []
+        self.dicOrderData = {}
+        self.InitOrderData()
+
+    def InitOrderData(self):
+        orderList = ('주문번호', '종목코드', '주문유형', '매도수구분', '주문수량',
+                        '체결수량', '미체결수량', '주문표시가격', '주문가격', '조건표시가격',
+                        '상태구분', '통화코드', '주문시각', '원주문번호')
+        for i in range(len(orderList)):
+            self.orderData.append([orderList[i], ''])
+            self.dicOrderData.update({orderList[i]: i})
+
+    def SetOrderData(self, sKey, sValue):
+        if not (isinstance(sKey, str) and isinstance(sValue, str)):
+            print("Error : ParameterTypeError by OrderInfo.SetOrderData")
+            raise ParameterTypeError()
+
+        try:
+            print('sKey : {}, sValue : {}'.format(sKey, sValue))
+            nIndex = self.dicOrderData[sKey]
+            self.orderData[nIndex][1] = sValue
+            if sKey == '주문번호':
+                self.orderNo = sValue
+            elif sKey == '종목코드':
+                self.code = sValue
+            elif sKey == '주문유형':
+                self.orderType = int(sValue)
+            elif sKey == '매도수구분':
+                if sValue == '1': # 매도
+                    self.position = -1
+                elif sValue == '2': # 매수
+                    self.position = 1
+            elif sKey == '주문수량':
+                self.orderCount = int(sValue)
+            elif sKey == '체결수량':
+                self.conclusionOrder = int(sValue)
+            elif sKey == '미체결수량':
+                self.outstandingOrder = int(sValue)
+            elif sKey == '주문표시가격':
+                self.orderPrice = float(sValue)
+            elif sKey == '주문가격':
+                self.orderPriceInt = int(sValue)
+            elif sKey == '조건표시가격':
+                if sValue != '' and sValue != None:
+                    self.conditionPrice = float(sValue)
+            elif sKey == '상태구분':
+                self.conditionType = int(sValue)
+            elif sKey == '통화코드':
+                self.currencyCode = sValue
+            elif sKey == '주문시각':
+                sValue = str(self.orderTime.year) + '/' + sValue
+                self.orderTime = datetime.datetime.strptime(sValue, '%Y/%m/%d %H:%M:%S')
+            elif sKey == '원주문번호':
+                self.originalOrderNo = sValue
+
+        except KeyError as error:
+            print("[KeyError]", error , "is wrong value by OrderInfo.SetOrderData")
+            raise error
+
+    def GetOrderData(self, sKey):
+        if not (isinstance(sKey, str)):
+            print("Error : ParameterTypeError by OrderInfo.GetOrderData")
+            raise ParameterTypeError()
+
+        try:
+            nIndex = self.dicOrderData[sKey]
+            return self.orderData[nIndex][1]
+        except KeyError as error:
+            print("[KeyError]", error , "is wrong value by OrderInfo.GetOrderData")
+            raise error
 
 class ParameterCountError(Exception):
     def __init__(self, msg="인자값의 개수가 잘못 되었습니다."):

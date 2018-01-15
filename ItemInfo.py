@@ -11,7 +11,7 @@ class ItemInfo(object):
         self.dicRealMarketPrice = {}
         self.singleData = []
         self.multiData = []
-        self.chart = ChartData()
+        # self.chart = ChartData()
         self._SetData()
 
     def SetCode(self, sCode, nIndex):
@@ -64,7 +64,6 @@ class ItemInfo(object):
         except Exception as error:
             print("[KeyError]", error , "is wrong value by ItemInfo._SetData")
             raise error
-
 
 
     def SetSingleData(self, sKey, sValue):
@@ -149,7 +148,7 @@ class ChartData(object):
         chartDataList = ("현재가", "시가", "고가", "저가", "누적거래량", "일자", "영업일자")
         for i in range(len(chartDataList)):
             self.dicDayChartData.update({chartDataList[i]:i})
-            self.dayChartData.append([chartDataList[i], "")
+            self.dayChartData.append([chartDataList[i], ""])
 
     def ResetChartData(self, sTrCode, nCount):
         '''

@@ -1,0 +1,272 @@
+
+
+[Mon Jan 15 02:32:18 2018] Started Program
+[00000] ['AA_DisableHighDpiScaling', 'AA_DontCreateNativeWidgetSiblings', 'AA_DontShowIconsInMenus', 'AA_DontUseNativeMenuBar', 'AA_EnableHighDpiScaling', 'AA_ForceRasterWidgets', 'AA_ImmediateWidgetCreation', 'AA_MSWindowsUseDirect3DByDefault', 'AA_MacDontSwapCtrlAndMeta', 'AA_MacPluginApplication', 'AA_NativeWindows', 'AA_SetPalette', 'AA_ShareOpenGLContexts', 'AA_SynthesizeMouseForUnhandledTouchEvents', 'AA_SynthesizeTouchForUnhandledMouseEvents', 'AA_Use96Dpi', 'AA_UseDesktopOpenGL', 'AA_UseHighDpiPixmaps', 'AA_UseOpenGLES', 'AA_UseSoftwareOpenGL', 'AA_X11InitThreads', 'ALT', 'AbsoluteSize', 'AccessibleDescriptionRole', 'AccessibleTextRole', 'ActionMask', 'ActionsContextMenu', 'ActiveWindowFocusReason', 'AddToSelection', 'AlignAbsolute', 'AlignBaseline', 'AlignBottom', 'AlignCenter', 'AlignHCenter', 'AlignHorizontal_Mask', 'AlignJustify', 'AlignLeading', 'AlignLeft', 'AlignRight', 'AlignTop', 'AlignTrailing', 'AlignVCenter', 'AlignVertical_Mask', 'Alignment', 'AlignmentFlag', 'AllButtons', 'AllDockWidgetAreas', 'AllToolBarAreas', 'AltModifier', 'AnchorBottom', 'AnchorHorizontalCenter', 'AnchorLeft', 'AnchorPoint', 'AnchorRight', 'AnchorTop', 'AnchorVerticalCenter', 'ApplicationActive', 'ApplicationAttribute', 'ApplicationHidden', 'ApplicationInactive', 'ApplicationModal', 'ApplicationShortcut', 'ApplicationState', 'ApplicationStates', 'ApplicationSuspended', 'ArrowCursor', 'ArrowType', 'AscendingOrder', 'AspectRatioMode', 'AutoColor', 'AutoConnection', 'AutoDither', 'AutoText', 'AvoidDither', 'Axis', 'BDiagPattern', 'BGMode', 'BackButton', 'BackgroundColorRole', 'BackgroundRole', 'BacktabFocusReason', 'BeginNativeGesture', 'BevelJoin', 'BitmapCursor', 'BlankCursor', 'BlockingQueuedConnection', 'BottomDockWidgetArea', 'BottomEdge', 'BottomLeftCorner', 'BottomLeftSection', 'BottomRightCorner', 'BottomRightSection', 'BottomSection', 'BottomToolBarArea', 'BrushStyle', 'BusyCursor', 'BypassGraphicsProxyWidget', 'BypassWindowManagerHint', 'CTRL', 'CaseInsensitive', 'CaseSensitive', 'CaseSensitivity', 'CheckState', 'CheckStateRole', 'Checked', 'ClickFocus', 'ClipOperation', 'ClosedHandCursor', 'CoarseTimer', 'ColorOnly', 'ConicalGradientPattern', 'ConnectionType', 'ContainsItemBoundingRect', 'ContainsItemShape', 'ContextMenuPolicy', 'ControlModifier', 'CoordinateSystem', 'CopyAction', 'Corner', 'CoverWindow', 'CrossCursor', 'CrossPattern', 'CursorMoveStyle', 'CursorShape', 'CustomContextMenu', 'CustomCursor', 'CustomDashLine', 'CustomGesture', 'CustomizeWindowHint', 'DashDotDotLine', 'DashDotLine', 'DashLine', 'DateFormat', 'DayOfWeek', 'DecorationRole', 'DefaultContextMenu', 'DefaultLocaleLongDate', 'DefaultLocaleShortDate', 'Dense1Pattern', 'Dense2Pattern', 'Dense3Pattern', 'Dense4Pattern', 'Dense5Pattern', 'Dense6Pattern', 'Dense7Pattern', 'DescendingOrder', 'Desktop', 'DeviceCoordinates', 'DiagCrossPattern', 'Dialog', 'DiffuseAlphaDither', 'DiffuseDither', 'DirectConnection', 'DisplayRole', 'DockWidgetArea', 'DockWidgetArea_Mask', 'DockWidgetAreas', 'DontStartGestureOnChildren', 'DotLine', 'DownArrow', 'DragCopyCursor', 'DragLinkCursor', 'DragMoveCursor', 'Drawer', 'DropAction', 'DropActions', 'Edge', 'Edges', 'EditRole', 'ElideLeft', 'ElideMiddle', 'ElideNone', 'ElideRight', 'EndNativeGesture', 'EnterKeyDefault', 'EnterKeyDone', 'EnterKeyGo', 'EnterKeyNext', 'EnterKeyPrevious', 'EnterKeyReturn', 'EnterKeySearch', 'EnterKeySend', 'EnterKeyType', 'EventPriority', 'ExactHit', 'ExtraButton1', 'ExtraButton10', 'ExtraButton11', 'ExtraButton12', 'ExtraButton13', 'ExtraButton14', 'ExtraButton15', 'ExtraButton16', 'ExtraButton17', 'ExtraButton18', 'ExtraButton19', 'ExtraButton2', 'ExtraButton20', 'ExtraButton21', 'ExtraButton22', 'ExtraButton23', 'ExtraButton24', 'ExtraButton3', 'ExtraButton4', 'ExtraButton5', 'ExtraButton6', 'ExtraButton7', 'ExtraButton8', 'ExtraButton9', 'FDiagPattern', 'FastTransformation', 'FillRule', 'FindChildOption', 'FindChildOptions', 'FindChildrenRecursively', 'FindDirectChildrenOnly', 'FlatCap', 'FocusPolicy', 'FocusReason', 'FontRole', 'ForbiddenCursor', 'ForegroundRole', 'ForeignWindow', 'ForwardButton', 'FramelessWindowHint', 'Friday', 'FuzzyHit', 'GestureCanceled', 'GestureFinished', 'GestureFlag', 'GestureFlags', 'GestureStarted', 'GestureState', 'GestureType', 'GestureUpdated', 'GlobalColor', 'GroupSwitchModifier', 'HighEventPriority', 'HitTestAccuracy', 'HorPattern', 'Horizontal', 'IBeamCursor', 'ISODate', 'IgnoreAction', 'IgnoreAspectRatio', 'IgnoredGesturesPropagateToParent', 'ImAbsolutePosition', 'ImAnchorPosition', 'ImCurrentSelection', 'ImCursorPosition', 'ImCursorRectangle', 'ImEnabled', 'ImEnterKeyType', 'ImFont', 'ImHints', 'ImMaximumTextLength', 'ImMicroFocus', 'ImPlatformData', 'ImPreferredLanguage', 'ImQueryAll', 'ImQueryInput', 'ImSurroundingText', 'ImTextAfterCursor', 'ImTextBeforeCursor', 'ImageConversionFlag', 'ImageConversionFlags', 'ImhDate', 'ImhDialableCharactersOnly', 'ImhDigitsOnly', 'ImhEmailCharactersOnly', 'ImhExclusiveInputMask', 'ImhFormattedNumbersOnly', 'ImhHiddenText', 'ImhLatinOnly', 'ImhLowercaseOnly', 'ImhMultiLine', 'ImhNoAutoUppercase', 'ImhNoPredictiveText', 'ImhNone', 'ImhPreferLatin', 'ImhPreferLowercase', 'ImhPreferNumbers', 'ImhPreferUppercase', 'ImhSensitiveData', 'ImhTime', 'ImhUppercaseOnly', 'ImhUrlCharactersOnly', 'InitialSortOrderRole', 'InputMethodHint', 'InputMethodHints', 'InputMethodQueries', 'InputMethodQuery', 'IntersectClip', 'IntersectsItemBoundingRect', 'IntersectsItemShape', 'InvertedLandscapeOrientation', 'InvertedPortraitOrientation', 'ItemDataRole', 'ItemFlag', 'ItemFlags', 'ItemIsAutoTristate', 'ItemIsDragEnabled', 'ItemIsDropEnabled', 'ItemIsEditable', 'ItemIsEnabled', 'ItemIsSelectable', 'ItemIsTristate', 'ItemIsUserCheckable', 'ItemIsUserTristate', 'ItemNeverHasChildren', 'ItemSelectionMode', 'ItemSelectionOperation', 'KeepAspectRatio', 'KeepAspectRatioByExpanding', 'Key', 'Key_0', 'Key_1', 'Key_2', 'Key_3', 'Key_4', 'Key_5', 'Key_6', 'Key_7', 'Key_8', 'Key_9', 'Key_A', 'Key_AE', 'Key_Aacute', 'Key_Acircumflex', 'Key_AddFavorite', 'Key_Adiaeresis', 'Key_Agrave', 'Key_Alt', 'Key_AltGr', 'Key_Ampersand', 'Key_Any', 'Key_Apostrophe', 'Key_ApplicationLeft', 'Key_ApplicationRight', 'Key_Aring', 'Key_AsciiCircum', 'Key_AsciiTilde', 'Key_Asterisk', 'Key_At', 'Key_Atilde', 'Key_AudioCycleTrack', 'Key_AudioForward', 'Key_AudioRandomPlay', 'Key_AudioRepeat', 'Key_AudioRewind', 'Key_Away', 'Key_B', 'Key_Back', 'Key_BackForward', 'Key_Backslash', 'Key_Backspace', 'Key_Backtab', 'Key_Bar', 'Key_BassBoost', 'Key_BassDown', 'Key_BassUp', 'Key_Battery', 'Key_Blue', 'Key_Bluetooth', 'Key_Book', 'Key_BraceLeft', 'Key_BraceRight', 'Key_BracketLeft', 'Key_BracketRight', 'Key_BrightnessAdjust', 'Key_C', 'Key_CD', 'Key_Calculator', 'Key_Calendar', 'Key_Call', 'Key_Camera', 'Key_CameraFocus', 'Key_Cancel', 'Key_CapsLock', 'Key_Ccedilla', 'Key_ChannelDown', 'Key_ChannelUp', 'Key_Clear', 'Key_ClearGrab', 'Key_Close', 'Key_Codeinput', 'Key_Colon', 'Key_Comma', 'Key_Community', 'Key_Context1', 'Key_Context2', 'Key_Context3', 'Key_Context4', 'Key_ContrastAdjust', 'Key_Control', 'Key_Copy', 'Key_Cut', 'Key_D', 'Key_DOS', 'Key_Dead_Abovedot', 'Key_Dead_Abovering', 'Key_Dead_Acute', 'Key_Dead_Belowdot', 'Key_Dead_Breve', 'Key_Dead_Caron', 'Key_Dead_Cedilla', 'Key_Dead_Circumflex', 'Key_Dead_Diaeresis', 'Key_Dead_Doubleacute', 'Key_Dead_Grave', 'Key_Dead_Hook', 'Key_Dead_Horn', 'Key_Dead_Iota', 'Key_Dead_Macron', 'Key_Dead_Ogonek', 'Key_Dead_Semivoiced_Sound', 'Key_Dead_Tilde', 'Key_Dead_Voiced_Sound', 'Key_Delete', 'Key_Direction_L', 'Key_Direction_R', 'Key_Display', 'Key_Documents', 'Key_Dollar', 'Key_Down', 'Key_E', 'Key_ETH', 'Key_Eacute', 'Key_Ecircumflex', 'Key_Ediaeresis', 'Key_Egrave', 'Key_Eisu_Shift', 'Key_Eisu_toggle', 'Key_Eject', 'Key_End', 'Key_Enter', 'Key_Equal', 'Key_Escape', 'Key_Excel', 'Key_Exclam', 'Key_Execute', 'Key_Exit', 'Key_Explorer', 'Key_F', 'Key_F1', 'Key_F10', 'Key_F11', 'Key_F12', 'Key_F13', 'Key_F14', 'Key_F15', 'Key_F16', 'Key_F17', 'Key_F18', 'Key_F19', 'Key_F2', 'Key_F20', 'Key_F21', 'Key_F22', 'Key_F23', 'Key_F24', 'Key_F25', 'Key_F26', 'Key_F27', 'Key_F28', 'Key_F29', 'Key_F3', 'Key_F30', 'Key_F31', 'Key_F32', 'Key_F33', 'Key_F34', 'Key_F35', 'Key_F4', 'Key_F5', 'Key_F6', 'Key_F7', 'Key_F8', 'Key_F9', 'Key_Favorites', 'Key_Finance', 'Key_Find', 'Key_Flip', 'Key_Forward', 'Key_G', 'Key_Game', 'Key_Go', 'Key_Greater', 'Key_Green', 'Key_Guide', 'Key_H', 'Key_Hangul', 'Key_Hangul_Banja', 'Key_Hangul_End', 'Key_Hangul_Hanja', 'Key_Hangul_Jamo', 'Key_Hangul_Jeonja', 'Key_Hangul_PostHanja', 'Key_Hangul_PreHanja', 'Key_Hangul_Romaja', 'Key_Hangul_Special', 'Key_Hangul_Start', 'Key_Hangup', 'Key_Hankaku', 'Key_Help', 'Key_Henkan', 'Key_Hibernate', 'Key_Hiragana', 'Key_Hiragana_Katakana', 'Key_History', 'Key_Home', 'Key_HomePage', 'Key_HotLinks', 'Key_Hyper_L', 'Key_Hyper_R', 'Key_I', 'Key_Iacute', 'Key_Icircumflex', 'Key_Idiaeresis', 'Key_Igrave', 'Key_Info', 'Key_Insert', 'Key_J', 'Key_K', 'Key_Kana_Lock', 'Key_Kana_Shift', 'Key_Kanji', 'Key_Katakana', 'Key_KeyboardBrightnessDown', 'Key_KeyboardBrightnessUp', 'Key_KeyboardLightOnOff', 'Key_L', 'Key_LastNumberRedial', 'Key_Launch0', 'Key_Launch1', 'Key_Launch2', 'Key_Launch3', 'Key_Launch4', 'Key_Launch5', 'Key_Launch6', 'Key_Launch7', 'Key_Launch8', 'Key_Launch9', 'Key_LaunchA', 'Key_LaunchB', 'Key_LaunchC', 'Key_LaunchD', 'Key_LaunchE', 'Key_LaunchF', 'Key_LaunchG', 'Key_LaunchH', 'Key_LaunchMail', 'Key_LaunchMedia', 'Key_Left', 'Key_Less', 'Key_LightBulb', 'Key_LogOff', 'Key_M', 'Key_MailForward', 'Key_Market', 'Key_Massyo', 'Key_MediaLast', 'Key_MediaNext', 'Key_MediaPause', 'Key_MediaPlay', 'Key_MediaPrevious', 'Key_MediaRecord', 'Key_MediaStop', 'Key_MediaTogglePlayPause', 'Key_Meeting', 'Key_Memo', 'Key_Menu', 'Key_MenuKB', 'Key_MenuPB', 'Key_Messenger', 'Key_Meta', 'Key_MicMute', 'Key_MicVolumeDown', 'Key_MicVolumeUp', 'Key_Minus', 'Key_Mode_switch', 'Key_MonBrightnessDown', 'Key_MonBrightnessUp', 'Key_Muhenkan', 'Key_Multi_key', 'Key_MultipleCandidate', 'Key_Music', 'Key_MySites', 'Key_N', 'Key_New', 'Key_News', 'Key_No', 'Key_Ntilde', 'Key_NumLock', 'Key_NumberSign', 'Key_O', 'Key_Oacute', 'Key_Ocircumflex', 'Key_Odiaeresis', 'Key_OfficeHome', 'Key_Ograve', 'Key_Ooblique', 'Key_Open', 'Key_OpenUrl', 'Key_Option', 'Key_Otilde', 'Key_P', 'Key_PageDown', 'Key_PageUp', 'Key_ParenLeft', 'Key_ParenRight', 'Key_Paste', 'Key_Pause', 'Key_Percent', 'Key_Period', 'Key_Phone', 'Key_Pictures', 'Key_Play', 'Key_Plus', 'Key_PowerDown', 'Key_PowerOff', 'Key_PreviousCandidate', 'Key_Print', 'Key_Printer', 'Key_Q', 'Key_Question', 'Key_QuoteDbl', 'Key_QuoteLeft', 'Key_R', 'Key_Red', 'Key_Redo', 'Key_Refresh', 'Key_Reload', 'Key_Reply', 'Key_Return', 'Key_Right', 'Key_Romaji', 'Key_RotateWindows', 'Key_RotationKB', 'Key_RotationPB', 'Key_S', 'Key_Save', 'Key_ScreenSaver', 'Key_ScrollLock', 'Key_Search', 'Key_Select', 'Key_Semicolon', 'Key_Send', 'Key_Settings', 'Key_Shift', 'Key_Shop', 'Key_SingleCandidate', 'Key_Slash', 'Key_Sleep', 'Key_Space', 'Key_Spell', 'Key_SplitScreen', 'Key_Standby', 'Key_Stop', 'Key_Subtitle', 'Key_Super_L', 'Key_Super_R', 'Key_Support', 'Key_Suspend', 'Key_SysReq', 'Key_T', 'Key_THORN', 'Key_Tab', 'Key_TaskPane', 'Key_Terminal', 'Key_Time', 'Key_ToDoList', 'Key_ToggleCallHangup', 'Key_Tools', 'Key_TopMenu', 'Key_TouchpadOff', 'Key_TouchpadOn', 'Key_TouchpadToggle', 'Key_Touroku', 'Key_Travel', 'Key_TrebleDown', 'Key_TrebleUp', 'Key_U', 'Key_UWB', 'Key_Uacute', 'Key_Ucircumflex', 'Key_Udiaeresis', 'Key_Ugrave', 'Key_Underscore', 'Key_Undo', 'Key_Up', 'Key_V', 'Key_Video', 'Key_View', 'Key_VoiceDial', 'Key_VolumeDown', 'Key_VolumeMute', 'Key_VolumeUp', 'Key_W', 'Key_WLAN', 'Key_WWW', 'Key_WakeUp', 'Key_WebCam', 'Key_Word', 'Key_X', 'Key_Xfer', 'Key_Y', 'Key_Yacute', 'Key_Yellow', 'Key_Yes', 'Key_Z', 'Key_Zenkaku', 'Key_Zenkaku_Hankaku', 'Key_Zoom', 'Key_ZoomIn', 'Key_ZoomOut', 'Key_acute', 'Key_brokenbar', 'Key_cedilla', 'Key_cent', 'Key_copyright', 'Key_currency', 'Key_degree', 'Key_diaeresis', 'Key_division', 'Key_exclamdown', 'Key_guillemotleft', 'Key_guillemotright', 'Key_hyphen', 'Key_iTouch', 'Key_macron', 'Key_masculine', 'Key_mu', 'Key_multiply', 'Key_nobreakspace', 'Key_notsign', 'Key_onehalf', 'Key_onequarter', 'Key_onesuperior', 'Key_ordfeminine', 'Key_paragraph', 'Key_periodcentered', 'Key_plusminus', 'Key_questiondown', 'Key_registered', 'Key_section', 'Key_ssharp', 'Key_sterling', 'Key_threequarters', 'Key_threesuperior', 'Key_twosuperior', 'Key_unknown', 'Key_ydiaeresis', 'Key_yen', 'KeyboardModifier', 'KeyboardModifierMask', 'KeyboardModifiers', 'KeypadModifier', 'LandscapeOrientation', 'LastCursor', 'LayoutDirection', 'LayoutDirectionAuto', 'LeftArrow', 'LeftButton', 'LeftDockWidgetArea', 'LeftEdge', 'LeftSection', 'LeftToRight', 'LeftToolBarArea', 'LinearGradientPattern', 'LinkAction', 'LinksAccessibleByKeyboard', 'LinksAccessibleByMouse', 'LocalDate', 'LocalTime', 'LocaleDate', 'LogicalCoordinates', 'LogicalMoveStyle', 'LowEventPriority', 'META', 'MODIFIER_MASK', 'MPenCapStyle', 'MPenJoinStyle', 'MPenStyle', 'MSWindowsFixedSizeDialogHint', 'MSWindowsOwnDC', 'MacWindowToolBarButtonHint', 'MaskInColor', 'MaskMode', 'MaskOutColor', 'MatchCaseSensitive', 'MatchContains', 'MatchEndsWith', 'MatchExactly', 'MatchFixedString', 'MatchFlag', 'MatchFlags', 'MatchRecursive', 'MatchRegExp', 'MatchStartsWith', 'MatchWildcard', 'MatchWrap', 'MaximizeUsingFullscreenGeometryHint', 'MaximumSize', 'MenuBarFocusReason', 'MetaModifier', 'MidButton', 'MiddleButton', 'MinimumDescent', 'MinimumSize', 'MiterJoin', 'Modifier', 'Monday', 'MonoOnly', 'MouseButton', 'MouseButtons', 'MouseEventCreatedDoubleClick', 'MouseEventFlag', 'MouseEventFlags', 'MouseEventNotSynthesized', 'MouseEventSource', 'MouseEventSynthesizedByApplication', 'MouseEventSynthesizedByQt', 'MouseEventSynthesizedBySystem', 'MouseFocusReason', 'MoveAction', 'NativeGestureType', 'NavigationMode', 'NavigationModeCursorAuto', 'NavigationModeCursorForceVisible', 'NavigationModeKeypadDirectional', 'NavigationModeKeypadTabOrder', 'NavigationModeNone', 'NoArrow', 'NoBrush', 'NoButton', 'NoClip', 'NoContextMenu', 'NoDockWidgetArea', 'NoDropShadowWindowHint', 'NoFocus', 'NoFocusReason', 'NoFormatConversion', 'NoItemFlags', 'NoModifier', 'NoOpaqueDetection', 'NoPen', 'NoSection', 'NoTabFocus', 'NoTextInteraction', 'NoToolBarArea', 'NonModal', 'NormalEventPriority', 'OddEvenFill', 'OffsetFromUTC', 'OpaqueMode', 'OpenHandCursor', 'OrderedAlphaDither', 'OrderedDither', 'Orientation', 'Orientations', 'OtherFocusReason', 'PanGesture', 'PanNativeGesture', 'PartiallyChecked', 'PenCapStyle', 'PenJoinStyle', 'PenStyle', 'PinchGesture', 'PlainText', 'PointingHandCursor', 'Popup', 'PopupFocusReason', 'PortraitOrientation', 'PreciseTimer', 'PreferDither', 'PreferredSize', 'PreventContextMenu', 'PrimaryOrientation', 'QueuedConnection', 'RFC2822Date', 'RadialGradientPattern', 'ReceivePartialGestures', 'RelativeSize', 'RepeatTile', 'ReplaceClip', 'ReplaceSelection', 'RichText', 'RightArrow', 'RightButton', 'RightDockWidgetArea', 'RightEdge', 'RightSection', 'RightToLeft', 'RightToolBarArea', 'RotateNativeGesture', 'RoundCap', 'RoundJoin', 'RoundTile', 'SHIFT', 'Saturday', 'ScreenOrientation', 'ScreenOrientations', 'ScrollBarAlwaysOff', 'ScrollBarAlwaysOn', 'ScrollBarAsNeeded', 'ScrollBarPolicy', 'ScrollBegin', 'ScrollEnd', 'ScrollPhase', 'ScrollUpdate', 'Sheet', 'ShiftModifier', 'ShortcutContext', 'ShortcutFocusReason', 'SizeAllCursor', 'SizeBDiagCursor', 'SizeFDiagCursor', 'SizeHint', 'SizeHintRole', 'SizeHorCursor', 'SizeMode', 'SizeVerCursor', 'SmartZoomNativeGesture', 'SmoothTransformation', 'SolidLine', 'SolidPattern', 'SortOrder', 'SplashScreen', 'SplitHCursor', 'SplitVCursor', 'SquareCap', 'StatusTipRole', 'StretchTile', 'StrongFocus', 'SubWindow', 'Sunday', 'SvgMiterJoin', 'SwipeGesture', 'SwipeNativeGesture', 'SystemLocaleDate', 'SystemLocaleLongDate', 'SystemLocaleShortDate', 'TabFocus', 'TabFocusAllControls', 'TabFocusBehavior', 'TabFocusListControls', 'TabFocusReason', 'TabFocusTextControls', 'TapAndHoldGesture', 'TapGesture', 'TargetMoveAction', 'TaskButton', 'TextAlignmentRole', 'TextBrowserInteraction', 'TextColorRole', 'TextDate', 'TextDontClip', 'TextDontPrint', 'TextEditable', 'TextEditorInteraction', 'TextElideMode', 'TextExpandTabs', 'TextFlag', 'TextFormat', 'TextHideMnemonic', 'TextIncludeTrailingSpaces', 'TextInteractionFlag', 'TextInteractionFlags', 'TextJustificationForced', 'TextSelectableByKeyboard', 'TextSelectableByMouse', 'TextShowMnemonic', 'TextSingleLine', 'TextWordWrap', 'TextWrapAnywhere', 'TexturePattern', 'ThresholdAlphaDither', 'ThresholdDither', 'Thursday', 'TileRule', 'TimeSpec', 'TimeZone', 'TimerType', 'TitleBarArea', 'Tool', 'ToolBarArea', 'ToolBarArea_Mask', 'ToolBarAreas', 'ToolButtonFollowStyle', 'ToolButtonIconOnly', 'ToolButtonStyle', 'ToolButtonTextBesideIcon', 'ToolButtonTextOnly', 'ToolButtonTextUnderIcon', 'ToolTip', 'ToolTipRole', 'TopDockWidgetArea', 'TopEdge', 'TopLeftCorner', 'TopLeftSection', 'TopRightCorner', 'TopRightSection', 'TopSection', 'TopToolBarArea', 'TouchPointMoved', 'TouchPointPressed', 'TouchPointReleased', 'TouchPointState', 'TouchPointStates', 'TouchPointStationary', 'TransformationMode', 'TransparentMode', 'Tuesday', 'UIEffect', 'UI_AnimateCombo', 'UI_AnimateMenu', 'UI_AnimateToolBox', 'UI_AnimateTooltip', 'UI_FadeMenu', 'UI_FadeTooltip', 'UI_General', 'UNICODE_ACCEL', 'UTC', 'Unchecked', 'UniqueConnection', 'UpArrow', 'UpArrowCursor', 'UserRole', 'VerPattern', 'Vertical', 'VeryCoarseTimer', 'VisualMoveStyle', 'WA_AcceptDrops', 'WA_AcceptTouchEvents', 'WA_AlwaysShowToolTips', 'WA_AlwaysStackOnTop', 'WA_AttributeCount', 'WA_CustomWhatsThis', 'WA_DeleteOnClose', 'WA_Disabled', 'WA_DontCreateNativeAncestors', 'WA_DontShowOnScreen', 'WA_ForceDisabled', 'WA_ForceUpdatesDisabled', 'WA_GrabbedShortcut', 'WA_GroupLeader', 'WA_Hover', 'WA_InputMethodEnabled', 'WA_InputMethodTransparent', 'WA_InvalidSize', 'WA_KeyCompression', 'WA_KeyboardFocusChange', 'WA_LaidOut', 'WA_LayoutOnEntireRect', 'WA_LayoutUsesWidgetRect', 'WA_MSWindowsUseDirect3D', 'WA_MacAlwaysShowToolWindow', 'WA_MacBrushedMetal', 'WA_MacFrameworkScaled', 'WA_MacMetalStyle', 'WA_MacMiniSize', 'WA_MacNoClickThrough', 'WA_MacNoShadow', 'WA_MacNormalSize', 'WA_MacOpaqueSizeGrip', 'WA_MacShowFocusRect', 'WA_MacSmallSize', 'WA_MacVariableSize', 'WA_Mapped', 'WA_MouseNoMask', 'WA_MouseTracking', 'WA_Moved', 'WA_NativeWindow', 'WA_NoChildEventsForParent', 'WA_NoChildEventsFromChildren', 'WA_NoMousePropagation', 'WA_NoMouseReplay', 'WA_NoSystemBackground', 'WA_NoX11EventCompression', 'WA_OpaquePaintEvent', 'WA_OutsideWSRange', 'WA_PaintOnScreen', 'WA_PaintUnclipped', 'WA_PendingMoveEvent', 'WA_PendingResizeEvent', 'WA_PendingUpdate', 'WA_QuitOnClose', 'WA_Resized', 'WA_RightToLeft', 'WA_SetCursor', 'WA_SetFont', 'WA_SetLayoutDirection', 'WA_SetLocale', 'WA_SetPalette', 'WA_SetStyle', 'WA_SetWindowIcon', 'WA_ShowWithoutActivating', 'WA_StaticContents', 'WA_StyleSheet', 'WA_StyledBackground', 'WA_TintedBackground', 'WA_TouchPadAcceptSingleTouchEvents', 'WA_TranslucentBackground', 'WA_TransparentForMouseEvents', 'WA_UnderMouse', 'WA_UpdatesDisabled', 'WA_WState_CompressKeys', 'WA_WState_ConfigPending', 'WA_WState_Created', 'WA_WState_ExplicitShowHide', 'WA_WState_Hidden', 'WA_WState_InPaintEvent', 'WA_WState_OwnSizePolicy', 'WA_WState_Polished', 'WA_WState_Reparented', 'WA_WState_Visible', 'WA_WindowModified', 'WA_WindowPropagation', 'WA_X11DoNotAcceptFocus', 'WA_X11NetWmWindowTypeCombo', 'WA_X11NetWmWindowTypeDND', 'WA_X11NetWmWindowTypeDesktop', 'WA_X11NetWmWindowTypeDialog', 'WA_X11NetWmWindowTypeDock', 'WA_X11NetWmWindowTypeDropDownMenu', 'WA_X11NetWmWindowTypeMenu', 'WA_X11NetWmWindowTypeNotification', 'WA_X11NetWmWindowTypePopupMenu', 'WA_X11NetWmWindowTypeSplash', 'WA_X11NetWmWindowTypeToolBar', 'WA_X11NetWmWindowTypeToolTip', 'WA_X11NetWmWindowTypeUtility', 'WA_X11OpenGLOverlay', 'WaitCursor', 'Wednesday', 'WhatsThisCursor', 'WhatsThisRole', 'WheelFocus', 'WhiteSpaceMode', 'WhiteSpaceModeUndefined', 'WhiteSpaceNoWrap', 'WhiteSpaceNormal', 'WhiteSpacePre', 'Widget', 'WidgetAttribute', 'WidgetShortcut', 'WidgetWithChildrenShortcut', 'WindingFill', 'Window', 'WindowActive', 'WindowCancelButtonHint', 'WindowCloseButtonHint', 'WindowContextHelpButtonHint', 'WindowDoesNotAcceptFocus', 'WindowFlags', 'WindowFrameSection', 'WindowFullScreen', 'WindowFullscreenButtonHint', 'WindowMaximizeButtonHint', 'WindowMaximized', 'WindowMinMaxButtonsHint', 'WindowMinimizeButtonHint', 'WindowMinimized', 'WindowModal', 'WindowModality', 'WindowNoState', 'WindowOkButtonHint', 'WindowOverridesSystemGestures', 'WindowShadeButtonHint', 'WindowShortcut', 'WindowState', 'WindowStates', 'WindowStaysOnBottomHint', 'WindowStaysOnTopHint', 'WindowSystemMenuHint', 'WindowTitleHint', 'WindowTransparentForInput', 'WindowType', 'WindowType_Mask', 'X11BypassWindowManagerHint', 'XAxis', 'XButton1', 'XButton2', 'YAxis', 'ZAxis', 'ZoomNativeGesture', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'black', 'blue', 'color0', 'color1', 'convertFromPlainText', 'cyan', 'darkBlue', 'darkCyan', 'darkGray', 'darkGreen', 'darkMagenta', 'darkRed', 'darkYellow', 'gray', 'green', 'lightGray', 'magenta', 'mightBeRichText', 'red', 'transparent', 'white', 'yellow']
+
+[Mon Jan 15 02:41:34 2018] Started Program
+[00000] [Exception]local variable 'timer' referenced before assignment in SetRealTime
+[00001] [Exception]local variable 'timer' referenced before assignment in SetRealTime
+
+[Mon Jan 15 03:57:16 2018] Started Program
+[00000] ====================
+[00001] cl 종목코드 추출 중
+[00002] CLZ17
+[00003] CLF18
+[00004] CLG18
+[00005] es 종목코드 추출 중
+[00006] ESZ17
+[00007] ESH18
+[00008] gc 종목코드 추출 중
+[00009] GCZ17
+[00010] GCG18
+[00011] CLZ17 시작시간 추출 중
+[00012] CLZ17 : 시작시간[20171108000000]
+[00013] CLZ17 종료시간 추출 중
+[00014] CLZ17 : 종료시간[20171120210703]
+[00015] CLF18 시작시간 추출 중
+[00016] CLF18 : 시작시간[20171120000000]
+[00017] CLF18 종료시간 추출 중
+[00018] CLF18 : 종료시간[20171216065956]
+[00019] CLG18 시작시간 추출 중
+[00020] CLG18 : 시작시간[20171220224833]
+[00021] CLG18 종료시간 추출 중
+[00022] CLG18 : 종료시간[20180113043053]
+[00023] ESZ17 시작시간 추출 중
+[00024] ESZ17 : 시작시간[20171108000000]
+[00025] ESZ17 종료시간 추출 중
+[00026] ESZ17 : 종료시간[20171212114440]
+[00027] ESH18 시작시간 추출 중
+[00028] ESH18 : 시작시간[20171212000000]
+[00029] ESH18 종료시간 추출 중
+[00030] ESH18 : 종료시간[20180113043053]
+[00031] GCZ17 시작시간 추출 중
+[00032] GCZ17 : 시작시간[20171108000000]
+[00033] GCZ17 종료시간 추출 중
+[00034] GCZ17 : 종료시간[20171206145215]
+[00035] GCG18 시작시간 추출 중
+[00036] GCG18 : 시작시간[20171206000000]
+[00037] GCG18 종료시간 추출 중
+[00038] GCG18 : 종료시간[20180113043053]
+[00039] ====================
+
+[Mon Jan 15 03:58:42 2018] Started Program
+[00000] ====================
+[00001] cl 종목코드 추출 중
+[00002] CLZ17
+[00003] CLF18
+[00004] CLG18
+[00005] es 종목코드 추출 중
+[00006] ESZ17
+[00007] ESH18
+[00008] gc 종목코드 추출 중
+[00009] GCZ17
+[00010] GCG18
+[00011] CLZ17 시작시간 추출 중
+[00012] CLZ17 : 시작시간[20171108000000]
+[00013] CLZ17 종료시간 추출 중
+[00014] CLZ17 : 종료시간[20171120210703]
+[00015] CLF18 시작시간 추출 중
+[00016] CLF18 : 시작시간[20171120000000]
+[00017] CLF18 종료시간 추출 중
+[00018] CLF18 : 종료시간[20171216065956]
+[00019] CLG18 시작시간 추출 중
+[00020] CLG18 : 시작시간[20171220224833]
+[00021] CLG18 종료시간 추출 중
+[00022] CLG18 : 종료시간[20180113043053]
+[00023] ESZ17 시작시간 추출 중
+[00024] ESZ17 : 시작시간[20171108000000]
+[00025] ESZ17 종료시간 추출 중
+[00026] ESZ17 : 종료시간[20171212114440]
+[00027] ESH18 시작시간 추출 중
+[00028] ESH18 : 시작시간[20171212000000]
+[00029] ESH18 종료시간 추출 중
+[00030] ESH18 : 종료시간[20180113043053]
+[00031] GCZ17 시작시간 추출 중
+[00032] GCZ17 : 시작시간[20171108000000]
+[00033] GCZ17 종료시간 추출 중
+[00034] GCZ17 : 종료시간[20171206145215]
+[00035] GCG18 시작시간 추출 중
+[00036] GCG18 : 시작시간[20171206000000]
+[00037] GCG18 종료시간 추출 중
+[00038] GCG18 : 종료시간[20180113043053]
+[00039] ====================
+[00040] [Exception]{} in SearchData
+[00041] [Exception]{} in SearchData
+[00042] [Exception]{} in SearchData
+
+[Mon Jan 15 03:59:54 2018] Started Program
+[00000] ====================
+[00001] cl 종목코드 추출 중
+[00002] CLZ17
+[00003] CLF18
+[00004] CLG18
+[00005] es 종목코드 추출 중
+[00006] ESZ17
+[00007] ESH18
+[00008] gc 종목코드 추출 중
+[00009] GCZ17
+[00010] GCG18
+[00011] CLZ17 시작시간 추출 중
+[00012] CLZ17 : 시작시간[20171108000000]
+[00013] CLZ17 종료시간 추출 중
+[00014] CLZ17 : 종료시간[20171120210703]
+[00015] CLF18 시작시간 추출 중
+[00016] CLF18 : 시작시간[20171120000000]
+[00017] CLF18 종료시간 추출 중
+[00018] CLF18 : 종료시간[20171216065956]
+[00019] CLG18 시작시간 추출 중
+[00020] CLG18 : 시작시간[20171220224833]
+[00021] CLG18 종료시간 추출 중
+[00022] CLG18 : 종료시간[20180113043053]
+[00023] ESZ17 시작시간 추출 중
+[00024] ESZ17 : 시작시간[20171108000000]
+[00025] ESZ17 종료시간 추출 중
+[00026] ESZ17 : 종료시간[20171212114440]
+[00027] ESH18 시작시간 추출 중
+[00028] ESH18 : 시작시간[20171212000000]
+[00029] ESH18 종료시간 추출 중
+[00030] ESH18 : 종료시간[20180113043053]
+[00031] GCZ17 시작시간 추출 중
+[00032] GCZ17 : 시작시간[20171108000000]
+[00033] GCZ17 종료시간 추출 중
+[00034] GCZ17 : 종료시간[20171206145215]
+[00035] GCG18 시작시간 추출 중
+[00036] GCG18 : 시작시간[20171206000000]
+[00037] GCG18 종료시간 추출 중
+[00038] GCG18 : 종료시간[20180113043053]
+[00039] ====================
+[00040] [Exception]'QComboBox' object has no attribute 'currnetText' in SearchData
+
+[Mon Jan 15 04:00:45 2018] Started Program
+[00000] ====================
+[00001] cl 종목코드 추출 중
+[00002] CLZ17
+[00003] CLF18
+[00004] CLG18
+[00005] es 종목코드 추출 중
+[00006] ESZ17
+[00007] ESH18
+[00008] gc 종목코드 추출 중
+[00009] GCZ17
+[00010] GCG18
+[00011] CLZ17 시작시간 추출 중
+[00012] CLZ17 : 시작시간[20171108000000]
+[00013] CLZ17 종료시간 추출 중
+[00014] CLZ17 : 종료시간[20171120210703]
+[00015] CLF18 시작시간 추출 중
+[00016] CLF18 : 시작시간[20171120000000]
+[00017] CLF18 종료시간 추출 중
+[00018] CLF18 : 종료시간[20171216065956]
+[00019] CLG18 시작시간 추출 중
+[00020] CLG18 : 시작시간[20171220224833]
+[00021] CLG18 종료시간 추출 중
+[00022] CLG18 : 종료시간[20180113043053]
+[00023] ESZ17 시작시간 추출 중
+[00024] ESZ17 : 시작시간[20171108000000]
+[00025] ESZ17 종료시간 추출 중
+[00026] ESZ17 : 종료시간[20171212114440]
+[00027] ESH18 시작시간 추출 중
+[00028] ESH18 : 시작시간[20171212000000]
+[00029] ESH18 종료시간 추출 중
+[00030] ESH18 : 종료시간[20180113043053]
+[00031] GCZ17 시작시간 추출 중
+[00032] GCZ17 : 시작시간[20171108000000]
+[00033] GCZ17 종료시간 추출 중
+[00034] GCZ17 : 종료시간[20171206145215]
+[00035] GCG18 시작시간 추출 중
+[00036] GCG18 : 시작시간[20171206000000]
+[00037] GCG18 종료시간 추출 중
+[00038] GCG18 : 종료시간[20180113043053]
+[00039] ====================
+
+[Mon Jan 15 04:02:27 2018] Started Program
+[00000] ====================
+[00001] cl 종목코드 추출 중
+[00002] CLZ17
+[00003] CLF18
+[00004] CLG18
+[00005] es 종목코드 추출 중
+[00006] ESZ17
+[00007] ESH18
+[00008] gc 종목코드 추출 중
+[00009] GCZ17
+[00010] GCG18
+[00011] CLZ17 시작시간 추출 중
+[00012] CLZ17 : 시작시간[20171108000000]
+[00013] CLZ17 종료시간 추출 중
+[00014] CLZ17 : 종료시간[20171120210703]
+[00015] CLF18 시작시간 추출 중
+[00016] CLF18 : 시작시간[20171120000000]
+[00017] CLF18 종료시간 추출 중
+[00018] CLF18 : 종료시간[20171216065956]
+[00019] CLG18 시작시간 추출 중
+[00020] CLG18 : 시작시간[20171220224833]
+[00021] CLG18 종료시간 추출 중
+[00022] CLG18 : 종료시간[20180113043053]
+[00023] ESZ17 시작시간 추출 중
+[00024] ESZ17 : 시작시간[20171108000000]
+[00025] ESZ17 종료시간 추출 중
+[00026] ESZ17 : 종료시간[20171212114440]
+[00027] ESH18 시작시간 추출 중
+[00028] ESH18 : 시작시간[20171212000000]
+[00029] ESH18 종료시간 추출 중
+[00030] ESH18 : 종료시간[20180113043053]
+[00031] GCZ17 시작시간 추출 중
+[00032] GCZ17 : 시작시간[20171108000000]
+[00033] GCZ17 종료시간 추출 중
+[00034] GCZ17 : 종료시간[20171206145215]
+[00035] GCG18 시작시간 추출 중
+[00036] GCG18 : 시작시간[20171206000000]
+[00037] GCG18 종료시간 추출 중
+[00038] GCG18 : 종료시간[20180113043053]
+[00039] ====================
+[00040] 20171206000000
+[00041] 20180113043053
+
+[Mon Jan 15 04:03:29 2018] Started Program
+[00000] ====================
+[00001] cl 종목코드 추출 중
+[00002] CLZ17
+[00003] CLF18
+[00004] CLG18
+[00005] es 종목코드 추출 중
+[00006] ESZ17
+[00007] ESH18
+[00008] gc 종목코드 추출 중
+[00009] GCZ17
+[00010] GCG18
+[00011] CLZ17 시작시간 추출 중
+[00012] CLZ17 : 시작시간[20171108000000]
+[00013] CLZ17 종료시간 추출 중
+[00014] CLZ17 : 종료시간[20171120210703]
+[00015] CLF18 시작시간 추출 중
+[00016] CLF18 : 시작시간[20171120000000]
+[00017] CLF18 종료시간 추출 중
+[00018] CLF18 : 종료시간[20171216065956]
+[00019] CLG18 시작시간 추출 중
+[00020] CLG18 : 시작시간[20171220224833]
+[00021] CLG18 종료시간 추출 중
+[00022] CLG18 : 종료시간[20180113043053]
+[00023] ESZ17 시작시간 추출 중
+[00024] ESZ17 : 시작시간[20171108000000]
+[00025] ESZ17 종료시간 추출 중
+[00026] ESZ17 : 종료시간[20171212114440]
+[00027] ESH18 시작시간 추출 중
+[00028] ESH18 : 시작시간[20171212000000]
+[00029] ESH18 종료시간 추출 중
+[00030] ESH18 : 종료시간[20180113043053]
+[00031] GCZ17 시작시간 추출 중
+[00032] GCZ17 : 시작시간[20171108000000]
+[00033] GCZ17 종료시간 추출 중
+[00034] GCZ17 : 종료시간[20171206145215]
+[00035] GCG18 시작시간 추출 중
+[00036] GCG18 : 시작시간[20171206000000]
+[00037] GCG18 종료시간 추출 중
+[00038] GCG18 : 종료시간[20180113043053]
+[00039] ====================
+[00040] {'CLZ17': {'시작시간': '20171206000000', '종료시간': '20180113043053'}, 'CLF18': {'시작시간': '20171206000000', '종료시간': '20180113043053'}, 'CLG18': {'시작시간': '20171206000000', '종료시간': '20180113043053'}, 'ESZ17': {'시작시간': '20171206000000', '종료시간': '20180113043053'}, 'ESH18': {'시작시간': '20171206000000', '종료시간': '20180113043053'}, 'GCZ17': {'시작시간': '20171206000000', '종료시간': '20180113043053'}, 'GCG18': {'시작시간': '20171206000000', '종료시간': '20180113043053'}}
+[00041] 20171206000000
+[00042] 20180113043053
+[00043] {'CLZ17': {'시작시간': '20171206000000', '종료시간': '20180113043053'}, 'CLF18': {'시작시간': '20171206000000', '종료시간': '20180113043053'}, 'CLG18': {'시작시간': '20171206000000', '종료시간': '20180113043053'}, 'ESZ17': {'시작시간': '20171206000000', '종료시간': '20180113043053'}, 'ESH18': {'시작시간': '20171206000000', '종료시간': '20180113043053'}, 'GCZ17': {'시작시간': '20171206000000', '종료시간': '20180113043053'}, 'GCG18': {'시작시간': '20171206000000', '종료시간': '20180113043053'}}
+[00044] 20171206000000
+[00045] 20180113043053

@@ -1,10 +1,15 @@
-class A(object):
-    def __init__(self):
-        self.kk = 10
+import threading, time
 
-    def BBB(self, ):
-        print(k)
+count = 0
 
-if __name__ == "__main__":
-    a = A()
-    a.BBB(11)
+def start_timer():
+    timer = threading.Timer(1, begin_timer)
+    timer.start()
+    for i in range(15):
+        time.sleep(0.1)
+        print(i)
+
+def begin_timer():
+    print('timer')
+
+start_timer()

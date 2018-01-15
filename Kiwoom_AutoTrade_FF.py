@@ -1,4 +1,5 @@
 import sys, os.path, configparser, time
+import threading as tr
 from ItemInfo import *
 from AccountInfo import *
 from KFOpenAPI import *
@@ -47,15 +48,18 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
                 self.sAccNo = self.cbAccountNum.currentText()
                 self.itemInfo = []
                 self.dicItemInfo = {}
+                self.orderIndex = []
                 for i in range(int(self.config['DEFAULT']['ItemsCount'])):
                     sections = 'ItemProperty' + str(i)
                     self.itemInfo.append(ItemInfo())
                     self.itemInfo[i].SetCode(self.config[sections]['Code'], i)
                     self.dicItemInfo.update({self.config[sections]['Code']:i})
+                    self.orderIndex.append([])
                     # self.Logging('Create {0} information, Index = {1}'.format(self.config[sections]['Code'], i))
                     # Check : 코드 정보를 정확히 불러오는지 확인
                 self._SetItemInfo() # 종목별 실시간 조회(관심종목)
                 time.sleep(1)
+                self._SetOrderInfo()
                 self._SetAccountInfo()
             else:
                 self.accountInfo.clear()
@@ -87,21 +91,28 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
         # tbAcountItem
         rowCount = 4
         columnCount = 14
+        self.tbAcountItemData = []
+        for i in range(rowCount):
+            self.tbAcountItemData.append([])
+            for j in range(columnCount):
+                self.tbAcountItemData[i].append('')
         self.tbAcountItem.setRowCount(rowCount) # 4행
         self.tbAcountItem.setColumnCount(columnCount) # 10열
         # 행 높이, 열 너비 설정
         for i in range(rowCount):
             self.tbAcountItem.setRowHeight(i, 21)
         for i in range(columnCount):
-            if i == 3:
-                self.tbAcountItem.setColumnWidth(i, 95)
+            if i == 0 or i == 1 or i == 2:
+                self.tbAcountItem.setColumnWidth(i, 75)
+            elif i == 3:
+                self.tbAcountItem.setColumnWidth(i, 110)
             elif i == 4 or i == 5 or i == 7 or i == 8 or i == 13:
                 self.tbAcountItem.setColumnWidth(i, 60)
             else:
                 self.tbAcountItem.setColumnWidth(i, 80)
             self.tbAcountItem.setHorizontalHeaderItem(i, QTableWidgetItem().setBackground(Qt.red))
         # Header 설정
-        columnLables = ['구 분', '종목코드', '현재가', '원주문번호', '주 문', '주문수량', '주문가', '보 유',
+        columnLables = ['구 분', '종목코드', '현재가', '주문번호', '주 문', '주문수량', '주문가', '보 유',
                         '보유수량', '진입가', '목표가', '손절가', '평가손익', '통화코드']
         self.tbAcountItem.setHorizontalHeaderLabels(columnLables) # QTableWidget.setHorizontalHeaderLabels(self, QStringList lables)
 
@@ -204,7 +215,6 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
             self.kiwoom.SetInputValue('비밀번호입력매체', '00')
             self.kiwoom.SetInputValue('통화코드', 'USD')
             errorCode = self.kiwoom.CommRqData(sRQName, sTrCode, '', sScrNo)
-            self.Logging(errorCode)
             if errorCode:
                 self.Logging('[Error] Code = {} in _SetAccountInfo'.format(errorCode))
             self.Logging('Finished getting information {}'.format(self.sAccNo))
@@ -219,12 +229,12 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
 
     # 요청 이벤트 수신부
     def ReceiveTrData(self, sScrNo, sRQName, sTrCode, sRecordName, sPrevNext):
-        # self.Logging("[Event] OnReceiveTrData")
-        # self.Logging("sScrNo : {}".format(sScrNo))
-        # self.Logging("sRQName : {}".format(sRQName))
-        # self.Logging("sTrCode : {}".format(sTrCode))
-        # self.Logging("sRecordName : {}".format(sRecordName))
-        # self.Logging("sPrevNext : {}".format(sPrevNext))
+        self.Logging("[Event] OnReceiveTrData")
+        self.Logging("sScrNo : {}".format(sScrNo))
+        self.Logging("sRQName : {}".format(sRQName))
+        self.Logging("sTrCode : {}".format(sTrCode))
+        self.Logging("sRecordName : {}".format(sRecordName))
+        self.Logging("sPrevNext : {}".format(sPrevNext))
 
         if sRQName == '종목정보조회':
             if sTrCode == TrList.OPT['TR_OPT10001']:
@@ -239,9 +249,23 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
                     self.Logging("[Exception][종목정보조회] {} in ReceiveTrData ".format(error))
 
         elif sRQName == '계좌정보조회':
-            # if  sTrCode == TrList.OPW['TR_OPW30001']:
-            #     try:
-            #         for data in self.accountInfo.myOrder:
+            if  sTrCode == TrList.OPW['TR_OPW30001']:
+                try:
+                    self.accountInfo.InitOrderInfo()
+                    nCount = self.kiwoom.GetRepeatCnt(sTrCode, sRQName) # 반복 회수 조회
+                    for i in range(nCount):
+                        # 종목 정보 추가
+                        sOrderNo = self.kiwoom.GetCommData(sTrCode, sRQName, i, '주문번호')
+                        sOriginalOrderNo = self.kiwoom.GetCommData(sTrCode, sRQName, i, '원주문번호')
+                        self.accountInfo.AddOrderInfo(sOrderNo, sOriginalOrderNo)
+                        for data in self.accountInfo.GetOrderInfo(sOrderNo).orderData:
+                            sValue = self.kiwoom.GetCommData(sTrCode, sRQName, i, data[0])
+                            self.accountInfo.SetOrderInfo(sOrderNo, data[0], sValue)
+                    self.SetOrderIndex()
+
+                except Exception as error:
+                    self.Logging("[Exception][계좌정보조회] {} in ReceiveTrData ".format(error))
+
             if sTrCode == TrList.OPW['TR_OPW30003']:
                 try:
                     for data in self.accountInfo.myBalance:
@@ -273,6 +297,7 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
                     sValue = self.kiwoom.GetCommRealData(sRealType, realFid).strip()
                     self.itemInfo[nIndex].SetRealHoga(realFid, sValue)
                     # self.Logging("[{0}] : {1}".format(realFid, self.itemInfo[nIndex].GetRealHoga(realFid))) # 입력 확인
+                self.SetTbAcountItem(nIndex)
             except Exception as error:
                 self.Logging("[해외옵션선물호가][Exception] {} in ReceiveRealData".format(error))
         elif sRealType == "해외옵션시세" or sRealType == "해외선물시세":
@@ -299,20 +324,18 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
         self.Logging('[ReceiveMsg]sMsg : {}'.format(sMsg))
 
     def ReceiveChejanData(self, sGubun, nItemCnt, sFidList):
-        self.Logging(dir(self.kiwoom.OnReceiveChejanData))
         try:
             self.Logging('[ReceiveChejanData]sGubun : {}'.format(sGubun))
             self.Logging('[ReceiveChejanData]nItemCnt : {}'.format(nItemCnt))
             self.Logging('[ReceiveChejanData]sFidList : {}'.format(sFidList))
             fids = sFidList.split(';')
             self.Logging('sGubun : {}'.format(sGubun))
-            for fid in fids:
-                nFid = int(fid)
-                if sGubun == '0':
-                    real = '해외선물옵션주문'
-                elif sGubun == '1':
-                    real = '해외선물옵션체결'
-                self.Logging('Fid({}) {} : {}'.format(fid, RealFidList.FIDLIST[real][nFid], self.kiwoom.GetChejanData(nFid)))
+            if sGubun == '0':
+                real = '해외선물옵션주문'
+                tr.Timer(0.1, self._SetOrderInfo).start()
+            elif sGubun == '1':
+                real = '해외선물옵션체결'
+                tr.Timer(0.1, self._SetAccountInfo).start()
         except Exception as error:
             self.Logging("[Exception] {} in ReceiveChejanData ".format(error))
 
@@ -354,105 +377,223 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
         # 프로그램 실행 및 설정이 변경 되었을 경우 초기화과정
         try:
             if nIndex < 0 or nIndex > 3:
-                self.Logging("Out of Range [{}]".format(nIndex))
-                for i in range(10):
+                self.Logging("[{}]Seting All item in table".format(nIndex))
+                for i in range(14):
                     for key in self.dicItemInfo.keys():
-                        if not (i == 0 or i == 1 or i == 9):
-                            self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(''))
-                        else:
+                        if (i == 0 or i == 1 or i == 13):
                             row = self.dicItemInfo[key]
-                            self.tbAcountItem.setItem(row, 0, QTableWidgetItem('시세감시'))
-                            self.tbAcountItem.setItem(row, 1, QTableWidgetItem(key))
-                            self.tbAcountItem.setItem(row, 9, QTableWidgetItem('USD'))
-                for i in range(10):
-                    if i == 0 or i == 1 or i == 9:
-                        continue
-                    else:
-                        if i == 2: # 현재가
+                            self.tbAcountItemData[row][0] = '시세감시'
+                            self.tbAcountItemData[row][1] = key
+                            self.tbAcountItemData[row][13] = 'USD'
+                            self.tbAcountItem.setItem(row, 0, QTableWidgetItem(self.tbAcountItemData[row][0]))
+                            self.tbAcountItem.setItem(row, 1, QTableWidgetItem(self.tbAcountItemData[row][1]))
+                            self.tbAcountItem.setItem(row, 13, QTableWidgetItem(self.tbAcountItemData[row][13]))
+                        elif i == 2: # 현재가
                             for key in self.dicItemInfo.keys():
                                 row = self.dicItemInfo[key]
-                                currentPrice = self.itemInfo[row].GetSingleData('현재가(진법)')
-                                if currentPrice == '':
-                                    currentPrice = self.itemInfo[row].GetSingleData('현재가')
-                                color, price = self.GetPriceForm(currentPrice)
-                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(price))  # 데이터 입력
+                                self.tbAcountItemData[row][i] = self.itemInfo[row].GetSingleData('현재가(진법)')
+                                if self.tbAcountItemData[row][i] == '':
+                                    self.tbAcountItemData[row][i] = self.itemInfo[row].GetSingleData('현재가')
+                                color, self.tbAcountItemData[row][i] = self.GetPriceForm(self.tbAcountItemData[row][i])
+                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(self.tbAcountItemData[row][i]))  # 데이터 입력
                                 self.tbAcountItem.item(row, i).setForeground(QBrush(color)) # 글자색 변경
-                        elif i == 3: # 포지션
+                        elif i == 3:
+                            for key in self.dicItemInfo.keys():
+                                row = self.dicItemInfo[key]
+                                if len(self.orderIndex[row]) > 0:
+                                    col = 0
+                                    self.tbAcountItemData[row][i] = self.orderIndex[row][col]
+                                    orderNo = '{:010}({}/{})'.format(int(self.tbAcountItemData[row][i]), col+1, len(self.orderIndex[row]))
+                                else:
+                                    self.tbAcountItemData[row][i] = ''
+                                    orderNo = self.tbAcountItemData[row][i]
+                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(orderNo))
+                        elif i == 4: # 주문 포지션
+                            for key in self.dicItemInfo.keys():
+                                row = self.dicItemInfo[key]
+                                color = Qt.black
+                                orderNo = self.tbAcountItemData[row][i-1]
+                                if orderNo != '':
+                                    nPosition = self.accountInfo.GetOrderInfo(orderNo, '매도수구분')
+                                    if nPosition == '1': # 매도일 경우
+                                        self.tbAcountItemData[row][i] = '매도'
+                                        color = Qt.blue
+                                    elif nPosition == '2': # 매수일 경우
+                                        self.tbAcountItemData[row][i] = '매수'
+                                        color = Qt.red
+                                else:
+                                    self.tbAcountItemData[row][i] = ''
+                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(self.tbAcountItemData[row][i]))  # 데이터 입력
+                                self.tbAcountItem.item(row, i).setForeground(QBrush(color)) # 글자색 변경
+                        elif i == 5: # 주문가
+                            for key in self.dicItemInfo.keys():
+                                row = self.dicItemInfo[key]
+                                orderNo = self.tbAcountItemData[row][i-2]
+                                if orderNo != '':
+                                    self.tbAcountItemData[row][i] = str(int(self.accountInfo.GetOrderInfo(orderNo, '주문수량')))
+                                else:
+                                    self.tbAcountItemData[row][i] = ''
+                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(self.tbAcountItemData[row][i]))  # 데이터 입력
+                        elif i == 6: # 주문 수량
+                            for key in self.dicItemInfo.keys():
+                                row = self.dicItemInfo[key]
+                                orderNo = self.tbAcountItemData[row][i-3]
+                                if orderNo != '':
+                                    self.tbAcountItemData[row][i] = self.accountInfo.GetOrderInfo(orderNo, '주문표시가격')
+                                else:
+                                    self.tbAcountItemData[row][i] = ''
+                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(self.tbAcountItemData[row][i]))  # 데이터 입력
+                        elif i == 7: # 보유 포지션
                             for key in self.accountInfo.dicMyItems.keys():
-                                sPosition = ''
+                                self.tbAcountItemData[row][i] = ''
                                 color = Qt.black
                                 row = self.accountInfo.dicMyItems[key]
                                 if self.accountInfo.myItemInfo[row].HasItem():
                                     nPosition = self.accountInfo.myItemInfo[row].GetItemBalance('매도수구분')
                                     if nPosition == '1': # 매도일 경우
-                                        sPosition = '매도'
+                                        self.tbAcountItemData[row][i] = '매도'
                                         color = Qt.blue
                                     elif nPosition == '2': # 매수일 경우
-                                        sPosition = '매수'
+                                        self.tbAcountItemData[row][i] = '매수'
                                         color = Qt.red
-                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(sPosition))  # 데이터 입력
+                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(self.tbAcountItemData[row][i]))  # 데이터 입력
                                 self.tbAcountItem.item(row, i).setForeground(QBrush(color)) # 글자색 변경
-                        elif i == 4: # 보유수량
+                        elif i == 8: # 보유수량
                             for key in self.accountInfo.dicMyItems.keys():
                                 row = self.accountInfo.dicMyItems[key]
                                 if self.accountInfo.myItemInfo[row].HasItem():
-                                    sQuantity = str(int(self.accountInfo.myItemInfo[row].GetItemBalance('수량')))
+                                    self.tbAcountItemData[row][i] = str(int(self.accountInfo.myItemInfo[row].GetItemBalance('수량')))
                                 else:
-                                    sQuantity = ''
-                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(sQuantity))  # 데이터 입력
-                        elif i == 5: # 진입가
+                                    self.tbAcountItemData[row][i] = ''
+                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(self.tbAcountItemData[row][i]))  # 데이터 입력
+                        elif i == 9: # 진입가
                             for key in self.accountInfo.dicMyItems.keys():
                                 row = self.accountInfo.dicMyItems[key]
                                 if self.accountInfo.myItemInfo[row].HasItem():
-                                    sInsertPrice = self.accountInfo.myItemInfo[row].GetItemBalance('평균단가')
+                                    self.tbAcountItemData[row][i] = self.accountInfo.myItemInfo[row].GetItemBalance('평균단가')
                                 else:
-                                    sInsertPrice = ''
-                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(sInsertPrice))  # 데이터 입력
-                        elif i == 6: # 청산가
+                                    self.tbAcountItemData[row][i] = ''
+                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(self.tbAcountItemData[row][i]))  # 데이터 입력
+                        elif i == 10: # 청산가
                             for key in self.accountInfo.dicMyItems.keys():
                                 row = self.accountInfo.dicMyItems[key]
                                 if self.accountInfo.myItemInfo[row].HasItem():
-                                    sGoalPrice = self.accountInfo.myItemInfo[row].GetGoalPrice()
+                                    self.tbAcountItemData[row][i] = self.accountInfo.myItemInfo[row].GetGoalPrice()
                                 else:
-                                    sGoalPrice = ''
-                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(sGoalPrice))  # 데이터 입력
-                        elif i == 7: # 손절가
+                                    self.tbAcountItemData[row][i] = ''
+                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(self.tbAcountItemData[row][i]))  # 데이터 입력
+                        elif i == 11: # 손절가
                             for key in self.accountInfo.dicMyItems.keys():
                                 row = self.accountInfo.dicMyItems[key]
                                 if self.accountInfo.myItemInfo[row].HasItem():
-                                    sLossPrice = self.accountInfo.myItemInfo[row].GetLossPrice()
+                                    self.tbAcountItemData[row][i] = self.accountInfo.myItemInfo[row].GetLossPrice()
                                 else:
-                                    sLossPrice = ''
-                                    self.tbAcountItem.setItem(row, i, QTableWidgetItem(sLossPrice))  # 데이터 입력
-                        elif i == 8 : # 평가손익
+                                    self.tbAcountItemData[row][i] = ''
+                                    self.tbAcountItem.setItem(row, i, QTableWidgetItem(self.tbAcountItemData[row][i]))  # 데이터 입력
+                        elif i == 12 : # 평가손익
                             for key in self.accountInfo.dicMyItems.keys():
                                 row = self.accountInfo.dicMyItems[key]
                                 if self.accountInfo.myItemInfo[row].HasItem():
-                                    sEvaluationPrice = self.accountInfo.myItemInfo[row].GetEvaluationPrice()
+                                    self.tbAcountItemData[row][i] = self.accountInfo.myItemInfo[row].GetEvaluationPrice()
                                     color, _ = self.GetPriceForm(sEvaluationPrice)
                                 else:
                                     sEvaluationPrice = ''
-                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(sEvaluationPrice))  # 데이터 입력
+                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(self.tbAcountItemData[row][i]))  # 데이터 입력
                                 self.tbAcountItem.item(row, i).setForeground(QBrush(color)) # 글자색 변경
 
             else:
-                for i in range(10):
+                for i in range(14):
                     if i == 2:
                         currentPrice = self.itemInfo[nIndex].GetSingleData("현재가(진법)")
-                        color, price = self.GetPriceForm(currentPrice)
+                        color, self.tbAcountItemData[nIndex][i] = self.GetPriceForm(currentPrice)
                         if self.tbAcountItem.item(nIndex, i) != currentPrice:
-                            self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(price))
+                            self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(self.tbAcountItemData[nIndex][i]))
                             self.tbAcountItem.item(nIndex, i).setForeground(QBrush(color))
-                    elif i == 8 : # 평가손익
-                        for key in self.accountInfo.dicMyItems.keys():
-                            row = self.accountInfo.dicMyItems[key]
-                            if self.accountInfo.myItemInfo[row].HasItem():
-                                sEvaluationPrice = self.accountInfo.myItemInfo[row].GetEvaluationPrice()
-                                color, _ = self.GetPriceForm(sEvaluationPrice)
+                    elif i == 3:
+                        if len(self.orderIndex[nIndex]) > 0:
+                            col = 0
+                            self.tbAcountItemData[nIndex][i] = self.orderIndex[nIndex][col]
+                            orderNo = '{:010}({}/{})'.format(int(self.tbAcountItemData[nIndex][i]), col+1, len(self.orderIndex[nIndex]))
+                        else:
+                            self.tbAcountItemData[nIndex][i] = ''
+                            orderNo = self.tbAcountItemData[nIndex][i]
+                        self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(orderNo))
+                    elif i == 4: # 주문 포지션
+                        color = Qt.black
+                        orderNo = self.tbAcountItemData[nIndex][i-1]
+                        if orderNo != '':
+                            nPosition = self.accountInfo.GetOrderInfo(orderNo, '매도수구분')
+                            if nPosition == '1': # 매도일 경우
+                                self.tbAcountItemData[nIndex][i] = '매도'
+                                color = Qt.blue
+                            elif nPosition == '2': # 매수일 경우
+                                self.tbAcountItemData[nIndex][i] = '매수'
+                                color = Qt.red
                             else:
-                                sEvaluationPrice = ''
-                            self.tbAcountItem.setItem(row, i, QTableWidgetItem(sEvaluationPrice))  # 데이터 입력
-                            self.tbAcountItem.item(row, i).setForeground(QBrush(color)) # 글자색 변경
+                                self.tbAcountItemData[nIndex][i] = ''
+                        else:
+                            self.tbAcountItemData[nIndex][i] = ''
+                        self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(self.tbAcountItemData[nIndex][i]))  # 데이터 입력
+                        self.tbAcountItem.item(nIndex, i).setForeground(QBrush(color)) # 글자색 변경
+                    elif i == 5: # 주문가
+                        orderNo = self.tbAcountItemData[nIndex][i-2]
+                        if orderNo != '':
+                            self.tbAcountItemData[nIndex][i] = str(int(self.accountInfo.GetOrderInfo(orderNo, '주문수량')))
+                        else:
+                            self.tbAcountItemData[nIndex][i] = ''
+                        self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(self.tbAcountItemData[nIndex][i]))  # 데이터 입력
+                    elif i == 6: # 주문 수량key]
+                        orderNo = self.tbAcountItemData[nIndex][i-3]
+                        if orderNo != '':
+                            self.tbAcountItemData[nIndex][i] = self.accountInfo.GetOrderInfo(orderNo, '주문표시가격')
+                        else:
+                            self.tbAcountItemData[nIndex][i] = ''
+                        self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(self.tbAcountItemData[nIndex][i]))  # 데이터 입력
+                    elif i == 7: # 보유 포지션
+                        if self.accountInfo.myItemInfo[nIndex].HasItem():
+                            nPosition = self.accountInfo.myItemInfo[nIndex].GetItemBalance('매도수구분')
+                            if nPosition == '1': # 매도일 경우
+                                self.tbAcountItemData[nIndex][i] = '매도'
+                                color = Qt.blue
+                            elif nPosition == '2': # 매수일 경우
+                                self.tbAcountItemData[nIndex][i] = '매수'
+                                color = Qt.red
+                            else:
+                                self.tbAcountItemData[nIndex][i] = ''
+                        self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(self.tbAcountItemData[nIndex][i]))  # 데이터 입력
+                        self.tbAcountItem.item(nIndex, i).setForeground(QBrush(color)) # 글자색 변경
+                    elif i == 8: # 보유수량
+                        if self.accountInfo.myItemInfo[nIndex].HasItem():
+                            self.tbAcountItemData[nIndex][i] = str(int(self.accountInfo.myItemInfo[nIndex].GetItemBalance('수량')))
+                        else:
+                            self.tbAcountItemData[nIndex][i] = ''
+                        self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(self.tbAcountItemData[nIndex][i]))  # 데이터 입력
+                    elif i == 9: # 진입가
+                        if self.accountInfo.myItemInfo[nIndex].HasItem():
+                            self.tbAcountItemData[nIndex][i] = self.accountInfo.myItemInfo[nIndex].GetItemBalance('평균단가')
+                        else:
+                            self.tbAcountItemData[nIndex][i] = ''
+                        self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(self.tbAcountItemData[nIndex][i]))  # 데이터 입력
+                    elif i == 10: # 청산가
+                        if self.accountInfo.myItemInfo[nIndex].HasItem():
+                            self.tbAcountItemData[nIndex][i] = self.accountInfo.myItemInfo[nIndex].GetGoalPrice()
+                        else:
+                            self.tbAcountItemData[nIndex][i] = ''
+                        self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(self.tbAcountItemData[nIndex][i]))  # 데이터 입력
+                    elif i == 11: # 손절가
+                        if self.accountInfo.myItemInfo[nIndex].HasItem():
+                            self.tbAcountItemData[nIndex][i] = self.accountInfo.myItemInfo[nIndex].GetLossPrice()
+                        else:
+                            self.tbAcountItemData[nIndex][i] = ''
+                        self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(self.tbAcountItemData[nIndex][i]))  # 데이터 입력
+                    elif i == 12 : # 평가손익
+                        if self.accountInfo.myItemInfo[nIndex].HasItem():
+                            self.tbAcountItemData[nIndex][i] = self.accountInfo.myItemInfo[nIndex].GetEvaluationPrice()
+                            color, _ = self.GetPriceForm(self.tbAcountItemData[nIndex][i])
+                        else:
+                            self.tbAcountItemData[nIndex][i] = ''
+                        self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(self.tbAcountItemData[nIndex][i]))  # 데이터 입력
+                        self.tbAcountItem.item(nIndex, i).setForeground(QBrush(color)) # 글자색 변경
 
         except Exception as error:
             self.Logging("[Exception] {} in SetTbAcountItem".format(error))
@@ -464,6 +605,14 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
             return Qt.red, sValue[1:]
         else:
             return Qt.black, sValue
+
+    def SetOrderIndex(self):
+        for i in range(len(self.orderIndex)):
+            self.orderIndex[i].clear()
+        for key in self.accountInfo.orderInfo.keys():
+            code = self.accountInfo.GetOrderInfo(key, '종목코드')
+            nIndex = self.dicItemInfo[code]
+            self.orderIndex[nIndex].append(key)
 
     def Logging(self, strData):
         # 각종 데이터 처리 과정을 메론 로그에 남김

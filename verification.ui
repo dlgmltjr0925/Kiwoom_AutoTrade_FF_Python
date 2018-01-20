@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>전략 검증</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="gbBasicSetting">
@@ -88,7 +88,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QSpinBox" name="spinBox_3">
+    <widget class="QSpinBox" name="sbTimeUnit">
      <property name="geometry">
       <rect>
        <x>760</x>
@@ -246,7 +246,7 @@
       <string>시간 : </string>
      </property>
     </widget>
-    <widget class="QSlider" name="horizontalSlider">
+    <widget class="QSlider" name="hsTimer">
      <property name="geometry">
       <rect>
        <x>208</x>
@@ -269,7 +269,7 @@
       </rect>
      </property>
      <property name="displayFormat">
-      <string>yyyy-MM-dd hh:mm:ss:##</string>
+      <string>yyyy-MM-dd hh:mm:ss</string>
      </property>
     </widget>
    </widget>

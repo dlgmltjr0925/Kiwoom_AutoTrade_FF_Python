@@ -264,16 +264,6 @@
         <string>거래일자</string>
        </property>
       </widget>
-      <widget class="QDoubleSpinBox" name="dsbTradeDay">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>7</y>
-         <width>101</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QComboBox" name="cbItemList">
        <property name="geometry">
         <rect>
@@ -327,6 +317,16 @@
          <y>70</y>
          <width>541</width>
          <height>185</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QDateEdit" name="dateEdit">
+       <property name="geometry">
+        <rect>
+         <x>219</x>
+         <y>7</y>
+         <width>110</width>
+         <height>22</height>
         </rect>
        </property>
       </widget>

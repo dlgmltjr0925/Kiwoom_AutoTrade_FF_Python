@@ -1,4 +1,4 @@
-import sys, os.path, configparser, time, pymysql, datetime, threading
+import sys, os.path, configparser, time, pymysql, datetime, threading as tr
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
@@ -21,8 +21,13 @@ class VerificationMain(QMainWindow, VerificationMainForm):
         self.tradeDB = []
         self._SetupUi()
         self.timer = None
-        self.btnSearch.clicked.connect(self._SearchData)
+        self.processTime = None
+        self.tradeTable = TradeTable()
+        self.hogaTable = HogaTable()
+        self.btnSearch.clicked.connect(self._SearchData) # 검색 버튼을 누르면 데이터 처리가 이루어진다
         self.chRealTime.clicked.connect(self._SetRealTime)
+        self.cbCode.currentIndexChanged.connect(self._SetSearchDate)
+
 
     # User Interface 초기화
     def _SetupUi(self):
@@ -31,7 +36,7 @@ class VerificationMain(QMainWindow, VerificationMainForm):
         self.show() # 화면 출력
         self._InitTableWidget()
         self._SetCodeList()
-        # self._SetBasicOption()
+        self._SetSearchDate()
 
     def _InitTableWidget(self):
         # Setting Hoga Table Widget
@@ -75,64 +80,134 @@ class VerificationMain(QMainWindow, VerificationMainForm):
     # 종목 코드 및 시작 & 종료 시간
     def _SetCodeList(self):
         self.cbCode.addItem('CLF18')
-        # codeList = ('cl', 'es', 'gc')
-        # self.Log('====================')
-        # dicItemDetail = {'시작시간':'', '종료시간':''}
-        # for i in range(len(codeList)):
-        #     self.Log('{} 종목코드 추출 중'.format(codeList[i]))
-        #     # 종목명만 추출하는 쿼리문
-        #     query = 'select distinct name from tb_ff_{}_real_trade'.format(codeList[i])
-        #     self.db.ExecuteQuery(query)
-        #     for code in self.db.GetData():
-        #         self.dicItem.update({code[0]:dicItemDetail})
-        #         self.Log(code[0])
-        # for key in self.dicItem.keys():
-        #     self.Log('{} 시작시간 추출 중'.format(key))
-        #     query = 'select distinct time from tb_ff_{}_real_trade where name = "{}" order by time asc limit 1'.format(key[0:2].lower(), key)
-        #     self.db.ExecuteQuery(query)
-        #     self.dicItem[key].update({'시작시간':self.db.GetData()[0][0][0:14]})
-        #     self.Log('{} : 시작시간[{}]'.format(key, self.dicItem[key]['시작시간']))
-        #     self.Log('{} 종료시간 추출 중'.format(key))
-        #     query = 'select distinct time from tb_ff_{}_real_trade where name = "{}" order by time desc limit 1'.format(key[0:2].lower(), key)
-        #     self.db.ExecuteQuery(query)
-        #     self.dicItem[key].update({'종료시간':self.db.GetData()[0][0][0:14]})
-        #     self.Log('{} : 종료시간[{}]'.format(key, self.dicItem[key]['종료시간']))
-        # self.Log('====================')
+        self.cbCode.addItem('ESZ17')
+        self.cbCode.addItem('GCZ17')
 
-    # 코드
-    # def _SetBasicOption(self):
-    #     try:
-    #         for key in self.dicItem.keys():
-    #             self.cbCode.addItem(key)
-    #         self.dteStart.setDateTime(datetime.datetime.now())
-    #         self.dteFinish.setDateTime(datetime.datetime.now())
-    #         self.dteProcess.setDateTime(datetime.datetime.now())
-    #     except Exception as error:
-    #         self.Log('[Exception]{} in SetupComboBox'.format(error))
+    # 시간 설정
+    def _SetSearchDate(self):
+        try:
+            self.sCode = self.cbCode.currentText()
+            query = 'select time from {}_hoga order by time asc limit 1;'.format(self.sCode)
+            self.db.ExecuteQuery(query)
+            startTime1 = datetime.datetime.strptime(self.db.GetData()[0][0][:-2], '%Y%m%d%H%M%S')
+            query = 'select time from {}_hoga order by time asc limit 1'.format(self.sCode)
+            self.db.ExecuteQuery(query)
+            startTime2 = datetime.datetime.strptime(self.db.GetData()[0][0][:-2], '%Y%m%d%H%M%S')
+            query = 'select time from {}_trade order by time desc limit 1'.format(self.sCode)
+            self.db.ExecuteQuery(query)
+            endTime1 = datetime.datetime.strptime(self.db.GetData()[0][0][:-2], '%Y%m%d%H%M%S')
+            query = 'select time from {}_hoga order by time desc limit 1'.format(self.sCode)
+            self.db.ExecuteQuery(query)
+            endTime2 = datetime.datetime.strptime(self.db.GetData()[0][0][:-2], '%Y%m%d%H%M%S')
+            # 가장 빠른 시간 데이터 ~ 가장 마지막 시간 데이터
+            if startTime1 < startTime2:
+                self.dteStart.setDateTime(startTime1)
+                self.dteProcess.setDateTime(startTime1)
+                self.processTime = startTime1
+            else:
+                self.dteStart.setDateTime(startTime2)
+                self.dteProcess.setDateTime(startTime2)
+                self.processTime = startTime2
+            if endTime1 > endTime2:
+                self.dteFinish.setDateTime(endTime1)
+            else:
+                self.dteFinish.setDateTime(endTime2)
+        except Exception as error:
+            self.Log('[Exception]{} in SetupComboBox'.format(error))
 
     def _SearchData(self):
-        # try:
-        #     if self.sCode == self.cbCode.currentText():
-        #         return 0
-        #     self.Log(self.dicItem)
-        #     self.sCode = self.cbCode.currentText()
-        #     startTime = self.dicItem[self.sCode]['시작시간']
-        #     self.Log(startTime)
-        #     self.dteStart.setDateTime(datetime.datetime.strptime(startTime, '%Y%m%d%H%M%S'))
-        #     finishTime = self.dicItem[self.sCode]['종료시간']
-        #     self.Log(finishTime)
-        #     self.dteFinish.setDateTime(datetime.datetime.strptime(finishTime, '%Y%m%d%H%M%S'))
-        # except Exception as error:
-        #     self.Log('[Exception]{} in SearchData'.format(error))
+        try:
+            finishTime = self.dteFinish.dateTime().toPyDateTime()
+            if self.processTime == finishTime:
+                self.Log('Completed getting data')
+            else:
+                self._GetDataFromDB()
+                self.processTime += datetime.timedelta(seconds=1)
+                self.dteProcess.setDateTime(self.processTime)
+                # timeUnit = int(self.sbTimeUnit.value()) * 0.1
+                # tr.Timer(timeUnit, self._Ready)
+        except Exception as error:
+            self.Log('[Exception]{} in searchData'.format(error))
 
+    def _GetDataFromDB(self):
         '''
-        데이터를 MariaDB로 부터 불러 들인다.
-        단위는 초단위 2차 리스트로 설정
-        1. 시작시간을 구한다. 호가, 체결 중 빠른 것을 선호
-        2. 시간을 초단위로 검색할 수 있게 설정
-        datetime.datetime.strptime(%Y%m%d%H%M%S)
-        해당 되는 시간으로 쿼리문 작성 후
+        processTime 기준 초단위 데이터를 불러온다
         '''
+        try:
+            self.processTime = self.dteProcess.dateTime().toPyDateTime()
+            # DB 데이터 가져오기'%Y%m%d%H%M%S'
+            self.hogaDB = []
+            self.tradeDB = []
+            query = 'select * from {}_trade where time like \'{}\' order by time asc'.format(self.sCode, self.processTime.strftime('%Y%m%d%H%M%S') + '%')
+            self.db.ExecuteQuery(query)
+            # self.Log(self.db.GetData())
+            if not len(self.db.GetData()) == 0:
+                self.tradeDB = self.db.GetData()
+            # self.Log(self.tradeDB)
+            query = 'select * from {}_hoga where time like \'{}\' order by time asc'.format(self.sCode, self.processTime.strftime('%Y%m%d%H%M%S') + '%')
+            self.db.ExecuteQuery(query)
+            # self.Log(self.db.GetData())
+            if not len(self.db.GetData()) == 0:
+                self.hogaDB = self.db.GetData()
+            self._SeparateData()
+
+        except Exception as error:
+            self.Log('[Exception]{} in GetDataFromDB'.format(error))
+
+    def _SeparateData(self):
+        try:
+            processTime = self.processTime.strftime('%Y%m%d%H%M%S') + '00'
+            processTime = int(processTime)
+            nCount = len(self.tradeDB) + len(self.hogaDB)
+            disTrade = None
+            disHoga = None
+            while nCount:
+                for tradeDB in self.tradeDB:
+                    if tradeDB[0] == str(processTime):
+                        nCount -= 1
+                        disTrade = tradeDB
+                for hogaDB in self.hogaDB:
+                    if hogaDB[0] == str(processTime):
+                        nCount -= 1
+                        disHoga = hogaDB
+                processTime += 1
+                if nCount == 0:
+                    if not disTrade == None:
+                        self._DisplayTradeDB(tradeDB)
+                    elif not disHoga == None:
+                        self._DisplayHogaDB(hogaDB)
+        except Exception as error:
+            self.Log('[Exception]{} in SeparateData'.format(error))
+
+    def _DisplayTradeDB(self, tradeDB):
+        try:
+            for nIndex in range(len(tradeDB)):
+                row = self.tradeTable.indexToTable[nIndex][0]
+                col = self.tradeTable.indexToTable[nIndex][1]
+                # self.Log('row : [{}], col : [{}], data = [{}]'.format(row, col, tradeDB[nIndex]))
+                if not (row == None or col == None):
+                    self.twTrade.setItem(row, col, QTableWidgetItem(str(tradeDB[nIndex])))
+        except Exception as error:
+            self.Log('[Exception]{} in DisplayTradeDB'.format(error))
+
+    def _DisplayHogaDB(self, hogaDB):
+        try:
+            hogaIndex = 0
+            for nIndex in range(len(hogaDB)):
+                row = self.hogaTable.indexToTable[nIndex][0]
+                col = self.hogaTable.indexToTable[nIndex][1]
+                # self.Log('row : [{}], col : [{}], data = [{}]'.format(row, col, hogaDB[nIndex]))
+                if not (row == None or col == None):
+                    if 51 < nIndex <= 61:
+                        hogaIndex += 1
+                        hoga = hogaDB[4 * hogaIndex]
+                        if hoga < 0:
+                            hoga *= -1
+                        self.twHoga.setItem(row, col, QTableWidgetItem('{}({})'.format(hoga, hogaDB[nIndex])))
+                    else:
+                        self.twHoga.setItem(row, col, QTableWidgetItem(str(hogaDB[nIndex])))
+        except Exception as error:
+            self.Log('[Exception]{} in DisplayHogaDB'.format(error))
 
     def _SetHogaTableWidget(self, hogaData = None):
         if hogaData == None:
@@ -336,11 +411,40 @@ class HogaTable(object):
         (7, 3),          # 58 매수2호가등락율
         (8, 3),          # 59 매수3호가등락율
         (9, 3),          # 60 매수4호가등락율
-        (10, 3))          # 61 매수5호가등락율
+        (10, 3))         # 61 매수5호가등락율
         self.tableToIndex = (6, 7, 5, 4, 56, 10, 11, 9, 8, 55, 14, 15, 13, 12, 54, 18, 19,
                             17, 16, 53, 22, 23, 21, 20, 52, 24, 57, 25, 27, 26, 28, 58, 29, 31,
                             30, 32, 59, 33, 35, 34, 36, 60, 37, 39, 38, 40, 61, 41, 43, 42,
                             45, 46, 44, 0, 47, 49, 48)
+
+        def GetTableIndex(self, nIndex):
+            return self.indexToTable[nIndex][0], self.indexToTable[nIndex][1]
+
+class TradeTable(object):
+    def __init__(self):
+        self.indexToTable = (
+        # 행(row), 열(column)
+        (1, 0),        #  0 체결시간
+        (None, None),  #  1 코드명
+        (1, 1),        #  2 현재가(진법)
+        (1, 2),        #  3 현재가
+        (1, 3),        #  4 전일대비
+        (1, 4),        #  5 등락율
+        (1, 5),        #  6 매도호가
+        (1, 6),        #  7 매수호가
+        (1, 7),        #  8 체결량
+        (3, 0),        #  9 누적거래량
+        (3, 1),        #  10 시가
+        (3, 2),        #  11 고가
+        (3, 3),        #  12 저가
+        (3, 4),        #  13 전일대비기호
+        (3, 5),        #  14 대비
+        (3, 6),        #  15 체결일자
+        (3, 7))        #  16 영업일
+        self.tableToIndex = (0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
+
+        def GetTableIndex(self, nIndex):
+            return self.indexToTable[nIndex][0], self.indexToTable[nIndex][1]
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

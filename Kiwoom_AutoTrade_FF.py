@@ -22,6 +22,7 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
         self.accountInfo = AccountInfo(self.kiwoom) # 계좌정보
         self.sScrNo = self.kiwoom.GetScreenNumber() # 화면번호
         self.sAccNo = ''  # 데이터 송수신 중인 계좌번호
+        self.chejanReceive = [0, 0] # 체결 잔고 (index 0 : 주문, 1 : 체결)
         self.kiwoom.OnReceiveTrData.connect(self.ReceiveTrData)
         self.kiwoom.OnReceiveRealData.connect(self.ReceiveRealData)
         self.kiwoom.OnReceiveMsg.connect(self.ReceiveMsg)
@@ -201,6 +202,10 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
             self.Logging('Finished getting information {}'.format(self.sAccNo))
         except Exception as error:
             self.Logging('[Exception] {} in _SetOrderInfo'.format(error))
+            error = '{}'.format(error)
+            if error == 'CommRqData(): 조회과부하':
+                self.Logging('[재요청중...] in _SetOrderInfo')
+                tr.Timer(0.25, self._SetOrderInfo).start()
         self.SetTbAcountItem()
 
     # 보유하고 있는 종목 정보
@@ -220,7 +225,18 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
             self.Logging('Finished getting information {}'.format(self.sAccNo))
         except Exception as error:
             self.Logging('[Exception] {} in _SetAccountInfo'.format(error))
+            error = '{}'.format(error)
+            if error == 'CommRqData(): 조회과부하':
+                self.Logging('[재요청중...] in _SetAccountInfo')
+                tr.Timer(0.25, self._SetAccountInfo).start()
         self.SetTbAcountItem()
+
+    def _TrRequest(self):
+        if self.chejanReceive[0] > 0:
+            self._SetOrderInfo()
+        if self.chejanReceive[1] > 0:
+            self._SetAccountInfo()
+        self.chejanReceive = [0, 0]
 
     ###########################################################################
     # 이벤트 수신부
@@ -229,12 +245,12 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
 
     # 요청 이벤트 수신부
     def ReceiveTrData(self, sScrNo, sRQName, sTrCode, sRecordName, sPrevNext):
-        self.Logging("[Event] OnReceiveTrData")
-        self.Logging("sScrNo : {}".format(sScrNo))
-        self.Logging("sRQName : {}".format(sRQName))
-        self.Logging("sTrCode : {}".format(sTrCode))
-        self.Logging("sRecordName : {}".format(sRecordName))
-        self.Logging("sPrevNext : {}".format(sPrevNext))
+        # self.Logging("[Event] OnReceiveTrData")
+        # self.Logging("sScrNo : {}".format(sScrNo))
+        # self.Logging("sRQName : {}".format(sRQName))
+        # self.Logging("sTrCode : {}".format(sTrCode))
+        # self.Logging("sRecordName : {}".format(sRecordName))
+        # self.Logging("sPrevNext : {}".format(sPrevNext))
 
         if sRQName == '종목정보조회':
             if sTrCode == TrList.OPT['TR_OPT10001']:
@@ -297,7 +313,7 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
                     sValue = self.kiwoom.GetCommRealData(sRealType, realFid).strip()
                     self.itemInfo[nIndex].SetRealHoga(realFid, sValue)
                     # self.Logging("[{0}] : {1}".format(realFid, self.itemInfo[nIndex].GetRealHoga(realFid))) # 입력 확인
-                self.SetTbAcountItem(nIndex)
+                # self.SetTbAcountItem(nIndex)
             except Exception as error:
                 self.Logging("[해외옵션선물호가][Exception] {} in ReceiveRealData".format(error))
         elif sRealType == "해외옵션시세" or sRealType == "해외선물시세":
@@ -324,18 +340,20 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
         self.Logging('[ReceiveMsg]sMsg : {}'.format(sMsg))
 
     def ReceiveChejanData(self, sGubun, nItemCnt, sFidList):
+        # self.Logging('[ReceiveChejanData]sGubun : {}'.format(sGubun))
+        # self.Logging('[ReceiveChejanData]nItemCnt : {}'.format(nItemCnt))
+        # self.Logging('[ReceiveChejanData]sFidList : {}'.format(sFidList))
         try:
-            self.Logging('[ReceiveChejanData]sGubun : {}'.format(sGubun))
-            self.Logging('[ReceiveChejanData]nItemCnt : {}'.format(nItemCnt))
-            self.Logging('[ReceiveChejanData]sFidList : {}'.format(sFidList))
-            fids = sFidList.split(';')
+            # fids = sFidList.split(';')
             self.Logging('sGubun : {}'.format(sGubun))
-            if sGubun == '0':
-                real = '해외선물옵션주문'
-                tr.Timer(0.1, self._SetOrderInfo).start()
-            elif sGubun == '1':
-                real = '해외선물옵션체결'
-                tr.Timer(0.1, self._SetAccountInfo).start()
+            if sGubun == '0': # 해외선물옵션주문
+                self.chejanReceive[0] += 1
+                # tr.Timer(0.3, self._SetOrderInfo).start()
+            elif sGubun == '1': # 해외선물옵션체결
+                self.chejanReceive[1] += 1
+                # tr.Timer(0.3, self._SetAccountInfo).start()
+            if tr.active_count() == 1:
+                tr.Timer(0.24, self._TrRequest).start()
         except Exception as error:
             self.Logging("[Exception] {} in ReceiveChejanData ".format(error))
 
@@ -391,11 +409,12 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
                         elif i == 2: # 현재가
                             for key in self.dicItemInfo.keys():
                                 row = self.dicItemInfo[key]
-                                self.tbAcountItemData[row][i] = self.itemInfo[row].GetSingleData('현재가(진법)')
-                                if self.tbAcountItemData[row][i] == '':
-                                    self.tbAcountItemData[row][i] = self.itemInfo[row].GetSingleData('현재가')
-                                color, self.tbAcountItemData[row][i] = self.GetPriceForm(self.tbAcountItemData[row][i])
-                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(self.tbAcountItemData[row][i]))  # 데이터 입력
+                                currentPrice = self.itemInfo[row].GetSingleData('현재가(진법)')
+                                if currentPrice == '':
+                                    currentPrice = self.itemInfo[row].GetSingleData('현재가')
+                                color, currentPrice = self.GetPriceForm(currentPrice)
+                                self.tbAcountItemData[row][i] = currentPrice
+                                self.tbAcountItem.setItem(row, i, QTableWidgetItem(currentPrice)) # 데이터 입력
                                 self.tbAcountItem.item(row, i).setForeground(QBrush(color)) # 글자색 변경
                         elif i == 3:
                             for key in self.dicItemInfo.keys():
@@ -505,10 +524,10 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
                 for i in range(14):
                     if i == 2:
                         currentPrice = self.itemInfo[nIndex].GetSingleData("현재가(진법)")
-                        color, self.tbAcountItemData[nIndex][i] = self.GetPriceForm(currentPrice)
-                        if self.tbAcountItem.item(nIndex, i) != currentPrice:
-                            self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(self.tbAcountItemData[nIndex][i]))
-                            self.tbAcountItem.item(nIndex, i).setForeground(QBrush(color))
+                        color, currentPrice = self.GetPriceForm(currentPrice)
+                        self.tbAcountItemData[nIndex][i] = currentPrice
+                        self.tbAcountItem.setItem(nIndex, i, QTableWidgetItem(currentPrice))
+                        self.tbAcountItem.item(nIndex, i).setForeground(QBrush(color))
                     elif i == 3:
                         if len(self.orderIndex[nIndex]) > 0:
                             col = 0

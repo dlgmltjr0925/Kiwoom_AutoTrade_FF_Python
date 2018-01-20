@@ -246,7 +246,7 @@
       <string>시간 : </string>
      </property>
     </widget>
-    <widget class="QSlider" name="hsTimer">
+    <widget class="QSlider" name="slTimer">
      <property name="geometry">
       <rect>
        <x>208</x>

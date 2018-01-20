@@ -7,9 +7,9 @@ from PyQt5 import uic
 
 rootDir = os.getcwd() # 작업 최상위 디렉토리
 if platform.platform()[:7] == 'Windows':
-    VerificationDir = rootDir + '\Verification.ui'
+    VerificationDir = rootDir + '\Verification\Verification.ui'
 else:
-    VerificationDir = rootDir + '/Verification.ui'
+    VerificationDir = rootDir + '/Verification/Verification.ui'
 VerificationMainForm = uic.loadUiType(VerificationDir)[0]
 
 class VerificationMain(QMainWindow, VerificationMainForm):

@@ -1,0 +1,794 @@
+
+
+[Sat Jan 20 19:43:50 2018] Started Program
+[00000] ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattr__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'blockSignals', 'childEvent', 'children', 'connectNotify', 'customEvent', 'deleteLater', 'destroyed', 'disconnect', 'disconnectNotify', 'dumpObjectInfo', 'dumpObjectTree', 'dynamicPropertyNames', 'event', 'eventFilter', 'findChild', 'findChildren', 'inherits', 'installEventFilter', 'interval', 'isActive', 'isSignalConnected', 'isSingleShot', 'isWidgetType', 'isWindowType', 'killTimer', 'metaObject', 'moveToThread', 'objectName', 'objectNameChanged', 'parent', 'property', 'pyqtConfigure', 'receivers', 'remainingTime', 'removeEventFilter', 'sender', 'senderSignalIndex', 'setInterval', 'setObjectName', 'setParent', 'setProperty', 'setSingleShot', 'setTimerType', 'signalsBlocked', 'singleShot', 'start', 'startTimer', 'staticMetaObject', 'stop', 'thread', 'timeout', 'timerEvent', 'timerId', 'timerType', 'tr']
+
+[Sat Jan 20 20:15:08 2018] Started Program
+[00000] [Exception]exceptions must derive from BaseException in GetDataFromDB
+
+[Sat Jan 20 20:20:10 2018] Started Program
+[00000] [Exception]'VerificationMain' object has no attribute 'bTimer' in SetupComboBox
+[00001] Completed getting data
+
+[Sat Jan 20 20:20:31 2018] Started Program
+[00000] [Exception]'VerificationMain' object has no attribute 'bTimer' in SetupComboBox
+[00001] Completed getting data
+[00002] Completed getting data
+
+[Sat Jan 20 20:21:29 2018] Started Program
+[00000] [Exception]'VerificationMain' object has no attribute 'bTimer' in SetupComboBox
+[00001] Completed getting data
+[00002] Completed getting data
+[00003] Completed getting data
+
+[Sat Jan 20 20:23:54 2018] Started Program
+[00000] [Exception]'VerificationMain' object has no attribute 'bTimer' in SetupComboBox
+
+[Sat Jan 20 20:25:36 2018] Started Program
+[00000] [Exception]'VerificationMain' object has no attribute 'bTimer' in SetupComboBox
+
+[Sat Jan 20 20:26:56 2018] Started Program
+[00000] Not running
+[00001] Not running
+[00002] Already running
+[00003] Already running
+[00004] Already running
+[00005] Not running
+
+[Sat Jan 20 20:54:30 2018] Started Program
+[00000] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00001] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00002] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00003] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00004] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00005] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00006] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00007] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00008] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00009] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00010] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00011] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00012] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00013] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00014] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00015] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00016] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00017] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00018] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00019] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00020] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00021] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00022] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00023] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00024] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00025] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00026] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00027] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00028] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00029] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00030] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00031] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00032] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00033] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00034] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00035] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00036] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00037] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00038] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00039] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00040] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00041] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00042] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+
+[Sat Jan 20 21:08:32 2018] Started Program
+[00000] Completed getting data
+[00001] [Exception]name 'threading' is not defined in SetRealTime
+[00002] [Exception]'QTimer' object has no attribute 'cancel' in SetRealTime
+[00003] [Exception]name 'threading' is not defined in SetRealTime
+[00000] ['ButtonSymbols', 'CorrectToNearestValue', 'CorrectToPreviousValue', 'CorrectionMode', 'DrawChildren', 'DrawWindowBackground', 'IgnoreMask', 'NoButtons', 'PaintDeviceMetric', 'PdmDepth', 'PdmDevicePixelRatio', 'PdmDevicePixelRatioScaled', 'PdmDpiX', 'PdmDpiY', 'PdmHeight', 'PdmHeightMM', 'PdmNumColors', 'PdmPhysicalDpiX', 'PdmPhysicalDpiY', 'PdmWidth', 'PdmWidthMM', 'PlusMinus', 'RenderFlag', 'RenderFlags', 'StepDownEnabled', 'StepEnabled', 'StepEnabledFlag', 'StepNone', 'StepUpEnabled', 'UpDownArrows', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattr__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'acceptDrops', 'accessibleDescription', 'accessibleName', 'actionEvent', 'actions', 'activateWindow', 'addAction', 'addActions', 'adjustSize', 'alignment', 'autoFillBackground', 'backgroundRole', 'baseSize', 'blockSignals', 'buttonSymbols', 'changeEvent', 'childAt', 'childEvent', 'children', 'childrenRect', 'childrenRegion', 'cleanText', 'clear', 'clearFocus', 'clearMask', 'close', 'closeEvent', 'colorCount', 'connectNotify', 'contentsMargins', 'contentsRect', 'contextMenuEvent', 'contextMenuPolicy', 'correctionMode', 'create', 'createWindowContainer', 'cursor', 'customContextMenuRequested', 'customEvent', 'deleteLater', 'depth', 'destroy', 'destroyed', 'devType', 'devicePixelRatio', 'devicePixelRatioF', 'devicePixelRatioFScale', 'disconnect', 'disconnectNotify', 'displayIntegerBase', 'dragEnterEvent', 'dragLeaveEvent', 'dragMoveEvent', 'dropEvent', 'dumpObjectInfo', 'dumpObjectTree', 'dynamicPropertyNames', 'editingFinished', 'effectiveWinId', 'ensurePolished', 'enterEvent', 'event', 'eventFilter', 'find', 'findChild', 'findChildren', 'fixup', 'focusInEvent', 'focusNextChild', 'focusNextPrevChild', 'focusOutEvent', 'focusPolicy', 'focusPreviousChild', 'focusProxy', 'focusWidget', 'font', 'fontInfo', 'fontMetrics', 'foregroundRole', 'frameGeometry', 'frameSize', 'geometry', 'getContentsMargins', 'grab', 'grabGesture', 'grabKeyboard', 'grabMouse', 'grabShortcut', 'graphicsEffect', 'graphicsProxyWidget', 'hasAcceptableInput', 'hasFocus', 'hasFrame', 'hasHeightForWidth', 'hasMouseTracking', 'height', 'heightForWidth', 'heightMM', 'hide', 'hideEvent', 'inherits', 'initPainter', 'initStyleOption', 'inputMethodEvent', 'inputMethodHints', 'inputMethodQuery', 'insertAction', 'insertActions', 'installEventFilter', 'interpretText', 'isAccelerated', 'isActiveWindow', 'isAncestorOf', 'isEnabled', 'isEnabledTo', 'isFullScreen', 'isGroupSeparatorShown', 'isHidden', 'isLeftToRight', 'isMaximized', 'isMinimized', 'isModal', 'isReadOnly', 'isRightToLeft', 'isSignalConnected', 'isVisible', 'isVisibleTo', 'isWidgetType', 'isWindow', 'isWindowModified', 'isWindowType', 'keyPressEvent', 'keyReleaseEvent', 'keyboardGrabber', 'keyboardTracking', 'killTimer', 'layout', 'layoutDirection', 'leaveEvent', 'lineEdit', 'locale', 'logicalDpiX', 'logicalDpiY', 'lower', 'mapFrom', 'mapFromGlobal', 'mapFromParent', 'mapTo', 'mapToGlobal', 'mapToParent', 'mask', 'maximum', 'maximumHeight', 'maximumSize', 'maximumWidth', 'metaObject', 'metric', 'minimum', 'minimumHeight', 'minimumSize', 'minimumSizeHint', 'minimumWidth', 'mouseDoubleClickEvent', 'mouseGrabber', 'mouseMoveEvent', 'mousePressEvent', 'mouseReleaseEvent', 'move', 'moveEvent', 'moveToThread', 'nativeEvent', 'nativeParentWidget', 'nextInFocusChain', 'normalGeometry', 'objectName', 'objectNameChanged', 'overrideWindowFlags', 'overrideWindowState', 'paintEngine', 'paintEvent', 'paintingActive', 'palette', 'parent', 'parentWidget', 'physicalDpiX', 'physicalDpiY', 'pos', 'prefix', 'previousInFocusChain', 'property', 'pyqtConfigure', 'raise_', 'receivers', 'rect', 'releaseKeyboard', 'releaseMouse', 'releaseShortcut', 'removeAction', 'removeEventFilter', 'render', 'repaint', 'resize', 'resizeEvent', 'restoreGeometry', 'saveGeometry', 'scroll', 'selectAll', 'sender', 'senderSignalIndex', 'setAccelerated', 'setAcceptDrops', 'setAccessibleDescription', 'setAccessibleName', 'setAlignment', 'setAttribute', 'setAutoFillBackground', 'setBackgroundRole', 'setBaseSize', 'setButtonSymbols', 'setContentsMargins', 'setContextMenuPolicy', 'setCorrectionMode', 'setCursor', 'setDisabled', 'setDisplayIntegerBase', 'setEnabled', 'setFixedHeight', 'setFixedSize', 'setFixedWidth', 'setFocus', 'setFocusPolicy', 'setFocusProxy', 'setFont', 'setForegroundRole', 'setFrame', 'setGeometry', 'setGraphicsEffect', 'setGroupSeparatorShown', 'setHidden', 'setInputMethodHints', 'setKeyboardTracking', 'setLayout', 'setLayoutDirection', 'setLineEdit', 'setLocale', 'setMask', 'setMaximum', 'setMaximumHeight', 'setMaximumSize', 'setMaximumWidth', 'setMinimum', 'setMinimumHeight', 'setMinimumSize', 'setMinimumWidth', 'setMouseTracking', 'setObjectName', 'setPalette', 'setParent', 'setPrefix', 'setProperty', 'setRange', 'setReadOnly', 'setShortcutAutoRepeat', 'setShortcutEnabled', 'setSingleStep', 'setSizeIncrement', 'setSizePolicy', 'setSpecialValueText', 'setStatusTip', 'setStyle', 'setStyleSheet', 'setSuffix', 'setTabOrder', 'setToolTip', 'setToolTipDuration', 'setUpdatesEnabled', 'setValue', 'setVisible', 'setWhatsThis', 'setWindowFilePath', 'setWindowFlags', 'setWindowIcon', 'setWindowIconText', 'setWindowModality', 'setWindowModified', 'setWindowOpacity', 'setWindowRole', 'setWindowState', 'setWindowTitle', 'setWrapping', 'sharedPainter', 'show', 'showEvent', 'showFullScreen', 'showMaximized', 'showMinimized', 'showNormal', 'signalsBlocked', 'singleStep', 'size', 'sizeHint', 'sizeIncrement', 'sizePolicy', 'specialValueText', 'stackUnder', 'startTimer', 'staticMetaObject', 'statusTip', 'stepBy', 'stepDown', 'stepEnabled', 'stepUp', 'style', 'styleSheet', 'suffix', 'tabletEvent', 'testAttribute', 'text', 'textFromValue', 'thread', 'timerEvent', 'toolTip', 'toolTipDuration', 'tr', 'underMouse', 'ungrabGesture', 'unsetCursor', 'unsetLayoutDirection', 'unsetLocale', 'update', 'updateGeometry', 'updateMicroFocus', 'updatesEnabled', 'validate', 'value', 'valueChanged', 'valueFromText', 'visibleRegion', 'whatsThis', 'wheelEvent', 'width', 'widthMM', 'winId', 'window', 'windowFilePath', 'windowFlags', 'windowHandle', 'windowIcon', 'windowIconChanged', 'windowIconText', 'windowIconTextChanged', 'windowModality', 'windowOpacity', 'windowRole', 'windowState', 'windowTitle', 'windowTitleChanged', 'windowType', 'wrapping', 'x', 'y']
+
+[Sun Jan 21 03:04:58 2018] Started Program
+[00000] ['ButtonSymbols', 'CorrectToNearestValue', 'CorrectToPreviousValue', 'CorrectionMode', 'DrawChildren', 'DrawWindowBackground', 'IgnoreMask', 'NoButtons', 'PaintDeviceMetric', 'PdmDepth', 'PdmDevicePixelRatio', 'PdmDevicePixelRatioScaled', 'PdmDpiX', 'PdmDpiY', 'PdmHeight', 'PdmHeightMM', 'PdmNumColors', 'PdmPhysicalDpiX', 'PdmPhysicalDpiY', 'PdmWidth', 'PdmWidthMM', 'PlusMinus', 'RenderFlag', 'RenderFlags', 'StepDownEnabled', 'StepEnabled', 'StepEnabledFlag', 'StepNone', 'StepUpEnabled', 'UpDownArrows', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattr__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'acceptDrops', 'accessibleDescription', 'accessibleName', 'actionEvent', 'actions', 'activateWindow', 'addAction', 'addActions', 'adjustSize', 'alignment', 'autoFillBackground', 'backgroundRole', 'baseSize', 'blockSignals', 'buttonSymbols', 'changeEvent', 'childAt', 'childEvent', 'children', 'childrenRect', 'childrenRegion', 'cleanText', 'clear', 'clearFocus', 'clearMask', 'close', 'closeEvent', 'colorCount', 'connectNotify', 'contentsMargins', 'contentsRect', 'contextMenuEvent', 'contextMenuPolicy', 'correctionMode', 'create', 'createWindowContainer', 'cursor', 'customContextMenuRequested', 'customEvent', 'deleteLater', 'depth', 'destroy', 'destroyed', 'devType', 'devicePixelRatio', 'devicePixelRatioF', 'devicePixelRatioFScale', 'disconnect', 'disconnectNotify', 'displayIntegerBase', 'dragEnterEvent', 'dragLeaveEvent', 'dragMoveEvent', 'dropEvent', 'dumpObjectInfo', 'dumpObjectTree', 'dynamicPropertyNames', 'editingFinished', 'effectiveWinId', 'ensurePolished', 'enterEvent', 'event', 'eventFilter', 'find', 'findChild', 'findChildren', 'fixup', 'focusInEvent', 'focusNextChild', 'focusNextPrevChild', 'focusOutEvent', 'focusPolicy', 'focusPreviousChild', 'focusProxy', 'focusWidget', 'font', 'fontInfo', 'fontMetrics', 'foregroundRole', 'frameGeometry', 'frameSize', 'geometry', 'getContentsMargins', 'grab', 'grabGesture', 'grabKeyboard', 'grabMouse', 'grabShortcut', 'graphicsEffect', 'graphicsProxyWidget', 'hasAcceptableInput', 'hasFocus', 'hasFrame', 'hasHeightForWidth', 'hasMouseTracking', 'height', 'heightForWidth', 'heightMM', 'hide', 'hideEvent', 'inherits', 'initPainter', 'initStyleOption', 'inputMethodEvent', 'inputMethodHints', 'inputMethodQuery', 'insertAction', 'insertActions', 'installEventFilter', 'interpretText', 'isAccelerated', 'isActiveWindow', 'isAncestorOf', 'isEnabled', 'isEnabledTo', 'isFullScreen', 'isGroupSeparatorShown', 'isHidden', 'isLeftToRight', 'isMaximized', 'isMinimized', 'isModal', 'isReadOnly', 'isRightToLeft', 'isSignalConnected', 'isVisible', 'isVisibleTo', 'isWidgetType', 'isWindow', 'isWindowModified', 'isWindowType', 'keyPressEvent', 'keyReleaseEvent', 'keyboardGrabber', 'keyboardTracking', 'killTimer', 'layout', 'layoutDirection', 'leaveEvent', 'lineEdit', 'locale', 'logicalDpiX', 'logicalDpiY', 'lower', 'mapFrom', 'mapFromGlobal', 'mapFromParent', 'mapTo', 'mapToGlobal', 'mapToParent', 'mask', 'maximum', 'maximumHeight', 'maximumSize', 'maximumWidth', 'metaObject', 'metric', 'minimum', 'minimumHeight', 'minimumSize', 'minimumSizeHint', 'minimumWidth', 'mouseDoubleClickEvent', 'mouseGrabber', 'mouseMoveEvent', 'mousePressEvent', 'mouseReleaseEvent', 'move', 'moveEvent', 'moveToThread', 'nativeEvent', 'nativeParentWidget', 'nextInFocusChain', 'normalGeometry', 'objectName', 'objectNameChanged', 'overrideWindowFlags', 'overrideWindowState', 'paintEngine', 'paintEvent', 'paintingActive', 'palette', 'parent', 'parentWidget', 'physicalDpiX', 'physicalDpiY', 'pos', 'prefix', 'previousInFocusChain', 'property', 'pyqtConfigure', 'raise_', 'receivers', 'rect', 'releaseKeyboard', 'releaseMouse', 'releaseShortcut', 'removeAction', 'removeEventFilter', 'render', 'repaint', 'resize', 'resizeEvent', 'restoreGeometry', 'saveGeometry', 'scroll', 'selectAll', 'sender', 'senderSignalIndex', 'setAccelerated', 'setAcceptDrops', 'setAccessibleDescription', 'setAccessibleName', 'setAlignment', 'setAttribute', 'setAutoFillBackground', 'setBackgroundRole', 'setBaseSize', 'setButtonSymbols', 'setContentsMargins', 'setContextMenuPolicy', 'setCorrectionMode', 'setCursor', 'setDisabled', 'setDisplayIntegerBase', 'setEnabled', 'setFixedHeight', 'setFixedSize', 'setFixedWidth', 'setFocus', 'setFocusPolicy', 'setFocusProxy', 'setFont', 'setForegroundRole', 'setFrame', 'setGeometry', 'setGraphicsEffect', 'setGroupSeparatorShown', 'setHidden', 'setInputMethodHints', 'setKeyboardTracking', 'setLayout', 'setLayoutDirection', 'setLineEdit', 'setLocale', 'setMask', 'setMaximum', 'setMaximumHeight', 'setMaximumSize', 'setMaximumWidth', 'setMinimum', 'setMinimumHeight', 'setMinimumSize', 'setMinimumWidth', 'setMouseTracking', 'setObjectName', 'setPalette', 'setParent', 'setPrefix', 'setProperty', 'setRange', 'setReadOnly', 'setShortcutAutoRepeat', 'setShortcutEnabled', 'setSingleStep', 'setSizeIncrement', 'setSizePolicy', 'setSpecialValueText', 'setStatusTip', 'setStyle', 'setStyleSheet', 'setSuffix', 'setTabOrder', 'setToolTip', 'setToolTipDuration', 'setUpdatesEnabled', 'setValue', 'setVisible', 'setWhatsThis', 'setWindowFilePath', 'setWindowFlags', 'setWindowIcon', 'setWindowIconText', 'setWindowModality', 'setWindowModified', 'setWindowOpacity', 'setWindowRole', 'setWindowState', 'setWindowTitle', 'setWrapping', 'sharedPainter', 'show', 'showEvent', 'showFullScreen', 'showMaximized', 'showMinimized', 'showNormal', 'signalsBlocked', 'singleStep', 'size', 'sizeHint', 'sizeIncrement', 'sizePolicy', 'specialValueText', 'stackUnder', 'startTimer', 'staticMetaObject', 'statusTip', 'stepBy', 'stepDown', 'stepEnabled', 'stepUp', 'style', 'styleSheet', 'suffix', 'tabletEvent', 'testAttribute', 'text', 'textFromValue', 'thread', 'timerEvent', 'toolTip', 'toolTipDuration', 'tr', 'underMouse', 'ungrabGesture', 'unsetCursor', 'unsetLayoutDirection', 'unsetLocale', 'update', 'updateGeometry', 'updateMicroFocus', 'updatesEnabled', 'validate', 'value', 'valueChanged', 'valueFromText', 'visibleRegion', 'whatsThis', 'wheelEvent', 'width', 'widthMM', 'winId', 'window', 'windowFilePath', 'windowFlags', 'windowHandle', 'windowIcon', 'windowIconChanged', 'windowIconText', 'windowIconTextChanged', 'windowModality', 'windowOpacity', 'windowRole', 'windowState', 'windowTitle', 'windowTitleChanged', 'windowType', 'wrapping', 'x', 'y']
+
+[Sun Jan 21 03:30:03 2018] Started Program
+[00000] [Exception]exceptions must derive from BaseException in SeparateData
+[00001] [Exception]exceptions must derive from BaseException in SeparateData
+[00002] [Exception]exceptions must derive from BaseException in SeparateData
+[00003] [Exception]exceptions must derive from BaseException in SeparateData
+[00004] [Exception]exceptions must derive from BaseException in SeparateData
+[00005] [Exception]exceptions must derive from BaseException in SeparateData
+[00006] [Exception]exceptions must derive from BaseException in SeparateData
+[00007] [Exception]exceptions must derive from BaseException in SeparateData
+[00008] [Exception]exceptions must derive from BaseException in SeparateData
+[00009] [Exception]exceptions must derive from BaseException in SeparateData
+[00010] [Exception]exceptions must derive from BaseException in SeparateData
+[00011] [Exception]exceptions must derive from BaseException in SeparateData
+[00012] [Exception]exceptions must derive from BaseException in SeparateData
+[00013] [Exception]exceptions must derive from BaseException in SeparateData
+[00014] [Exception]exceptions must derive from BaseException in SeparateData
+[00015] [Exception]exceptions must derive from BaseException in SeparateData
+[00016] [Exception]exceptions must derive from BaseException in SeparateData
+[00017] [Exception]exceptions must derive from BaseException in SeparateData
+[00018] [Exception]exceptions must derive from BaseException in SeparateData
+[00019] [Exception]exceptions must derive from BaseException in SeparateData
+[00020] [Exception]exceptions must derive from BaseException in SeparateData
+[00021] [Exception]exceptions must derive from BaseException in SeparateData
+[00022] [Exception]exceptions must derive from BaseException in SeparateData
+[00023] [Exception]exceptions must derive from BaseException in SeparateData
+[00024] [Exception]exceptions must derive from BaseException in SeparateData
+[00025] [Exception]exceptions must derive from BaseException in SeparateData
+[00026] [Exception]exceptions must derive from BaseException in SeparateData
+[00027] [Exception]exceptions must derive from BaseException in SeparateData
+[00028] [Exception]exceptions must derive from BaseException in SeparateData
+[00029] [Exception]exceptions must derive from BaseException in SeparateData
+[00030] [Exception]exceptions must derive from BaseException in SeparateData
+[00031] [Exception]exceptions must derive from BaseException in SeparateData
+[00032] [Exception]exceptions must derive from BaseException in SeparateData
+[00033] [Exception]exceptions must derive from BaseException in SeparateData
+[00034] [Exception]exceptions must derive from BaseException in SeparateData
+[00035] [Exception]exceptions must derive from BaseException in SeparateData
+[00036] [Exception]exceptions must derive from BaseException in SeparateData
+[00037] [Exception]exceptions must derive from BaseException in SeparateData
+[00038] [Exception]exceptions must derive from BaseException in SeparateData
+[00039] [Exception]exceptions must derive from BaseException in SeparateData
+[00040] [Exception]exceptions must derive from BaseException in SeparateData
+[00041] [Exception]exceptions must derive from BaseException in SeparateData
+[00042] [Exception]exceptions must derive from BaseException in SeparateData
+[00043] [Exception]exceptions must derive from BaseException in SeparateData
+[00044] [Exception]exceptions must derive from BaseException in SeparateData
+[00045] [Exception]exceptions must derive from BaseException in SeparateData
+[00046] [Exception]exceptions must derive from BaseException in SeparateData
+[00047] [Exception]exceptions must derive from BaseException in SeparateData
+[00048] [Exception]exceptions must derive from BaseException in SeparateData
+[00049] [Exception]exceptions must derive from BaseException in SeparateData
+[00050] [Exception]exceptions must derive from BaseException in SeparateData
+[00051] [Exception]exceptions must derive from BaseException in SeparateData
+[00052] [Exception]exceptions must derive from BaseException in SeparateData
+[00053] [Exception]exceptions must derive from BaseException in SeparateData
+[00054] [Exception]exceptions must derive from BaseException in SeparateData
+[00055] [Exception]exceptions must derive from BaseException in SeparateData
+[00056] [Exception]exceptions must derive from BaseException in SeparateData
+[00057] [Exception]exceptions must derive from BaseException in SeparateData
+[00058] [Exception]exceptions must derive from BaseException in SeparateData
+[00059] [Exception]exceptions must derive from BaseException in SeparateData
+[00060] [Exception]exceptions must derive from BaseException in SeparateData
+[00061] [Exception]exceptions must derive from BaseException in SeparateData
+[00062] [Exception]exceptions must derive from BaseException in SeparateData
+[00063] [Exception]exceptions must derive from BaseException in SeparateData
+[00064] [Exception]exceptions must derive from BaseException in SeparateData
+[00065] [Exception]exceptions must derive from BaseException in SeparateData
+[00066] [Exception]exceptions must derive from BaseException in SeparateData
+[00067] [Exception]exceptions must derive from BaseException in SeparateData
+[00068] [Exception]exceptions must derive from BaseException in SeparateData
+[00069] [Exception]exceptions must derive from BaseException in SeparateData
+[00070] [Exception]exceptions must derive from BaseException in SeparateData
+[00071] [Exception]exceptions must derive from BaseException in SeparateData
+[00072] [Exception]exceptions must derive from BaseException in SeparateData
+[00073] [Exception]exceptions must derive from BaseException in SeparateData
+
+[Sun Jan 21 03:31:46 2018] Started Program
+[00000] [Exception]exceptions must derive from BaseException in SeparateData
+[00001] [Exception]exceptions must derive from BaseException in SeparateData
+[00002] [Exception]exceptions must derive from BaseException in SeparateData
+[00003] [Exception]exceptions must derive from BaseException in SeparateData
+[00004] [Exception]exceptions must derive from BaseException in SeparateData
+[00005] [Exception]exceptions must derive from BaseException in SeparateData
+[00006] [Exception]exceptions must derive from BaseException in SeparateData
+[00007] [Exception]exceptions must derive from BaseException in SeparateData
+[00008] [Exception]exceptions must derive from BaseException in SeparateData
+[00009] [Exception]exceptions must derive from BaseException in SeparateData
+[00010] [Exception]exceptions must derive from BaseException in SeparateData
+[00011] [Exception]exceptions must derive from BaseException in SeparateData
+[00012] [Exception]exceptions must derive from BaseException in SeparateData
+[00013] [Exception]exceptions must derive from BaseException in SeparateData
+[00014] [Exception]exceptions must derive from BaseException in SeparateData
+[00015] [Exception]exceptions must derive from BaseException in SeparateData
+[00016] [Exception]exceptions must derive from BaseException in SeparateData
+[00017] [Exception]exceptions must derive from BaseException in SeparateData
+[00018] [Exception]exceptions must derive from BaseException in SeparateData
+[00019] [Exception]exceptions must derive from BaseException in SeparateData
+[00020] [Exception]exceptions must derive from BaseException in SeparateData
+[00021] [Exception]exceptions must derive from BaseException in SeparateData
+[00022] [Exception]exceptions must derive from BaseException in SeparateData
+[00023] [Exception]exceptions must derive from BaseException in SeparateData
+[00024] [Exception]exceptions must derive from BaseException in SeparateData
+[00025] [Exception]exceptions must derive from BaseException in SeparateData
+[00026] [Exception]exceptions must derive from BaseException in SeparateData
+[00027] [Exception]exceptions must derive from BaseException in SeparateData
+[00028] [Exception]exceptions must derive from BaseException in SeparateData
+[00029] [Exception]exceptions must derive from BaseException in SeparateData
+[00030] [Exception]exceptions must derive from BaseException in SeparateData
+[00031] [Exception]exceptions must derive from BaseException in SeparateData
+[00032] [Exception]exceptions must derive from BaseException in SeparateData
+[00033] [Exception]exceptions must derive from BaseException in SeparateData
+[00034] [Exception]exceptions must derive from BaseException in SeparateData
+[00035] [Exception]exceptions must derive from BaseException in SeparateData
+[00036] [Exception]exceptions must derive from BaseException in SeparateData
+[00037] [Exception]exceptions must derive from BaseException in SeparateData
+[00038] [Exception]exceptions must derive from BaseException in SeparateData
+[00039] [Exception]exceptions must derive from BaseException in SeparateData
+[00040] [Exception]exceptions must derive from BaseException in SeparateData
+[00041] [Exception]exceptions must derive from BaseException in SeparateData
+[00042] [Exception]exceptions must derive from BaseException in SeparateData
+[00043] [Exception]exceptions must derive from BaseException in SeparateData
+[00044] [Exception]exceptions must derive from BaseException in SeparateData
+[00045] [Exception]exceptions must derive from BaseException in SeparateData
+[00046] [Exception]exceptions must derive from BaseException in SeparateData
+[00047] [Exception]exceptions must derive from BaseException in SeparateData
+[00048] [Exception]exceptions must derive from BaseException in SeparateData
+[00049] [Exception]exceptions must derive from BaseException in SeparateData
+[00050] [Exception]exceptions must derive from BaseException in SeparateData
+[00051] [Exception]exceptions must derive from BaseException in SeparateData
+[00052] [Exception]exceptions must derive from BaseException in SeparateData
+[00053] [Exception]exceptions must derive from BaseException in SeparateData
+[00054] [Exception]exceptions must derive from BaseException in SeparateData
+[00055] [Exception]exceptions must derive from BaseException in SeparateData
+[00056] [Exception]exceptions must derive from BaseException in SeparateData
+[00057] [Exception]exceptions must derive from BaseException in SeparateData
+[00058] [Exception]exceptions must derive from BaseException in SeparateData
+[00059] [Exception]exceptions must derive from BaseException in SeparateData
+[00060] [Exception]exceptions must derive from BaseException in SeparateData
+[00061] [Exception]exceptions must derive from BaseException in SeparateData
+[00062] [Exception]exceptions must derive from BaseException in SeparateData
+[00063] [Exception]exceptions must derive from BaseException in SeparateData
+[00064] [Exception]exceptions must derive from BaseException in SeparateData
+[00065] [Exception]exceptions must derive from BaseException in SeparateData
+[00066] [Exception]exceptions must derive from BaseException in SeparateData
+[00067] [Exception]exceptions must derive from BaseException in SeparateData
+[00068] [Exception]exceptions must derive from BaseException in SeparateData
+[00069] [Exception]exceptions must derive from BaseException in SeparateData
+[00070] [Exception]exceptions must derive from BaseException in SeparateData
+[00071] [Exception]exceptions must derive from BaseException in SeparateData
+[00072] [Exception]exceptions must derive from BaseException in SeparateData
+[00073] [Exception]exceptions must derive from BaseException in SeparateData
+[00074] [Exception]exceptions must derive from BaseException in SeparateData
+[00075] [Exception]exceptions must derive from BaseException in SeparateData
+[00076] [Exception]exceptions must derive from BaseException in SeparateData
+[00077] [Exception]exceptions must derive from BaseException in SeparateData
+[00078] [Exception]exceptions must derive from BaseException in SeparateData
+[00079] [Exception]exceptions must derive from BaseException in SeparateData
+[00080] [Exception]exceptions must derive from BaseException in SeparateData
+[00081] [Exception]exceptions must derive from BaseException in SeparateData
+[00082] [Exception]exceptions must derive from BaseException in SeparateData
+[00083] [Exception]exceptions must derive from BaseException in SeparateData
+[00084] [Exception]exceptions must derive from BaseException in SeparateData
+[00085] [Exception]exceptions must derive from BaseException in SeparateData
+[00086] [Exception]exceptions must derive from BaseException in SeparateData
+[00087] [Exception]exceptions must derive from BaseException in SeparateData
+[00088] [Exception]exceptions must derive from BaseException in SeparateData
+[00089] [Exception]exceptions must derive from BaseException in SeparateData
+[00090] [Exception]exceptions must derive from BaseException in SeparateData
+[00091] [Exception]exceptions must derive from BaseException in SeparateData
+[00092] [Exception]exceptions must derive from BaseException in SeparateData
+[00093] [Exception]exceptions must derive from BaseException in SeparateData
+[00094] [Exception]exceptions must derive from BaseException in SeparateData
+[00095] [Exception]exceptions must derive from BaseException in SeparateData
+[00096] [Exception]exceptions must derive from BaseException in SeparateData
+[00097] [Exception]exceptions must derive from BaseException in SeparateData
+[00098] [Exception]exceptions must derive from BaseException in SeparateData
+[00099] [Exception]exceptions must derive from BaseException in SeparateData
+[00100] [Exception]exceptions must derive from BaseException in SeparateData
+[00101] [Exception]exceptions must derive from BaseException in SeparateData
+[00102] [Exception]exceptions must derive from BaseException in SeparateData
+[00103] [Exception]exceptions must derive from BaseException in SeparateData
+[00104] [Exception]exceptions must derive from BaseException in SeparateData
+[00105] [Exception]exceptions must derive from BaseException in SeparateData
+[00106] [Exception]exceptions must derive from BaseException in SeparateData
+[00107] [Exception]exceptions must derive from BaseException in SeparateData
+[00108] [Exception]exceptions must derive from BaseException in SeparateData
+[00109] [Exception]exceptions must derive from BaseException in SeparateData
+[00110] [Exception]exceptions must derive from BaseException in SeparateData
+[00111] [Exception]exceptions must derive from BaseException in SeparateData
+[00112] [Exception]exceptions must derive from BaseException in SeparateData
+[00113] [Exception]exceptions must derive from BaseException in SeparateData
+[00114] [Exception]exceptions must derive from BaseException in SeparateData
+[00115] [Exception]exceptions must derive from BaseException in SeparateData
+[00116] [Exception]exceptions must derive from BaseException in SeparateData
+[00117] [Exception]exceptions must derive from BaseException in SeparateData
+[00118] [Exception]exceptions must derive from BaseException in SeparateData
+[00119] [Exception]exceptions must derive from BaseException in SeparateData
+[00120] [Exception]exceptions must derive from BaseException in SeparateData
+[00121] [Exception]exceptions must derive from BaseException in SeparateData
+[00122] [Exception]exceptions must derive from BaseException in SeparateData
+[00123] [Exception]exceptions must derive from BaseException in SeparateData
+[00124] [Exception]exceptions must derive from BaseException in SeparateData
+[00125] [Exception]exceptions must derive from BaseException in SeparateData
+[00126] [Exception]exceptions must derive from BaseException in SeparateData
+[00127] [Exception]exceptions must derive from BaseException in SeparateData
+[00128] [Exception]exceptions must derive from BaseException in SeparateData
+[00129] [Exception]exceptions must derive from BaseException in SeparateData
+[00130] [Exception]exceptions must derive from BaseException in SeparateData
+[00131] [Exception]exceptions must derive from BaseException in SeparateData
+[00132] [Exception]exceptions must derive from BaseException in SeparateData
+[00133] [Exception]exceptions must derive from BaseException in SeparateData
+[00134] [Exception]exceptions must derive from BaseException in SeparateData
+[00135] [Exception]exceptions must derive from BaseException in SeparateData
+[00136] [Exception]exceptions must derive from BaseException in SeparateData
+[00137] [Exception]exceptions must derive from BaseException in SeparateData
+[00138] [Exception]exceptions must derive from BaseException in SeparateData
+[00139] [Exception]exceptions must derive from BaseException in SeparateData
+[00140] [Exception]exceptions must derive from BaseException in SeparateData
+[00141] [Exception]exceptions must derive from BaseException in SeparateData
+[00142] [Exception]exceptions must derive from BaseException in SeparateData
+[00143] [Exception]exceptions must derive from BaseException in SeparateData
+[00144] [Exception]exceptions must derive from BaseException in SeparateData
+[00145] [Exception]exceptions must derive from BaseException in SeparateData
+[00146] [Exception]exceptions must derive from BaseException in SeparateData
+[00147] [Exception]exceptions must derive from BaseException in SeparateData
+[00148] [Exception]exceptions must derive from BaseException in SeparateData
+[00149] [Exception]exceptions must derive from BaseException in SeparateData
+[00150] [Exception]exceptions must derive from BaseException in SeparateData
+[00151] [Exception]exceptions must derive from BaseException in SeparateData
+[00152] [Exception]exceptions must derive from BaseException in SeparateData
+[00153] [Exception]exceptions must derive from BaseException in SeparateData
+[00154] [Exception]exceptions must derive from BaseException in SeparateData
+[00155] [Exception]exceptions must derive from BaseException in SeparateData
+[00156] [Exception]exceptions must derive from BaseException in SeparateData
+[00157] [Exception]exceptions must derive from BaseException in SeparateData
+[00158] [Exception]exceptions must derive from BaseException in SeparateData
+[00159] [Exception]exceptions must derive from BaseException in SeparateData
+[00160] [Exception]exceptions must derive from BaseException in SeparateData
+[00161] [Exception]exceptions must derive from BaseException in SeparateData
+[00162] [Exception]exceptions must derive from BaseException in SeparateData
+[00163] [Exception]exceptions must derive from BaseException in SeparateData
+[00164] [Exception]exceptions must derive from BaseException in SeparateData
+[00165] [Exception]exceptions must derive from BaseException in SeparateData
+[00166] [Exception]exceptions must derive from BaseException in SeparateData
+[00167] [Exception]exceptions must derive from BaseException in SeparateData
+[00168] [Exception]exceptions must derive from BaseException in SeparateData
+[00169] [Exception]exceptions must derive from BaseException in SeparateData
+[00170] [Exception]exceptions must derive from BaseException in SeparateData
+[00171] [Exception]exceptions must derive from BaseException in SeparateData
+[00172] [Exception]exceptions must derive from BaseException in SeparateData
+[00173] [Exception]exceptions must derive from BaseException in SeparateData
+[00174] [Exception]exceptions must derive from BaseException in SeparateData
+[00175] [Exception]exceptions must derive from BaseException in SeparateData
+[00176] [Exception]exceptions must derive from BaseException in SeparateData
+[00177] [Exception]exceptions must derive from BaseException in SeparateData
+[00178] [Exception]exceptions must derive from BaseException in SeparateData
+[00179] [Exception]exceptions must derive from BaseException in SeparateData
+[00180] [Exception]exceptions must derive from BaseException in SeparateData
+[00181] [Exception]exceptions must derive from BaseException in SeparateData
+[00182] [Exception]exceptions must derive from BaseException in SeparateData
+[00183] [Exception]exceptions must derive from BaseException in SeparateData
+[00184] [Exception]exceptions must derive from BaseException in SeparateData
+[00185] [Exception]exceptions must derive from BaseException in SeparateData
+[00186] [Exception]exceptions must derive from BaseException in SeparateData
+[00187] [Exception]exceptions must derive from BaseException in SeparateData
+[00188] [Exception]exceptions must derive from BaseException in SeparateData
+[00189] [Exception]exceptions must derive from BaseException in SeparateData
+[00190] [Exception]exceptions must derive from BaseException in SeparateData
+[00191] [Exception]exceptions must derive from BaseException in SeparateData
+[00192] [Exception]exceptions must derive from BaseException in SeparateData
+[00193] [Exception]exceptions must derive from BaseException in SeparateData
+[00194] [Exception]exceptions must derive from BaseException in SeparateData
+[00195] [Exception]exceptions must derive from BaseException in SeparateData
+[00196] [Exception]exceptions must derive from BaseException in SeparateData
+[00197] [Exception]exceptions must derive from BaseException in SeparateData
+[00198] [Exception]exceptions must derive from BaseException in SeparateData
+[00199] [Exception]exceptions must derive from BaseException in SeparateData
+[00200] [Exception]exceptions must derive from BaseException in SeparateData
+[00201] [Exception]exceptions must derive from BaseException in SeparateData
+
+[Sun Jan 21 03:32:51 2018] Started Program
+[00000] [Exception]exceptions must derive from BaseException in SeparateData
+[00001] [Exception]exceptions must derive from BaseException in SeparateData
+[00002] [Exception]exceptions must derive from BaseException in SeparateData
+[00003] [Exception]exceptions must derive from BaseException in SeparateData
+[00004] [Exception]exceptions must derive from BaseException in SeparateData
+[00005] [Exception]exceptions must derive from BaseException in SeparateData
+[00006] [Exception]exceptions must derive from BaseException in SeparateData
+[00007] [Exception]exceptions must derive from BaseException in SeparateData
+[00008] [Exception]exceptions must derive from BaseException in SeparateData
+[00009] [Exception]exceptions must derive from BaseException in SeparateData
+[00010] [Exception]exceptions must derive from BaseException in SeparateData
+[00011] [Exception]exceptions must derive from BaseException in SeparateData
+[00012] [Exception]exceptions must derive from BaseException in SeparateData
+[00013] [Exception]exceptions must derive from BaseException in SeparateData
+[00014] [Exception]exceptions must derive from BaseException in SeparateData
+[00015] [Exception]exceptions must derive from BaseException in SeparateData
+[00016] [Exception]exceptions must derive from BaseException in SeparateData
+[00017] [Exception]exceptions must derive from BaseException in SeparateData
+[00018] [Exception]exceptions must derive from BaseException in SeparateData
+[00019] [Exception]exceptions must derive from BaseException in SeparateData
+[00020] [Exception]exceptions must derive from BaseException in SeparateData
+[00021] [Exception]exceptions must derive from BaseException in SeparateData
+[00022] [Exception]exceptions must derive from BaseException in SeparateData
+[00023] [Exception]exceptions must derive from BaseException in SeparateData
+[00024] [Exception]exceptions must derive from BaseException in SeparateData
+[00025] [Exception]exceptions must derive from BaseException in SeparateData
+[00026] [Exception]exceptions must derive from BaseException in SeparateData
+[00027] [Exception]exceptions must derive from BaseException in SeparateData
+[00028] [Exception]exceptions must derive from BaseException in SeparateData
+[00029] [Exception]exceptions must derive from BaseException in SeparateData
+[00030] [Exception]exceptions must derive from BaseException in SeparateData
+[00031] [Exception]exceptions must derive from BaseException in SeparateData
+[00032] [Exception]exceptions must derive from BaseException in SeparateData
+[00033] [Exception]exceptions must derive from BaseException in SeparateData
+[00034] [Exception]exceptions must derive from BaseException in SeparateData
+[00035] [Exception]exceptions must derive from BaseException in SeparateData
+[00036] [Exception]exceptions must derive from BaseException in SeparateData
+[00037] [Exception]exceptions must derive from BaseException in SeparateData
+[00038] [Exception]exceptions must derive from BaseException in SeparateData
+[00039] [Exception]exceptions must derive from BaseException in SeparateData
+[00040] [Exception]exceptions must derive from BaseException in SeparateData
+[00041] [Exception]exceptions must derive from BaseException in SeparateData
+[00042] [Exception]exceptions must derive from BaseException in SeparateData
+[00043] [Exception]exceptions must derive from BaseException in SeparateData
+[00044] [Exception]exceptions must derive from BaseException in SeparateData
+[00045] [Exception]exceptions must derive from BaseException in SeparateData
+[00046] [Exception]exceptions must derive from BaseException in SeparateData
+[00047] [Exception]exceptions must derive from BaseException in SeparateData
+[00048] [Exception]exceptions must derive from BaseException in SeparateData
+[00049] [Exception]exceptions must derive from BaseException in SeparateData
+[00050] [Exception]exceptions must derive from BaseException in SeparateData
+[00051] [Exception]exceptions must derive from BaseException in SeparateData
+[00052] [Exception]exceptions must derive from BaseException in SeparateData
+[00053] [Exception]exceptions must derive from BaseException in SeparateData
+[00054] [Exception]exceptions must derive from BaseException in SeparateData
+[00055] [Exception]exceptions must derive from BaseException in SeparateData
+[00056] [Exception]exceptions must derive from BaseException in SeparateData
+[00057] [Exception]exceptions must derive from BaseException in SeparateData
+[00058] [Exception]exceptions must derive from BaseException in SeparateData
+[00059] [Exception]exceptions must derive from BaseException in SeparateData
+[00060] [Exception]exceptions must derive from BaseException in SeparateData
+[00061] [Exception]exceptions must derive from BaseException in SeparateData
+[00062] [Exception]exceptions must derive from BaseException in SeparateData
+[00063] [Exception]exceptions must derive from BaseException in SeparateData
+[00064] [Exception]exceptions must derive from BaseException in SeparateData
+[00065] [Exception]exceptions must derive from BaseException in SeparateData
+[00066] [Exception]exceptions must derive from BaseException in SeparateData
+[00067] [Exception]exceptions must derive from BaseException in SeparateData
+[00068] [Exception]exceptions must derive from BaseException in SeparateData
+[00069] [Exception]exceptions must derive from BaseException in SeparateData
+[00070] [Exception]exceptions must derive from BaseException in SeparateData
+[00071] [Exception]exceptions must derive from BaseException in SeparateData
+[00072] [Exception]exceptions must derive from BaseException in SeparateData
+[00073] [Exception]exceptions must derive from BaseException in SeparateData
+[00074] [Exception]exceptions must derive from BaseException in SeparateData
+[00075] [Exception]exceptions must derive from BaseException in SeparateData
+[00076] [Exception]exceptions must derive from BaseException in SeparateData
+[00077] [Exception]exceptions must derive from BaseException in SeparateData
+[00078] [Exception]exceptions must derive from BaseException in SeparateData
+[00079] [Exception]exceptions must derive from BaseException in SeparateData
+[00080] [Exception]exceptions must derive from BaseException in SeparateData
+[00081] [Exception]exceptions must derive from BaseException in SeparateData
+[00082] [Exception]exceptions must derive from BaseException in SeparateData
+[00083] [Exception]exceptions must derive from BaseException in SeparateData
+[00084] [Exception]exceptions must derive from BaseException in SeparateData
+[00085] [Exception]exceptions must derive from BaseException in SeparateData
+[00086] [Exception]exceptions must derive from BaseException in SeparateData
+[00087] [Exception]exceptions must derive from BaseException in SeparateData
+[00088] [Exception]exceptions must derive from BaseException in SeparateData
+[00089] [Exception]exceptions must derive from BaseException in SeparateData
+[00090] [Exception]exceptions must derive from BaseException in SeparateData
+[00091] [Exception]exceptions must derive from BaseException in SeparateData
+[00092] [Exception]exceptions must derive from BaseException in SeparateData
+[00093] [Exception]exceptions must derive from BaseException in SeparateData
+[00094] [Exception]exceptions must derive from BaseException in SeparateData
+[00095] [Exception]exceptions must derive from BaseException in SeparateData
+[00096] [Exception]exceptions must derive from BaseException in SeparateData
+[00097] [Exception]exceptions must derive from BaseException in SeparateData
+[00098] [Exception]exceptions must derive from BaseException in SeparateData
+[00099] [Exception]exceptions must derive from BaseException in SeparateData
+[00100] [Exception]exceptions must derive from BaseException in SeparateData
+[00101] [Exception]exceptions must derive from BaseException in SeparateData
+[00102] [Exception]exceptions must derive from BaseException in SeparateData
+[00103] [Exception]exceptions must derive from BaseException in SeparateData
+[00104] [Exception]exceptions must derive from BaseException in SeparateData
+[00105] [Exception]exceptions must derive from BaseException in SeparateData
+[00106] [Exception]exceptions must derive from BaseException in SeparateData
+[00107] [Exception]exceptions must derive from BaseException in SeparateData
+[00108] [Exception]exceptions must derive from BaseException in SeparateData
+[00109] [Exception]exceptions must derive from BaseException in SeparateData
+[00110] [Exception]exceptions must derive from BaseException in SeparateData
+[00111] [Exception]exceptions must derive from BaseException in SeparateData
+[00112] [Exception]exceptions must derive from BaseException in SeparateData
+[00113] [Exception]exceptions must derive from BaseException in SeparateData
+[00114] [Exception]exceptions must derive from BaseException in SeparateData
+[00115] [Exception]exceptions must derive from BaseException in SeparateData
+[00116] [Exception]exceptions must derive from BaseException in SeparateData
+[00117] [Exception]exceptions must derive from BaseException in SeparateData
+[00118] [Exception]exceptions must derive from BaseException in SeparateData
+[00119] [Exception]exceptions must derive from BaseException in SeparateData
+[00120] [Exception]exceptions must derive from BaseException in SeparateData
+[00121] [Exception]exceptions must derive from BaseException in SeparateData
+[00122] [Exception]exceptions must derive from BaseException in SeparateData
+[00123] [Exception]exceptions must derive from BaseException in SeparateData
+[00124] [Exception]exceptions must derive from BaseException in SeparateData
+[00125] [Exception]exceptions must derive from BaseException in SeparateData
+[00126] [Exception]exceptions must derive from BaseException in SeparateData
+[00127] [Exception]exceptions must derive from BaseException in SeparateData
+[00128] [Exception]exceptions must derive from BaseException in SeparateData
+[00129] [Exception]exceptions must derive from BaseException in SeparateData
+[00130] [Exception]exceptions must derive from BaseException in SeparateData
+[00131] [Exception]exceptions must derive from BaseException in SeparateData
+[00132] [Exception]exceptions must derive from BaseException in SeparateData
+[00133] [Exception]exceptions must derive from BaseException in SeparateData
+[00134] [Exception]exceptions must derive from BaseException in SeparateData
+[00135] [Exception]exceptions must derive from BaseException in SeparateData
+[00136] [Exception]exceptions must derive from BaseException in SeparateData
+[00137] [Exception]exceptions must derive from BaseException in SeparateData
+[00138] [Exception]exceptions must derive from BaseException in SeparateData
+[00139] [Exception]exceptions must derive from BaseException in SeparateData
+[00140] [Exception]exceptions must derive from BaseException in SeparateData
+[00141] [Exception]exceptions must derive from BaseException in SeparateData
+[00142] [Exception]exceptions must derive from BaseException in SeparateData
+[00143] [Exception]exceptions must derive from BaseException in SeparateData
+[00144] [Exception]exceptions must derive from BaseException in SeparateData
+[00145] [Exception]exceptions must derive from BaseException in SeparateData
+[00146] [Exception]exceptions must derive from BaseException in SeparateData
+
+[Sun Jan 21 03:33:33 2018] Started Program
+[00000] [Exception]exceptions must derive from BaseException in SeparateData
+[00001] [Exception]exceptions must derive from BaseException in SeparateData
+[00002] [Exception]exceptions must derive from BaseException in SeparateData
+[00003] [Exception]exceptions must derive from BaseException in SeparateData
+[00004] [Exception]exceptions must derive from BaseException in SeparateData
+[00005] [Exception]exceptions must derive from BaseException in SeparateData
+[00006] [Exception]exceptions must derive from BaseException in SeparateData
+[00007] [Exception]exceptions must derive from BaseException in SeparateData
+[00008] [Exception]exceptions must derive from BaseException in SeparateData
+[00009] [Exception]exceptions must derive from BaseException in SeparateData
+[00010] [Exception]exceptions must derive from BaseException in SeparateData
+[00011] [Exception]exceptions must derive from BaseException in SeparateData
+[00012] [Exception]exceptions must derive from BaseException in SeparateData
+[00013] [Exception]exceptions must derive from BaseException in SeparateData
+[00014] [Exception]exceptions must derive from BaseException in SeparateData
+
+[Sun Jan 21 03:35:07 2018] Started Program
+[00000] [Exception]exceptions must derive from BaseException in SeparateData
+[00001] [Exception]exceptions must derive from BaseException in SeparateData
+[00002] [Exception]exceptions must derive from BaseException in SeparateData
+[00003] [Exception]exceptions must derive from BaseException in SeparateData
+[00004] [Exception]exceptions must derive from BaseException in SeparateData
+[00005] [Exception]exceptions must derive from BaseException in SeparateData
+[00006] [Exception]exceptions must derive from BaseException in SeparateData
+[00007] [Exception]exceptions must derive from BaseException in SeparateData
+[00008] [Exception]exceptions must derive from BaseException in SeparateData
+[00009] [Exception]exceptions must derive from BaseException in SeparateData
+[00010] [Exception]exceptions must derive from BaseException in SeparateData
+[00011] [Exception]exceptions must derive from BaseException in SeparateData
+[00012] [Exception]exceptions must derive from BaseException in SeparateData
+[00013] [Exception]exceptions must derive from BaseException in SeparateData
+[00014] [Exception]exceptions must derive from BaseException in SeparateData
+[00015] [Exception]exceptions must derive from BaseException in SeparateData
+[00016] [Exception]exceptions must derive from BaseException in SeparateData
+[00017] [Exception]exceptions must derive from BaseException in SeparateData
+[00018] [Exception]exceptions must derive from BaseException in SeparateData
+[00019] [Exception]exceptions must derive from BaseException in SeparateData
+[00020] [Exception]exceptions must derive from BaseException in SeparateData
+[00021] [Exception]exceptions must derive from BaseException in SeparateData
+[00022] [Exception]exceptions must derive from BaseException in SeparateData
+[00023] [Exception]exceptions must derive from BaseException in SeparateData
+[00024] [Exception]exceptions must derive from BaseException in SeparateData
+[00025] [Exception]exceptions must derive from BaseException in SeparateData
+[00026] [Exception]exceptions must derive from BaseException in SeparateData
+[00027] [Exception]exceptions must derive from BaseException in SeparateData
+[00028] [Exception]exceptions must derive from BaseException in SeparateData
+[00029] [Exception]exceptions must derive from BaseException in SeparateData
+[00030] [Exception]exceptions must derive from BaseException in SeparateData
+[00031] [Exception]exceptions must derive from BaseException in SeparateData
+[00032] [Exception]exceptions must derive from BaseException in SeparateData
+[00033] [Exception]exceptions must derive from BaseException in SeparateData
+[00034] [Exception]exceptions must derive from BaseException in SeparateData
+[00035] [Exception]exceptions must derive from BaseException in SeparateData
+[00036] [Exception]exceptions must derive from BaseException in SeparateData
+[00037] [Exception]exceptions must derive from BaseException in SeparateData
+[00038] [Exception]exceptions must derive from BaseException in SeparateData
+[00039] [Exception]exceptions must derive from BaseException in SeparateData
+[00040] [Exception]exceptions must derive from BaseException in SeparateData
+[00041] [Exception]exceptions must derive from BaseException in SeparateData
+[00042] [Exception]exceptions must derive from BaseException in SeparateData
+[00043] [Exception]exceptions must derive from BaseException in SeparateData
+[00044] [Exception]exceptions must derive from BaseException in SeparateData
+[00045] [Exception]exceptions must derive from BaseException in SeparateData
+[00046] [Exception]exceptions must derive from BaseException in SeparateData
+[00047] [Exception]exceptions must derive from BaseException in SeparateData
+[00048] [Exception]exceptions must derive from BaseException in SeparateData
+[00049] [Exception]exceptions must derive from BaseException in SeparateData
+[00050] [Exception]exceptions must derive from BaseException in SeparateData
+[00051] [Exception]exceptions must derive from BaseException in SeparateData
+[00052] [Exception]exceptions must derive from BaseException in SeparateData
+[00053] [Exception]exceptions must derive from BaseException in SeparateData
+[00054] [Exception]exceptions must derive from BaseException in SeparateData
+[00055] [Exception]exceptions must derive from BaseException in SeparateData
+[00056] [Exception]exceptions must derive from BaseException in SeparateData
+[00057] [Exception]exceptions must derive from BaseException in SeparateData
+[00058] [Exception]exceptions must derive from BaseException in SeparateData
+[00059] [Exception]exceptions must derive from BaseException in SeparateData
+[00060] [Exception]exceptions must derive from BaseException in SeparateData
+[00061] [Exception]exceptions must derive from BaseException in SeparateData
+[00062] [Exception]exceptions must derive from BaseException in SeparateData
+[00063] [Exception]exceptions must derive from BaseException in SeparateData
+[00064] [Exception]exceptions must derive from BaseException in SeparateData
+[00065] [Exception]exceptions must derive from BaseException in SeparateData
+[00066] [Exception]exceptions must derive from BaseException in SeparateData
+[00067] [Exception]exceptions must derive from BaseException in SeparateData
+[00068] [Exception]exceptions must derive from BaseException in SeparateData
+[00069] [Exception]exceptions must derive from BaseException in SeparateData
+[00070] [Exception]exceptions must derive from BaseException in SeparateData
+[00071] [Exception]exceptions must derive from BaseException in SeparateData
+[00072] [Exception]exceptions must derive from BaseException in SeparateData
+[00073] [Exception]exceptions must derive from BaseException in SeparateData
+[00074] [Exception]exceptions must derive from BaseException in SeparateData
+[00075] [Exception]exceptions must derive from BaseException in SeparateData
+[00076] [Exception]exceptions must derive from BaseException in SeparateData
+[00077] [Exception]exceptions must derive from BaseException in SeparateData
+[00078] [Exception]exceptions must derive from BaseException in SeparateData
+[00079] [Exception]exceptions must derive from BaseException in SeparateData
+[00080] [Exception]exceptions must derive from BaseException in SeparateData
+[00081] [Exception]exceptions must derive from BaseException in SeparateData
+[00082] [Exception]exceptions must derive from BaseException in SeparateData
+[00083] [Exception]exceptions must derive from BaseException in SeparateData
+[00084] [Exception]exceptions must derive from BaseException in SeparateData
+[00085] [Exception]exceptions must derive from BaseException in SeparateData
+[00086] [Exception]exceptions must derive from BaseException in SeparateData
+[00087] [Exception]exceptions must derive from BaseException in SeparateData
+[00088] [Exception]exceptions must derive from BaseException in SeparateData
+[00089] [Exception]exceptions must derive from BaseException in SeparateData
+[00090] [Exception]exceptions must derive from BaseException in SeparateData
+[00091] [Exception]exceptions must derive from BaseException in SeparateData
+[00092] [Exception]exceptions must derive from BaseException in SeparateData
+[00093] [Exception]exceptions must derive from BaseException in SeparateData
+[00094] [Exception]exceptions must derive from BaseException in SeparateData
+[00095] [Exception]exceptions must derive from BaseException in SeparateData
+[00096] [Exception]exceptions must derive from BaseException in SeparateData
+[00097] [Exception]exceptions must derive from BaseException in SeparateData
+[00098] [Exception]exceptions must derive from BaseException in SeparateData
+[00099] [Exception]exceptions must derive from BaseException in SeparateData
+[00100] [Exception]exceptions must derive from BaseException in SeparateData
+[00101] [Exception]exceptions must derive from BaseException in SeparateData
+[00102] [Exception]exceptions must derive from BaseException in SeparateData
+[00103] [Exception]exceptions must derive from BaseException in SeparateData
+[00104] [Exception]exceptions must derive from BaseException in SeparateData
+[00105] [Exception]exceptions must derive from BaseException in SeparateData
+[00106] [Exception]exceptions must derive from BaseException in SeparateData
+[00107] [Exception]exceptions must derive from BaseException in SeparateData
+[00108] [Exception]exceptions must derive from BaseException in SeparateData
+[00109] [Exception]exceptions must derive from BaseException in SeparateData
+[00110] [Exception]exceptions must derive from BaseException in SeparateData
+[00111] [Exception]exceptions must derive from BaseException in SeparateData
+[00112] [Exception]exceptions must derive from BaseException in SeparateData
+[00113] [Exception]exceptions must derive from BaseException in SeparateData
+[00114] [Exception]exceptions must derive from BaseException in SeparateData
+[00115] [Exception]exceptions must derive from BaseException in SeparateData
+[00116] [Exception]exceptions must derive from BaseException in SeparateData
+[00117] [Exception]exceptions must derive from BaseException in SeparateData
+[00118] [Exception]exceptions must derive from BaseException in SeparateData
+[00119] [Exception]exceptions must derive from BaseException in SeparateData
+[00120] [Exception]exceptions must derive from BaseException in SeparateData
+[00121] [Exception]exceptions must derive from BaseException in SeparateData
+[00122] [Exception]exceptions must derive from BaseException in SeparateData
+[00123] [Exception]exceptions must derive from BaseException in SeparateData
+[00124] [Exception]exceptions must derive from BaseException in SeparateData
+[00125] [Exception]exceptions must derive from BaseException in SeparateData
+[00126] [Exception]exceptions must derive from BaseException in SeparateData
+[00127] [Exception]exceptions must derive from BaseException in SeparateData
+[00128] [Exception]exceptions must derive from BaseException in SeparateData
+[00129] [Exception]exceptions must derive from BaseException in SeparateData
+[00130] [Exception]exceptions must derive from BaseException in SeparateData
+[00131] [Exception]exceptions must derive from BaseException in SeparateData
+[00132] [Exception]exceptions must derive from BaseException in SeparateData
+[00133] [Exception]exceptions must derive from BaseException in SeparateData
+[00134] [Exception]exceptions must derive from BaseException in SeparateData
+[00135] [Exception]exceptions must derive from BaseException in SeparateData
+[00136] [Exception]exceptions must derive from BaseException in SeparateData
+[00137] [Exception]exceptions must derive from BaseException in SeparateData
+[00138] [Exception]exceptions must derive from BaseException in SeparateData
+[00139] [Exception]exceptions must derive from BaseException in SeparateData
+[00140] [Exception]exceptions must derive from BaseException in SeparateData
+[00141] [Exception]exceptions must derive from BaseException in SeparateData
+[00142] [Exception]exceptions must derive from BaseException in SeparateData
+[00143] [Exception]exceptions must derive from BaseException in SeparateData
+[00144] [Exception]exceptions must derive from BaseException in SeparateData
+[00145] [Exception]exceptions must derive from BaseException in SeparateData
+[00146] [Exception]exceptions must derive from BaseException in SeparateData
+[00147] [Exception]exceptions must derive from BaseException in SeparateData
+[00148] [Exception]exceptions must derive from BaseException in SeparateData
+[00149] [Exception]exceptions must derive from BaseException in SeparateData
+[00150] [Exception]exceptions must derive from BaseException in SeparateData
+[00151] [Exception]exceptions must derive from BaseException in SeparateData
+[00152] [Exception]exceptions must derive from BaseException in SeparateData
+[00153] [Exception]exceptions must derive from BaseException in SeparateData
+[00154] [Exception]exceptions must derive from BaseException in SeparateData
+[00155] [Exception]exceptions must derive from BaseException in SeparateData
+[00156] [Exception]exceptions must derive from BaseException in SeparateData
+[00157] [Exception]exceptions must derive from BaseException in SeparateData
+[00158] [Exception]exceptions must derive from BaseException in SeparateData
+[00159] [Exception]exceptions must derive from BaseException in SeparateData
+[00160] [Exception]exceptions must derive from BaseException in SeparateData
+[00161] [Exception]exceptions must derive from BaseException in SeparateData
+[00162] [Exception]exceptions must derive from BaseException in SeparateData
+[00163] [Exception]exceptions must derive from BaseException in SeparateData
+[00164] [Exception]exceptions must derive from BaseException in SeparateData
+[00165] [Exception]exceptions must derive from BaseException in SeparateData
+[00166] [Exception]exceptions must derive from BaseException in SeparateData
+[00167] [Exception]exceptions must derive from BaseException in SeparateData
+[00168] [Exception]exceptions must derive from BaseException in SeparateData
+[00169] [Exception]exceptions must derive from BaseException in SeparateData
+[00170] [Exception]exceptions must derive from BaseException in SeparateData
+[00171] [Exception]exceptions must derive from BaseException in SeparateData
+[00172] [Exception]exceptions must derive from BaseException in SeparateData
+[00173] [Exception]exceptions must derive from BaseException in SeparateData
+[00174] [Exception]exceptions must derive from BaseException in SeparateData
+[00175] [Exception]exceptions must derive from BaseException in SeparateData
+[00176] [Exception]exceptions must derive from BaseException in SeparateData
+[00177] [Exception]exceptions must derive from BaseException in SeparateData
+[00178] [Exception]exceptions must derive from BaseException in SeparateData
+[00179] [Exception]exceptions must derive from BaseException in SeparateData
+[00180] [Exception]exceptions must derive from BaseException in SeparateData
+[00181] [Exception]exceptions must derive from BaseException in SeparateData
+[00182] [Exception]exceptions must derive from BaseException in SeparateData
+[00183] [Exception]exceptions must derive from BaseException in SeparateData
+[00184] [Exception]exceptions must derive from BaseException in SeparateData
+[00185] [Exception]exceptions must derive from BaseException in SeparateData
+[00186] [Exception]exceptions must derive from BaseException in SeparateData
+[00187] [Exception]exceptions must derive from BaseException in SeparateData
+
+[Sun Jan 21 03:35:59 2018] Started Program
+[00000] GCZ17
+[00001] GCZ17
+[00002] [Exception]exceptions must derive from BaseException in SeparateData
+[00003] [Exception]exceptions must derive from BaseException in SeparateData
+[00004] [Exception]exceptions must derive from BaseException in SeparateData
+[00005] [Exception]exceptions must derive from BaseException in SeparateData
+[00006] [Exception]exceptions must derive from BaseException in SeparateData
+[00007] [Exception]exceptions must derive from BaseException in SeparateData
+[00008] [Exception]exceptions must derive from BaseException in SeparateData
+[00009] [Exception]exceptions must derive from BaseException in SeparateData
+[00010] [Exception]exceptions must derive from BaseException in SeparateData
+[00011] [Exception]exceptions must derive from BaseException in SeparateData
+[00012] [Exception]exceptions must derive from BaseException in SeparateData
+[00013] [Exception]exceptions must derive from BaseException in SeparateData
+[00014] [Exception]exceptions must derive from BaseException in SeparateData
+[00015] [Exception]exceptions must derive from BaseException in SeparateData
+[00016] [Exception]exceptions must derive from BaseException in SeparateData
+[00017] [Exception]exceptions must derive from BaseException in SeparateData
+[00018] [Exception]exceptions must derive from BaseException in SeparateData
+[00019] [Exception]exceptions must derive from BaseException in SeparateData
+[00020] [Exception]exceptions must derive from BaseException in SeparateData
+[00021] [Exception]exceptions must derive from BaseException in SeparateData
+[00022] [Exception]exceptions must derive from BaseException in SeparateData
+[00023] [Exception]exceptions must derive from BaseException in SeparateData
+[00024] [Exception]exceptions must derive from BaseException in SeparateData
+[00025] [Exception]exceptions must derive from BaseException in SeparateData
+[00026] [Exception]exceptions must derive from BaseException in SeparateData
+[00027] [Exception]exceptions must derive from BaseException in SeparateData
+[00028] [Exception]exceptions must derive from BaseException in SeparateData
+[00029] [Exception]exceptions must derive from BaseException in SeparateData
+[00030] [Exception]exceptions must derive from BaseException in SeparateData
+[00031] [Exception]exceptions must derive from BaseException in SeparateData
+[00032] [Exception]exceptions must derive from BaseException in SeparateData
+[00033] [Exception]exceptions must derive from BaseException in SeparateData
+[00034] [Exception]exceptions must derive from BaseException in SeparateData
+[00035] [Exception]exceptions must derive from BaseException in SeparateData
+[00036] [Exception]exceptions must derive from BaseException in SeparateData
+[00037] [Exception]exceptions must derive from BaseException in SeparateData
+[00038] [Exception]exceptions must derive from BaseException in SeparateData
+[00039] [Exception]exceptions must derive from BaseException in SeparateData
+[00040] [Exception]exceptions must derive from BaseException in SeparateData
+[00041] [Exception]exceptions must derive from BaseException in SeparateData
+[00042] [Exception]exceptions must derive from BaseException in SeparateData
+[00043] [Exception]exceptions must derive from BaseException in SeparateData
+[00044] [Exception]exceptions must derive from BaseException in SeparateData
+[00045] [Exception]exceptions must derive from BaseException in SeparateData
+[00046] [Exception]exceptions must derive from BaseException in SeparateData
+[00047] [Exception]exceptions must derive from BaseException in SeparateData
+[00048] [Exception]exceptions must derive from BaseException in SeparateData
+[00049] [Exception]exceptions must derive from BaseException in SeparateData
+[00050] [Exception]exceptions must derive from BaseException in SeparateData
+[00051] [Exception]exceptions must derive from BaseException in SeparateData
+[00052] [Exception]exceptions must derive from BaseException in SeparateData
+[00053] [Exception]exceptions must derive from BaseException in SeparateData
+[00054] [Exception]exceptions must derive from BaseException in SeparateData
+[00055] [Exception]exceptions must derive from BaseException in SeparateData
+[00056] [Exception]exceptions must derive from BaseException in SeparateData
+[00057] [Exception]exceptions must derive from BaseException in SeparateData
+[00058] [Exception]exceptions must derive from BaseException in SeparateData
+[00059] [Exception]exceptions must derive from BaseException in SeparateData
+[00060] [Exception]exceptions must derive from BaseException in SeparateData
+[00061] [Exception]exceptions must derive from BaseException in SeparateData
+[00062] [Exception]exceptions must derive from BaseException in SeparateData
+[00063] CLF18
+[00064] CLF18

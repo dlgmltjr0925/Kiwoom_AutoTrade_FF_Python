@@ -1,11 +1,11 @@
-import sys, os.path, configparser, time, pymysql, datetime, threading
+import sys, os.path, configparser, time, pymysql, datetime, threading as tr, platform
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5 import uic
 
 rootDir = os.getcwd() # 작업 최상위 디렉토리
-VerificationMainForm = uic.loadUiType(rootDir + '\Verification.ui')[0]
+VerificationMainForm = uic.loadUiType(rootDir + '/Verification.ui')[0]
 
 class VerificationMain(QMainWindow, VerificationMainForm):
     def __init__(self):
@@ -230,9 +230,14 @@ class DataBase(object):
     # mysql 접속
     def Connect(self):
         if self.connect == None:
-            self.connect = pymysql.connect(host = self.host, user = self.user, password = self.password,
-                                            db = self.db, charset = self.charset)
-            self.cursor = self.connect.cursor()
+            if platform.platform()[:7] == 'Windows':
+                self.connect = pymysql.connect(host = self.host, user = self.user, password = self.password,
+                                                db = self.db, charset = self.charset)
+                self.cursor = self.connect.cursor()
+            elif platform.platform()[:6] == 'Darwin':
+                self.connect = pymysql.connect(host = '192.168.0.9', user = self.user, password = self.password,
+                                                db = self.db, charset = self.charset)
+
         else:
             raise 'Database is already Connected'
 

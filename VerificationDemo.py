@@ -1,11 +1,16 @@
-import sys, os.path, configparser, time, pymysql, datetime, threading as tr
+#-*- coding: utf-8 -*-
+import sys, os.path, configparser, time, pymysql, datetime, threading as tr, platform
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5 import uic
 
 rootDir = os.getcwd() # 작업 최상위 디렉토리
-VerificationMainForm = uic.loadUiType(rootDir + '\Verification.ui')[0]
+if platform.platform()[:7] == 'Windows':
+    VerificationDir = rootDir + '\Verification.ui'
+else:
+    VerificationDir = rootDir + '/Verification.ui'
+VerificationMainForm = uic.loadUiType(VerificationDir)[0]
 
 class VerificationMain(QMainWindow, VerificationMainForm):
     def __init__(self):
@@ -14,19 +19,24 @@ class VerificationMain(QMainWindow, VerificationMainForm):
         self.finishTime = None   # 종료 시간
         self.timeUnit = 0.01     # 타이머 이벤트 처리 간격
         self.logCounter = 0      # 로그 리스트 카운터
-        self.db = DataBase()        # 데이터 베이스 접속 설정값
+        self.db = DataBase()     # 데이터 베이스 접속 설정값
         self.dicItem = {}
         self.sCode = None
         self.hogaDB = []
         self.tradeDB = []
+        self.timer = QTimer() # 타이머
+        self.bTimer = False # 타이머가 작동 중이면 True, 작동중이지 않으면 False
         self._SetupUi()
-        self.timer = None
         self.processTime = None
         self.tradeTable = TradeTable()
         self.hogaTable = HogaTable()
         self.btnSearch.clicked.connect(self._SearchData) # 검색 버튼을 누르면 데이터 처리가 이루어진다
+        self.btnStart.clicked.connect(self._PlayVerification) # 시작(>) 버튼을 누르면 데이터 처리 진행
+        self.btnPause.clicked.connect(self._PauseVerification) # 일시정지(||) 버튼을 누르면 데이터 처리 중지
+        self.btnStop.clicked.connect(self._StopVerification) # 정지(ㅁ) 버튼을 누르면 데이터 처리 정지(시간 초기화)
         self.chRealTime.clicked.connect(self._SetRealTime)
         self.cbCode.currentIndexChanged.connect(self._SetSearchDate)
+        self.timer.timeout.connect(self._TimerProcessData)
 
 
     # User Interface 초기화
@@ -86,6 +96,9 @@ class VerificationMain(QMainWindow, VerificationMainForm):
     # 시간 설정
     def _SetSearchDate(self):
         try:
+            if self.bTimer: # 타이머 종료
+                self.timer.stop()
+                self.bTimer = False
             self.sCode = self.cbCode.currentText()
             query = 'select time from {}_hoga order by time asc limit 1;'.format(self.sCode)
             self.db.ExecuteQuery(query)
@@ -117,17 +130,58 @@ class VerificationMain(QMainWindow, VerificationMainForm):
 
     def _SearchData(self):
         try:
-            finishTime = self.dteFinish.dateTime().toPyDateTime()
-            if self.processTime == finishTime:
-                self.Log('Completed getting data')
-            else:
-                self._GetDataFromDB()
-                self.processTime += datetime.timedelta(seconds=1)
-                self.dteProcess.setDateTime(self.processTime)
-                # timeUnit = int(self.sbTimeUnit.value()) * 0.1
-                # tr.Timer(timeUnit, self._Ready)
+            self.processTime = self.dteStart.dateTime().toPyDateTime()
+            self.dteProcess.setDateTime(self.processTime)
+            self._InitTableWidget()
         except Exception as error:
             self.Log('[Exception]{} in searchData'.format(error))
+
+    def _PlayVerification(self):
+        try:
+            if not self.bTimer:
+                self.bTimer = True
+                self.timer.start(10 * self.sbTimeUnit.value())
+            else:
+                self.Log('Already running')
+        except Exception as error:
+            self.Log('[Exception]{} in PlayVerification'.format(error))
+
+    def _PauseVerification(self):
+        try:
+            if self.bTimer:
+                self.timer.stop()
+                self.bTimer = False
+            else:
+                self.Log('Not running')
+        except Exception as error:
+            self.Log('[Exception]{} in PauseVerification'.format(error))
+
+    def _StopVerification(self):
+        # 타이머 동작을 멈추고 processTime을 시작값으로 복귀
+        try:
+            if self.bTimer:
+                self.timer.stop()
+                self.bTimer = False
+            self.processTime = self.dteStart.dateTime().toPyDateTime()
+            self.dteProcess.setDateTime(self.processTime)
+        except Exception as error:
+            self.Log('[Exception]{} in StopVerification'.format(error))
+
+    def _TimerProcessData(self):
+        try:
+            if self.bTimer:
+                if self.processTime == self.dteFinish.dateTime().toPyDateTime():
+                    self.Log('Completed getting data')
+                    self.bTimer = False
+                else:
+                    self._GetDataFromDB()
+                    self.processTime += datetime.timedelta(seconds=1)
+                    self.dteProcess.setDateTime(self.processTime)
+            else:
+                self.timer.stop()
+        except Exception as error:
+            self.Log('[Exception]{} in TimerProcessData'.format(error))
+
 
     def _GetDataFromDB(self):
         '''
@@ -305,8 +359,13 @@ class DataBase(object):
     # mysql 접속
     def Connect(self):
         if self.connect == None:
-            self.connect = pymysql.connect(host = self.host, user = self.user, password = self.password,
-                                            db = self.db, charset = self.charset)
+            if platform.platform()[:7] == 'Windows':
+                self.connect = pymysql.connect(host = self.host, user = self.user, password = self.password,
+                                                db = self.db, charset = self.charset)
+
+            elif platform.platform()[:6] == 'Darwin':
+                self.connect = pymysql.connect(host = '192.168.0.9', user = self.user, password = self.password,
+                                                db = self.db, charset = self.charset)
             self.cursor = self.connect.cursor()
         else:
             raise 'Database is already Connected'

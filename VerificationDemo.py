@@ -24,10 +24,8 @@ class VerificationMain(QMainWindow, VerificationMainForm):
         self.sCode = None
         self.hogaDB = []
         self.tradeDB = []
-        self.timer = QTimer() # 타이머
-        self.bTimer = False # 타이머가 작동 중이면 True, 작동중이지 않으면 False
+        self._SetTimer()
         self._SetupUi()
-        self.processTime = None
         self.tradeTable = TradeTable()
         self.hogaTable = HogaTable()
         self.btnSearch.clicked.connect(self._SearchData) # 검색 버튼을 누르면 데이터 처리가 이루어진다
@@ -37,7 +35,18 @@ class VerificationMain(QMainWindow, VerificationMainForm):
         self.chRealTime.clicked.connect(self._SetRealTime)
         self.cbCode.currentIndexChanged.connect(self._SetSearchDate)
         self.timer.timeout.connect(self._TimerProcessData)
+        self.realTimer.timeout.connect(self._SetRealTime)
 
+    def _SetTimer(self):
+        self.timer = QTimer() # 타이머(데이터 동작)
+        self.bTimer = False # 타이머가 작동 중이면 True, 작동중이지 않으면 False
+        self.realTimer = QTimer() # 종료 시간 실시간 처리
+        self.bRealTimer = False
+        self.timeDelta = 1 #
+        self.timeDeltaCount = 60
+        self.startTime = None
+        self.finishTime = None
+        self.processTime = None
 
     # User Interface 초기화
     def _SetupUi(self):
@@ -108,23 +117,27 @@ class VerificationMain(QMainWindow, VerificationMainForm):
             startTime2 = datetime.datetime.strptime(self.db.GetData()[0][0][:-2], '%Y%m%d%H%M%S')
             query = 'select time from {}_trade order by time desc limit 1'.format(self.sCode)
             self.db.ExecuteQuery(query)
-            endTime1 = datetime.datetime.strptime(self.db.GetData()[0][0][:-2], '%Y%m%d%H%M%S')
+            finishTime1 = datetime.datetime.strptime(self.db.GetData()[0][0][:-2], '%Y%m%d%H%M%S')
             query = 'select time from {}_hoga order by time desc limit 1'.format(self.sCode)
             self.db.ExecuteQuery(query)
-            endTime2 = datetime.datetime.strptime(self.db.GetData()[0][0][:-2], '%Y%m%d%H%M%S')
+            finishTime2 = datetime.datetime.strptime(self.db.GetData()[0][0][:-2], '%Y%m%d%H%M%S')
             # 가장 빠른 시간 데이터 ~ 가장 마지막 시간 데이터
             if startTime1 < startTime2:
                 self.dteStart.setDateTime(startTime1)
                 self.dteProcess.setDateTime(startTime1)
+                self.startTime = startTime1
                 self.processTime = startTime1
             else:
                 self.dteStart.setDateTime(startTime2)
                 self.dteProcess.setDateTime(startTime2)
+                self.startTime = startTime2
                 self.processTime = startTime2
-            if endTime1 > endTime2:
-                self.dteFinish.setDateTime(endTime1)
+            if finishTime1 > finishTime2:
+                self.dteFinish.setDateTime(finishTime1)
+                self.finishTime = finishTime1
             else:
-                self.dteFinish.setDateTime(endTime2)
+                self.dteFinish.setDateTime(finishTime2)
+                self.finishTime = finishTime2
         except Exception as error:
             self.Log('[Exception]{} in SetupComboBox'.format(error))
 
@@ -137,16 +150,18 @@ class VerificationMain(QMainWindow, VerificationMainForm):
             self.Log('[Exception]{} in searchData'.format(error))
 
     def _PlayVerification(self):
+        # 타이머 시작
         try:
             if not self.bTimer:
                 self.bTimer = True
-                self.timer.start(10 * self.sbTimeUnit.value())
+                self.timer.start(self.sbTimeUnit.value())
             else:
                 self.Log('Already running')
         except Exception as error:
             self.Log('[Exception]{} in PlayVerification'.format(error))
 
     def _PauseVerification(self):
+        # 타이머 동장을 일시 정지
         try:
             if self.bTimer:
                 self.timer.stop()
@@ -175,7 +190,7 @@ class VerificationMain(QMainWindow, VerificationMainForm):
                     self.bTimer = False
                 else:
                     self._GetDataFromDB()
-                    self.processTime += datetime.timedelta(seconds=1)
+                    self.processTime += datetime.timedelta(seconds = self.timeDelta)
                     self.dteProcess.setDateTime(self.processTime)
             else:
                 self.timer.stop()
@@ -213,6 +228,17 @@ class VerificationMain(QMainWindow, VerificationMainForm):
             processTime = self.processTime.strftime('%Y%m%d%H%M%S') + '00'
             processTime = int(processTime)
             nCount = len(self.tradeDB) + len(self.hogaDB)
+            if nCount == 0: # 단위 시간별 데이터가 없을 경우
+                self.timeDeltaCount -= 1
+            else:           # 단위 시간별 데이터가 있을 경우
+                self.timeDeltaCount = 60
+            if not self.timeDeltaCount: # 단위 시간당 반응이 없을 경우 탐색 시간 증가
+                self.timeDelta += 10
+                if self.timeDelta > 60:
+                    self.timeDelata = 60
+                self.timeDeltaCount = 60
+            else:
+                self.timeDelta = 1
             disTrade = None
             disHoga = None
             while nCount:
@@ -239,8 +265,9 @@ class VerificationMain(QMainWindow, VerificationMainForm):
                 row = self.tradeTable.indexToTable[nIndex][0]
                 col = self.tradeTable.indexToTable[nIndex][1]
                 # self.Log('row : [{}], col : [{}], data = [{}]'.format(row, col, tradeDB[nIndex]))
-                if not (row == None or col == None):
+                if row != None and col != None:
                     self.twTrade.setItem(row, col, QTableWidgetItem(str(tradeDB[nIndex])))
+            self.twTrade.setItem(1, 0, QTableWidgetItem(self.TimeFormat(str(tradeDB[0]))))
         except Exception as error:
             self.Log('[Exception]{} in DisplayTradeDB'.format(error))
 
@@ -260,63 +287,25 @@ class VerificationMain(QMainWindow, VerificationMainForm):
                         self.twHoga.setItem(row, col, QTableWidgetItem('{}({})'.format(hoga, hogaDB[nIndex])))
                     else:
                         self.twHoga.setItem(row, col, QTableWidgetItem(str(hogaDB[nIndex])))
+                self.twHoga.setItem(11, 3, QTableWidgetItem(self.TimeFormat(str(hogaDB[0]))))
         except Exception as error:
             self.Log('[Exception]{} in DisplayHogaDB'.format(error))
 
-    def _SetHogaTableWidget(self, hogaData = None):
-        if hogaData == None:
-            data = self.hogaDB
-        else:
-            data = hogaData
-        nIndex = 0
-        for row in range(1, 12):
-            if row < 6:
-                for col in range(4):
-                    if not col == 3:
-                        self.twHoga.setItem(row, col, QTableWidgetItem(data[self.hogaTableIndex[nIndex]]))
-                        nIndex += 1
-                    else:
-                        strData = '{}({})'.format(data[self.hogaTableIndex[nIndex]], data[self.hogaTableIndex[nIndex+1]])
-                        self.twHoga.setItem(row, col, QTableWidgetItem(strData))
-                        nIndex += 2
-
-            elif 5 < row < 11:
-                for col in range(3, 7):
-                    if not col == 3:
-                        self.twHoga.setItem(row, col, QTableWidgetItem(data[self.hogaTableIndex[nIndex]]))
-                        nIndex += 1
-                    else:
-                        strData = '{}({})'.format(data[self.hogaTableIndex[nIndex]], data[self.hogaTableIndex[nIndex+1]])
-                        self.twHoga.setItem(row, col, QTableWidgetItem(strData))
-                        nIndex += 2
-            else:
-                for col in range(7):
-                    self.twHoga.setItem(row, col, QTableWidgetItem(data[self.hogaTableIndex[nIndex+1]]))
-                    nIndex += 1
-
-    def _SetTradeTableWidget(self, tradeData = None):
-        if tradeData == None:
-            data = self.hogaDB
-        else:
-            data = tradeData
-        nIndex = 0
-        for row in range(1, 4):
-            if row == 2:
-                continue
-            else:
-                for col in range(8):
-                    self.twHoga.setItem(row, col, QTableWidgetItem(data[self.tradeTableIndex[nIndex]]))
-                    nIndex += 1
-
+    def TimeFormat(self, sTime):
+        return sTime[8:10] + ':' + sTime[10:12] + ':' +sTime[12:14]
 
     def _SetRealTime(self):
         try:
             if self.chRealTime.isChecked():
+                if not self.bRealTimer:
+                    self.realTimer.start(1000) # 1초 단위 이벤트 발생
+                    self.bRealTimer = True
                 self.dteFinish.setDateTime(datetime.datetime.now())
-                self.timer = threading.Timer(1, self._SetRealTime)
-                self.timer.start()
             else:
-                self.timer.cancel()
+                if self.bRealTimer:
+                    self.realTimer.stop()
+                    self.bRealTimer = False
+                self.dteFinish.setDateTime(self.finishTime)
         except Exception as error:
             self.Log('[Exception]{} in SetRealTime'.format(error))
 
@@ -461,11 +450,11 @@ class HogaTable(object):
         (11, 5),         # 49 매수호가총건수
         (None, None),    # 50 호가순잔량
         (None, None),    # 51 순매수잔량
-        (5, 3),          # 52 매도1호가등락율
-        (4, 3),          # 53 매도2호가등락율
+        (1, 3),          # 52 매도1호가등락율
+        (2, 3),          # 53 매도2호가등락율
         (3, 3),          # 54 매도3호가등락율
-        (2, 3),          # 55 매도4호가등락율
-        (1, 3),          # 56 매도5호가등락율
+        (4, 3),          # 55 매도4호가등락율
+        (5, 3),          # 56 매도5호가등락율
         (6, 3),          # 57 매수1호가등락율
         (7, 3),          # 58 매수2호가등락율
         (8, 3),          # 59 매수3호가등락율

@@ -34,3 +34,54 @@
 [00003] Already running
 [00004] Already running
 [00005] Not running
+
+[Sat Jan 20 20:54:30 2018] Started Program
+[00000] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00001] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00002] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00003] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00004] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00005] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00006] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00007] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00008] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00009] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00010] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00011] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00012] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00013] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00014] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00015] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00016] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00017] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00018] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00019] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00020] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00021] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00022] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00023] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00024] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00025] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00026] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00027] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00028] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00029] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00030] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00031] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00032] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00033] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00034] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00035] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00036] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00037] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00038] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00039] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00040] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00041] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+[00042] [Exception]'VerificationMain' object has no attribute 'TimerFormat' in DisplayTradeDB
+
+[Sat Jan 20 21:08:32 2018] Started Program
+[00000] Completed getting data
+[00001] [Exception]name 'threading' is not defined in SetRealTime
+[00002] [Exception]'QTimer' object has no attribute 'cancel' in SetRealTime
+[00003] [Exception]name 'threading' is not defined in SetRealTime

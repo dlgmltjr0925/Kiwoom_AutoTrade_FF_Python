@@ -457,8 +457,8 @@ class VerificationMain(QMainWindow, VerificationMainForm):
 class DataBase(object):
     def __init__(self):
         self.host = 'localhost'
-        self.user = 'root'
-        self.password = '1'
+        self.user = 'dbreader'
+        self.password = 'dbreader'
         self.db = 'ff_data'
         self.charset = 'utf8'
         self.SetConnectOption()

@@ -116,7 +116,8 @@ class VerificationMain(QMainWindow, VerificationMainForm):
             columnLables = ['매도', '가격', '매수']
             self.twVolume.setHorizontalHeaderLabels(columnLables)
         else:
-            self.volumeTable = VolumeTable(self.sCode)
+            if not self.sCode == self.volumeTable.sCode:
+                self.volumeTable = VolumeTable(self.sCode)
             self.twVolume.clear()
             self.twVolume.setRowCount(self.volumeTable.rowCount)
             self.twVolume.setColumnCount(self.volumeTable.columnCount)
@@ -129,10 +130,13 @@ class VerificationMain(QMainWindow, VerificationMainForm):
                     self.twVolume.setColumnWidth(i, 50)
             columnLables = ['매도', '가격', '매수']
             self.twVolume.setHorizontalHeaderLabels(columnLables)
+            for i in range(self.volumeTable.rowCount):
+                self.twVolume.setItem(i, 0, QTableWidgetItem('{}'.format(self.volumeTable.volumeData[i][1])))
+                self.twVolume.setItem(i, 2, QTableWidgetItem('{}'.format(self.volumeTable.volumeData[i][2])))
             if self.volumeTable.tickUnit == 1:
                 for i in range(self.volumeTable.rowCount):
                     self.twVolume.setItem(i, 1, QTableWidgetItem('{:.01f}'.format(self.volumeTable.volumeData[i][0])))
-            if self.volumeTable.tickUnit == 2:
+            elif self.volumeTable.tickUnit == 2:
                 for i in range(self.volumeTable.rowCount):
                     self.twVolume.setItem(i, 1, QTableWidgetItem('{:.02f}'.format(self.volumeTable.volumeData[i][0])))
             else:
@@ -197,6 +201,7 @@ class VerificationMain(QMainWindow, VerificationMainForm):
         try:
             if not self.sCode == self.volumeTable.sCode:
                 self._SearchData()
+
             if not self.bTimer:
                 self.bTimer = True
                 self.timer.start(self.sbTimeUnit.value())
@@ -244,14 +249,18 @@ class VerificationMain(QMainWindow, VerificationMainForm):
                     self._GetDataFromDB()
                     if self.processTime.hour == 7:
                         self.processTime += datetime.timedelta(hours = 1)
-                        self._InitTableWidget()
-                        self.bMajor = False
+                        self.volumeTable.InitVolumeData()
+                        for i in range(self.volumeTable.rowCount):
+                            self.twVolume.setItem(i, 0, QTableWidgetItem('{}'.format(self.volumeTable.volumeData[i][1])))
+                            self.twVolume.setItem(i, 2, QTableWidgetItem('{}'.format(self.volumeTable.volumeData[i][2])))
                     elif 8 <= self.processTime.hour < 16:
                         if self.bMajor:
                             self.bMajor = False
+                            self.timeDelta = 60
                     else:
                         if not self.bMajor:
                             self.bMajor = True
+                            self.timeDelta = 1
 
                     self.processTime += datetime.timedelta(seconds = self.timeDelta)
                     self.dteProcess.setDateTime(self.processTime)
@@ -311,29 +320,43 @@ class VerificationMain(QMainWindow, VerificationMainForm):
                     self.timeDelta = 60
                     if self.bRealVerification:
                         self.timeDelta = 1
+            totalData = self.tradeDB + self.hogaDB
+            nCount = len(totalData)
+            if nCount == 0: # 단위 시간별 데이터가 없을 경우
+                self.timeDeltaCount -= 1
+            else:           # 단위 시간별 데이터가 있을 경우
+                self.timeDeltaCount = 60
+            if self.timeDeltaCount <= 0: # 단위 시간당 반응이 없을 경우 탐색 시간 증가
+                if self.processTime.second == 0:
+                    self.timeDelta = 60
+            else:
+                if self.bMajor:
+                    self.timeDelta = 1
+                else:
+                    if not self.bRealVerification:
+                        self.timeDelta = 60
+                    else:
+                        self.timeDelta = 1
+            if self.tradeDB and self.hogaDB:
+                totalData.sort()
             disTrade = None
             disHoga = None
             price = []
-            while nCount:
-                for tradeDB in self.tradeDB:
-                    if tradeDB[0] == str(processTime):
-                        nCount -= 1
-                        disTrade = tradeDB
-                        # twVolume table 거래량 데이터 입력
-                        self.volumeTable.SetTableData(tradeDB[3], tradeDB[8])
-                        if not tradeDB[3] in price:
-                            price.append(tradeDB[3])
-                for hogaDB in self.hogaDB:
-                    if hogaDB[0] == str(processTime):
-                        nCount -= 1
-                        disHoga = hogaDB
-                processTime += 1
-                if nCount == 0:
-                    if not disTrade == None:
-                        self._DisplayTradeDB(tradeDB)
-                        self._DisplayVolumeData(price)
-                    elif not disHoga == None:
-                        self._DisplayHogaDB(hogaDB)
+            if not totalData == []:
+                for data in totalData:
+                    if len(data) == 17:
+                        disTrade = data
+                        self.volumeTable.SetVolumeData(data[3], data[8])
+                        if not data[3] in price:
+                            price.append(data[3])
+                    else:
+                        disHoga = data
+            if not disTrade == None:
+                self._DisplayTradeDB(disTrade)
+                self._DisplayVolumeData(price)
+            if not disHoga == None:
+                self._DisplayHogaDB(disHoga)
+
         except Exception as error:
             self.Log('[Exception]{} in SeparateData'.format(error))
 
@@ -485,7 +508,10 @@ class DataBase(object):
                 raise 'Please, writing query'
 
             if 0 <= select < 10:
-                self.dbData[select] = self.cursor.fetchall()
+                dbData = self.cursor.fetchall()
+                self.dbData[select] = []
+                for data in dbData:
+                    self.dbData[select].append(list(data))
             else:
                 raise 'list index out of range'
 
@@ -642,7 +668,12 @@ class VolumeTable(object):
                 self.dicVolumeData.update({price:i})
                 self.volumeData.append([price, 0, 0]) # 가격, 매도 거래량, 매수 거래량
 
-    def SetTableData(self, nPrice, nVolume):
+    def InitVolumeData(self):
+        for i in range(len(self.volumeData)):
+            self.volumeData[i][1] = 0
+            self.volumeData[i][2] = 0
+
+    def SetVolumeData(self, nPrice, nVolume):
         try:
             if self.sCode == None:
                 raise 'Volume Table is not defined'
@@ -652,13 +683,13 @@ class VolumeTable(object):
                 else:
                     self.volumeData[self.dicVolumeData[nPrice]][2] += nVolume
         except Exception as error:
-            raise '[Exception]{} in SetTableData'.format(error)
+            raise '[Exception]{} in SetVolumeData'.format(error)
 
-    def GetTableData(self, nPrice):
+    def GetVolumeData(self, nPrice):
         try:
             return self.volumeData[self.dicVolumeData[nPrice]]
         except Exception as error:
-            raise '[Exception]{} in GetTableData'.format(error)
+            raise '[Exception]{} in GetVolumeData'.format(error)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

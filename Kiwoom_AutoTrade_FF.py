@@ -643,6 +643,7 @@ class AutoTradeMain(QMainWindow, AutoTradeMainForm):
             if not (isinstance(strData, str)):
                 strData = str(strData)
             self.lstLog.addItem('[{0:05d}] {1}'.format(self.logCounter, strData))
+            self.lstLog.scrollToBottom()
             logFile = open('log.txt', 'a')
             logFile.write('\n[{0:05d}] {1}'.format(self.logCounter, strData))
             logFile.close()

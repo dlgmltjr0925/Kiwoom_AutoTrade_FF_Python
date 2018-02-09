@@ -14778,3 +14778,1639 @@
 [00030] [ReceiveMsg]sMsg : [9999  ] 조회내역이 없습니다.
 [00031] Finished getting information 7003688572
 [00032] [-1]Seting All item in table
+
+[Mon Jan 22 11:10:11 2018] Started Program
+[00000] Clicked btnSearchMyAccount
+[00001] Opened Login Pannel
+[00002] Successed login
+[00003] Loading login information
+[00004] Completed Login!
+[00005] Clicked btnSearchMyAccount
+[00006] Requesting [CLG18] information
+[00007] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00008] [Exception][종목정보조회] '' in ReceiveTrData 
+[00009] Finished getting information about [CLG18]
+[00010] Requesting [ESH18] information
+[00011] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00012] Finished getting information about [ESH18]
+[00013] Requesting [GCG18] information
+[00014] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00015] Finished getting information about [GCG18]
+[00016] Requesting [6EH18] information
+[00017] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00018] Finished getting information about [6EH18]
+[00019] [Exception] could not convert string to float:  in _InitItemInfo
+[00020] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00021] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00022] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00023] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00024] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00025] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00026] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00027] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00028] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00029] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00030] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00031] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00032] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00033] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00034] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00035] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00036] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00037] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00038] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00039] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00040] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00041] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00042] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00043] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00044] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00045] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00046] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00047] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00048] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00049] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00050] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00051] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00052] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00053] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00054] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00055] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00056] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00057] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00058] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00059] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00060] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00061] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00062] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00063] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00064] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00065] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00066] Clicked btnSearchMyAccount
+[00067] Requesting [CLG18] information
+[00068] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00069] [Exception][종목정보조회] '' in ReceiveTrData 
+[00070] Finished getting information about [CLG18]
+[00071] Requesting [ESH18] information
+[00072] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00073] Finished getting information about [ESH18]
+[00074] Requesting [GCG18] information
+[00075] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00076] Finished getting information about [GCG18]
+[00077] Requesting [6EH18] information
+[00078] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00079] Finished getting information about [6EH18]
+[00080] [Exception] could not convert string to float:  in _InitItemInfo
+[00081] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00082] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00083] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00084] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00085] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00086] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00087] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00088] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00089] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00090] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00091] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00092] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00093] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00094] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00095] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00096] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00097] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00098] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00099] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00100] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00101] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00102] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00103] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00104] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00105] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00106] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00107] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00108] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00109] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00110] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00111] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00112] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00113] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00114] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00115] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00116] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00117] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00118] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00119] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00120] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00121] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00122] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00123] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00124] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00125] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00126] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00127] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00128] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00129] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00130] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00131] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00132] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00133] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00134] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00135] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00136] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00137] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00138] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00139] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00140] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00141] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00142] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00143] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00144] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00145] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00146] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00147] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00148] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00149] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00150] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00151] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00152] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00153] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00154] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00155] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00156] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00157] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00158] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00159] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00160] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00161] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00162] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00163] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00164] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00165] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00166] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00167] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00168] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00169] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00170] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00171] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00172] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00173] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00174] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00175] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00176] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00177] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00178] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00179] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00180] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00181] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00182] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00183] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00184] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00185] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00186] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00187] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00188] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00189] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00190] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00191] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00192] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00193] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00194] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00195] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00196] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00197] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00198] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00199] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00200] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00201] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00202] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00203] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00204] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00205] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00206] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00207] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00208] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00209] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00210] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00211] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00212] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00213] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00214] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00215] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00216] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00217] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00218] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00219] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00220] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00221] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00222] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00223] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00224] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00225] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00226] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00227] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00228] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00229] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00230] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00231] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00232] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00233] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00234] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00235] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00236] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00237] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00238] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00239] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00240] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00241] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00242] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00243] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00244] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00245] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00246] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00247] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00248] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00249] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00250] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00251] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00252] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00253] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00254] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00255] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00256] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00257] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00258] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00259] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00260] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00261] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00262] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00263] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00264] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00265] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00266] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00267] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00268] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00269] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00270] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00271] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00272] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00273] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00274] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00275] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00276] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00277] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00278] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00279] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00280] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00281] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00282] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00283] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00284] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00285] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00286] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00287] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00288] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00289] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00290] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00291] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00292] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00293] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00294] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00295] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00296] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00297] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00298] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00299] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00300] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00301] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00302] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00303] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00304] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00305] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00306] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00307] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00308] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00309] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00310] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00311] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00312] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00313] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00314] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00315] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00316] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00317] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00318] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00319] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00320] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00321] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00322] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00323] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00324] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00325] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00326] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00327] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00328] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00329] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00330] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00331] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00332] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00333] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00334] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00335] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00336] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+
+[Mon Jan 22 11:12:56 2018] Started Program
+[00000] Clicked btnSearchMyAccount
+[00001] Opened Login Pannel
+[00002] Successed login
+[00003] Loading login information
+[00004] Completed Login!
+[00005] Clicked btnSearchMyAccount
+[00006] Requesting [CLG18] information
+[00007] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00008] [Exception][종목정보조회] '' in ReceiveTrData 
+[00009] Finished getting information about [CLG18]
+[00010] Requesting [ESH18] information
+[00011] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00012] Finished getting information about [ESH18]
+[00013] Requesting [GCG18] information
+[00014] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00015] Finished getting information about [GCG18]
+[00016] Requesting [6EH18] information
+[00017] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00018] Finished getting information about [6EH18]
+[00019] [Exception] could not convert string to float:  in _InitItemInfo
+[00020] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00021] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00022] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00023] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00024] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00025] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00026] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00027] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00028] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00029] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00030] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00031] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00032] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00033] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00034] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00035] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00036] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00037] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00038] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00039] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00040] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00041] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00042] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00043] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00044] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00045] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00046] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00047] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00048] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00049] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00050] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00051] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00052] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00053] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00054] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00055] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00056] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00057] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00058] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00059] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00060] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00061] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00062] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00063] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00064] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00065] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00066] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00067] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00068] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00069] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00070] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00071] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00072] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00073] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00074] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00075] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00076] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00077] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00078] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00079] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00080] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00081] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00082] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00083] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+
+[Mon Jan 22 11:14:24 2018] Started Program
+[00000] Clicked btnSearchMyAccount
+[00001] Opened Login Pannel
+[00002] Successed login
+[00003] Loading login information
+[00004] Completed Login!
+[00005] Clicked btnSearchMyAccount
+[00006] Requesting [CLG18] information
+[00007] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00008] [Exception][종목정보조회] '' in ReceiveTrData 
+[00009] Finished getting information about [CLG18]
+[00010] Requesting [ESH18] information
+[00011] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00012] Finished getting information about [ESH18]
+[00013] Requesting [GCG18] information
+[00014] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00015] Finished getting information about [GCG18]
+[00016] Requesting [6EH18] information
+[00017] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00018] Finished getting information about [6EH18]
+[00019] [Exception] could not convert string to float:  in _InitItemInfo
+[00020] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+
+[Mon Jan 22 11:14:48 2018] Started Program
+[00000] Clicked btnSearchMyAccount
+[00001] Opened Login Pannel
+[00002] Successed login
+[00003] Loading login information
+[00004] Completed Login!
+[00005] Clicked btnSearchMyAccount
+[00006] Requesting [CLG18] information
+[00007] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00008] [Exception][종목정보조회] '' in ReceiveTrData 
+[00009] Finished getting information about [CLG18]
+[00010] Requesting [ESH18] information
+[00011] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00012] Finished getting information about [ESH18]
+[00013] Requesting [GCG18] information
+[00014] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00015] Finished getting information about [GCG18]
+[00016] Requesting [6EH18] information
+[00017] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00018] Finished getting information about [6EH18]
+[00019] [Exception] could not convert string to float:  in _InitItemInfo
+[00020] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00021] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00022] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00023] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00024] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00025] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00026] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00027] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00028] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00029] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00030] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00031] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00032] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00033] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00034] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00035] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00036] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00037] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00038] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00039] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00040] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00041] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00042] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00043] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00044] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00045] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00046] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00047] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00048] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00049] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00050] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00051] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00052] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00053] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00054] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00055] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00056] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00057] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00058] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00059] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00060] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00061] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00062] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00063] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00064] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00065] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00066] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00067] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00068] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00069] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00070] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00071] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00072] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00073] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00074] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00075] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00076] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00077] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00078] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00079] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00080] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00081] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00082] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00083] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00084] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00085] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00086] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00087] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00088] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00089] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00090] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00091] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00092] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00093] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00094] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00095] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00096] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00097] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00098] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00099] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00100] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00101] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00102] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00103] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00104] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00105] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00106] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00107] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00108] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00109] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00110] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00111] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00112] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00113] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00114] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00115] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00116] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00117] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00118] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00119] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00120] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00121] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00122] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00123] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00124] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00125] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00126] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00127] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00128] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00129] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00130] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00131] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00132] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00133] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00134] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00135] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00136] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00137] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00138] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00139] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00140] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00141] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00142] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00143] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00144] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00145] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00146] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00147] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00148] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00149] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00150] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00151] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00152] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00153] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00154] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00155] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00156] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00157] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00158] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00159] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00160] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00161] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00162] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00163] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00164] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00165] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00166] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00167] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00168] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00169] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00170] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00171] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00172] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00173] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00174] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00175] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00176] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00177] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00178] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00179] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00180] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00181] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00182] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00183] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00184] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00185] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00186] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00187] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00188] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00189] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00190] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00191] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00192] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00193] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00194] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00195] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00196] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00197] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00198] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00199] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00200] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00201] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00202] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00203] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00204] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00205] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00206] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00207] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00208] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00209] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00210] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00211] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00212] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00213] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00214] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00215] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00216] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00217] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00218] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00219] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00220] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00221] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00222] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00223] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00224] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00225] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00226] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00227] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00228] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00229] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00230] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00231] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00232] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00233] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00234] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00235] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00236] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00237] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00238] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00239] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00240] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00241] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00242] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00243] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00244] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00245] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00246] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00247] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00248] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00249] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00250] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00251] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00252] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00253] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00254] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00255] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00256] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00257] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00258] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00259] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00260] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00261] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00262] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00263] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00264] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00265] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00266] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00267] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00268] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00269] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00270] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00271] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00272] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00273] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00274] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00275] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00276] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00277] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00278] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00279] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00280] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00281] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00282] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00283] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00284] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00285] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00286] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00287] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00288] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00289] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00290] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00291] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00292] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00293] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00294] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00295] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00296] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00297] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00298] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00299] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00300] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00301] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00302] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00303] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00304] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00305] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00306] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00307] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00308] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00309] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00310] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00311] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00312] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00313] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00314] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00315] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00316] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00317] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00318] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00319] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00320] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00321] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00322] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00323] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00324] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00325] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00326] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00327] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00328] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00329] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00330] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00331] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00332] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00333] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00334] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00335] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00336] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00337] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00338] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00339] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00340] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00341] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00342] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00343] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00344] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00345] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00346] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00347] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00348] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00349] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00350] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00351] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00352] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00353] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00354] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00355] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00356] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00357] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00358] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00359] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00360] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00361] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00362] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00363] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00364] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00365] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00366] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00367] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00368] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00369] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00370] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00371] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00372] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00373] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00374] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00375] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00376] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00377] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00378] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00379] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00380] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00381] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00382] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00383] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00384] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00385] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00386] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00387] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00388] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00389] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00390] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00391] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00392] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00393] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00394] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00395] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00396] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00397] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00398] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00399] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00400] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00401] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00402] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00403] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00404] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00405] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00406] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00407] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00408] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00409] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00410] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00411] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00412] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00413] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00414] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00415] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00416] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00417] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00418] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00419] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00420] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00421] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00422] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00423] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00424] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00425] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00426] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00427] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00428] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00429] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00430] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00431] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00432] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00433] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00434] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00435] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00436] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00437] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00438] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00439] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00440] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00441] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00442] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00443] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00444] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00445] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00446] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00447] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00448] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00449] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00450] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00451] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00452] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00453] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00454] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00455] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00456] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00457] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00458] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00459] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00460] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00461] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00462] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00463] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00464] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00465] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00466] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00467] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00468] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00469] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00470] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00471] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00472] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00473] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00474] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00475] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00476] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00477] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00478] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00479] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00480] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00481] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00482] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00483] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00484] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00485] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00486] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00487] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00488] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00489] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00490] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00491] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00492] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00493] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00494] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00495] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00496] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00497] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00498] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00499] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00500] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00501] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00502] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00503] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00504] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00505] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00506] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00507] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00508] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00509] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00510] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00511] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00512] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00513] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00514] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00515] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00516] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00517] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00518] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00519] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00520] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00521] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00522] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00523] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00524] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00525] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00526] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00527] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00528] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00529] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00530] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00531] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00532] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00533] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00534] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00535] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00536] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00537] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00538] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00539] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00540] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00541] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00542] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00543] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00544] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00545] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00546] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00547] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00548] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00549] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00550] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00551] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00552] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00553] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00554] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00555] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00556] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00557] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00558] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00559] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00560] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00561] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00562] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00563] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00564] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00565] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00566] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00567] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00568] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00569] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00570] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00571] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00572] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00573] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00574] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00575] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00576] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00577] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00578] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00579] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00580] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00581] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00582] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00583] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00584] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00585] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00586] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00587] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00588] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00589] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00590] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00591] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00592] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00593] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00594] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00595] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00596] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00597] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00598] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00599] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00600] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00601] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00602] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00603] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00604] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00605] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00606] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00607] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00608] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00609] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00610] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00611] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00612] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00613] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00614] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00615] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00616] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00617] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00618] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00619] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00620] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00621] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00622] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00623] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00624] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00625] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00626] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00627] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00628] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00629] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00630] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00631] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00632] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00633] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00634] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00635] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00636] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00637] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00638] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00639] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00640] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00641] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00642] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00643] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00644] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00645] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00646] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00647] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00648] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00649] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00650] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00651] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00652] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00653] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00654] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00655] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00656] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00657] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00658] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00659] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00660] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00661] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00662] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00663] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00664] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00665] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00666] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00667] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00668] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00669] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00670] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00671] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00672] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00673] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00674] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00675] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00676] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00677] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00678] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00679] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00680] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00681] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00682] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00683] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00684] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00685] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00686] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00687] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00688] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00689] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00690] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00691] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00692] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00693] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00694] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00695] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00696] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00697] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00698] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00699] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00700] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00701] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00702] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00703] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00704] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00705] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00706] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00707] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00708] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00709] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00710] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00711] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00712] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00713] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00714] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00715] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00716] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00717] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00718] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00719] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00720] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00721] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00722] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00723] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00724] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00725] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00726] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00727] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00728] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00729] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00730] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00731] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00732] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00733] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00734] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00735] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00736] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00737] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00738] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00739] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00740] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00741] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00742] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00743] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00744] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00745] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00746] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00747] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00748] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00749] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00750] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00751] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00752] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00753] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00754] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00755] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00756] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00757] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00758] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00759] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00760] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00761] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00762] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00763] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00764] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00765] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00766] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00767] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00768] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00769] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00770] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00771] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00772] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00773] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00774] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00775] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00776] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00777] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00778] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00779] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00780] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00781] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00782] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00783] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00784] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00785] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00786] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00787] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00788] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00789] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00790] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00791] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00792] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00793] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00794] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00795] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00796] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00797] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00798] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00799] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00800] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00801] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00802] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00803] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00804] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00805] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00806] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00807] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00808] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00809] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00810] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00811] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00812] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00813] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00814] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00815] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00816] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00817] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00818] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00819] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00820] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00821] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00822] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00823] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00824] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00825] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00826] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00827] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00828] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00829] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00830] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00831] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00832] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00833] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00834] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00835] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00836] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00837] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00838] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00839] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00840] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00841] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00842] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00843] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00844] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00845] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00846] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00847] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00848] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00849] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00850] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00851] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00852] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00853] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00854] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00855] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00856] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00857] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00858] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00859] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00860] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00861] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00862] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00863] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00864] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00865] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00866] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00867] [해외옵션선물시세][Exception] 'GCG18' in ReceiveRealData
+[00868] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00869] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00870] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00871] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00872] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+
+[Mon Jan 22 11:26:38 2018] Started Program
+[00000] Clicked btnSearchMyAccount
+[00001] Opened Login Pannel
+[00002] Successed login
+[00003] Loading login information
+[00004] Completed Login!
+[00005] Clicked btnSearchMyAccount
+[00006] Requesting [CLH18] information
+[00007] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00008] Finished getting information about [CLH18]
+[00009] Requesting [ESH18] information
+[00010] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00011] Finished getting information about [ESH18]
+[00012] Requesting [GCG18] information
+[00013] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00014] Finished getting information about [GCG18]
+[00015] Requesting [6EH18] information
+[00016] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00017] Finished getting information about [6EH18]
+[00018] [-1]Seting All item in table
+[00019] Requesting [7003688572] information
+[00020] [ReceiveMsg]sScrNo : 1000
+[00021] [ReceiveMsg]sRQname : 계좌정보조회
+[00022] [ReceiveMsg]sTrCode : opw30001
+[00023] [ReceiveMsg]sMsg : [9999  ] 조회내역이 없습니다.
+[00024] Finished getting information 7003688572
+[00025] [-1]Seting All item in table
+[00026] Requesting [7003688572] information
+[00027] [ReceiveMsg]sScrNo : 1000
+[00028] [ReceiveMsg]sRQname : 계좌정보조회
+[00029] [ReceiveMsg]sTrCode : opw30003
+[00030] [ReceiveMsg]sMsg : [9999  ] 조회내역이 없습니다.
+[00031] Finished getting information 7003688572
+[00032] [-1]Seting All item in table
+[00033] [Error]local variable 'msg' referenced before assignment in EventConnect
+
+[Mon Jan 22 12:44:03 2018] Started Program
+[00000] Clicked btnSearchMyAccount
+[00001] Opened Login Pannel
+[00002] Successed login
+[00003] Loading login information
+[00004] Completed Login!
+[00005] Clicked btnSearchMyAccount
+[00006] Requesting [CLH18] information
+[00007] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00008] Finished getting information about [CLH18]
+[00009] Requesting [ESH18] information
+[00010] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00011] Finished getting information about [ESH18]
+[00012] Requesting [GCG18] information
+[00013] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00014] Finished getting information about [GCG18]
+[00015] Requesting [6EH18] information
+[00016] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00017] Finished getting information about [6EH18]
+[00018] [-1]Seting All item in table
+[00019] Requesting [7003688572] information
+[00020] [ReceiveMsg]sScrNo : 1000
+[00021] [ReceiveMsg]sRQname : 계좌정보조회
+[00022] [ReceiveMsg]sTrCode : opw30001
+[00023] [ReceiveMsg]sMsg : [9999  ] 조회내역이 없습니다.
+[00024] Finished getting information 7003688572
+[00025] [-1]Seting All item in table
+[00026] Requesting [7003688572] information
+[00027] [ReceiveMsg]sScrNo : 1000
+[00028] [ReceiveMsg]sRQname : 계좌정보조회
+[00029] [ReceiveMsg]sTrCode : opw30003
+[00030] [ReceiveMsg]sMsg : [9999  ] 조회내역이 없습니다.
+[00031] Finished getting information 7003688572
+[00032] [-1]Seting All item in table
+
+[Mon Jan 22 21:19:03 2018] Started Program
+[00000] Opened Login Pannel
+[00001] Successed login
+[00002] Loading login information
+[00003] Completed Login!
+[00004] Clicked btnSearchMyAccount
+[00005] Requesting [CLH18] information
+[00006] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00007] Finished getting information about [CLH18]
+[00008] Requesting [ESH18] information
+[00009] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00010] Finished getting information about [ESH18]
+[00011] Requesting [GCG18] information
+[00012] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00013] Finished getting information about [GCG18]
+[00014] Requesting [6EH18] information
+[00015] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00016] Finished getting information about [6EH18]
+[00017] [-1]Seting All item in table
+[00018] Requesting [7003688572] information
+[00019] [Exception] CommRqData(): 계좌비밀번호를 입력하십시오. in _SetOrderInfo
+[00020] [-1]Seting All item in table
+[00021] Requesting [7003688572] information
+[00022] [Exception] CommRqData(): 계좌비밀번호를 입력하십시오. in _SetAccountInfo
+[00023] [-1]Seting All item in table
+
+[Fri Feb  9 21:40:37 2018] Started Program
+[00000] Clicked btnSearchMyAccount
+[00001] Opened Login Pannel
+[00002] Successed login
+[00003] Loading login information
+[00004] Completed Login!
+[00005] Clicked btnSearchMyAccount
+[00006] Requesting [CLH18] information
+[00007] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00008] Finished getting information about [CLH18]
+[00009] Requesting [ESH18] information
+[00010] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00011] Finished getting information about [ESH18]
+[00012] Requesting [GCG18] information
+[00013] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00014] [Exception][종목정보조회] '' in ReceiveTrData 
+[00015] Finished getting information about [GCG18]
+[00016] Requesting [6EH18] information
+[00017] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00018] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00019] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00020] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00021] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00022] Finished getting information about [6EH18]
+[00023] [Exception] could not convert string to float:  in _InitItemInfo
+[00024] sGubun : 0
+[00025] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00026] [해외옵션선물시세][Exception] '6EH18' in ReceiveRealData
+[00027] Requesting [7003688572] information
+
+[Fri Feb  9 21:43:36 2018] Started Program
+[00000] Clicked btnSearchMyAccount
+[00001] Opened Login Pannel
+[00002] Successed login
+[00003] Loading login information
+[00004] Completed Login!
+[00005] Clicked btnSearchMyAccount
+[00006] Requesting [CLH18] information
+[00007] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00008] Finished getting information about [CLH18]
+[00009] Requesting [ESH18] information
+[00010] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00011] Finished getting information about [ESH18]
+[00012] Requesting [GCJ18] information
+[00013] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00014] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00015] Finished getting information about [GCJ18]
+[00016] Requesting [6EH18] information
+[00017] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00018] Finished getting information about [6EH18]
+[00019] [-1]Seting All item in table
+[00020] Requesting [7003688572] information
+[00021] [ReceiveMsg]sScrNo : 1000
+[00022] [ReceiveMsg]sRQname : 계좌정보조회
+[00023] [ReceiveMsg]sTrCode : opw30001
+[00024] [ReceiveMsg]sMsg : [0     ] 조회가 완료되었습니다.
+[00025] Finished getting information 7003688572
+[00026] [-1]Seting All item in table
+[00027] Requesting [7003688572] information
+[00028] [ReceiveMsg]sScrNo : 1000
+[00029] [ReceiveMsg]sRQname : 계좌정보조회
+[00030] [ReceiveMsg]sTrCode : opw30003
+[00031] [ReceiveMsg]sMsg : [0     ] 조회가 완료되었습니다.
+[00032] Finished getting information 7003688572
+[00033] [-1]Seting All item in table
+[00034] [Exception] local variable 'sEvaluationPrice' referenced before assignment in SetTbAcountItem
+
+[Fri Feb  9 21:49:14 2018] Started Program
+[00000] Clicked btnSearchMyAccount
+[00001] Opened Login Pannel
+[00002] Successed login
+[00003] Loading login information
+[00004] Completed Login!
+[00005] Clicked btnSearchMyAccount
+[00006] Requesting [CLH18] information
+[00007] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00008] Finished getting information about [CLH18]
+[00009] Requesting [ESH18] information
+[00010] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00011] Finished getting information about [ESH18]
+[00012] Requesting [GCJ18] information
+[00013] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00014] Finished getting information about [GCJ18]
+[00015] Requesting [6EH18] information
+[00016] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00017] Finished getting information about [6EH18]
+[00018] [-1]Seting All item in table
+[00019] Requesting [7003688572] information
+[00020] [ReceiveMsg]sScrNo : 1000
+[00021] [ReceiveMsg]sRQname : 계좌정보조회
+[00022] [ReceiveMsg]sTrCode : opw30001
+[00023] [ReceiveMsg]sMsg : [9999  ] 조회내역이 없습니다.
+[00024] Finished getting information 7003688572
+[00025] [-1]Seting All item in table
+[00026] Requesting [7003688572] information
+[00027] [ReceiveMsg]sScrNo : 1000
+[00028] [ReceiveMsg]sRQname : 계좌정보조회
+[00029] [ReceiveMsg]sTrCode : opw30003
+[00030] [ReceiveMsg]sMsg : [0     ] 조회가 완료되었습니다.
+[00031] Finished getting information 7003688572
+[00032] [-1]Seting All item in table
+[00033] [Exception] local variable 'sEvaluationPrice' referenced before assignment in SetTbAcountItem
+[00034] sGubun : 0
+[00035] Requesting [7003688572] information
+[00036] [ReceiveMsg]sScrNo : 1000
+[00037] [ReceiveMsg]sRQname : 계좌정보조회
+[00038] [ReceiveMsg]sTrCode : opw30001
+[00039] [ReceiveMsg]sMsg : [0     ] 조회가 완료되었습니다.
+[00040] Finished getting information 7003688572
+[00041] [-1]Seting All item in table
+[00042] [Exception] local variable 'sEvaluationPrice' referenced before assignment in SetTbAcountItem
+[00043] sGubun : 0
+[00044] Requesting [7003688572] information
+[00045] [ReceiveMsg]sScrNo : 1000
+[00046] [ReceiveMsg]sRQname : 계좌정보조회
+[00047] [ReceiveMsg]sTrCode : opw30001
+[00048] [ReceiveMsg]sMsg : [9999  ] 조회내역이 없습니다.
+[00049] Finished getting information 7003688572
+[00050] [-1]Seting All item in table
+[00051] [Exception] local variable 'sEvaluationPrice' referenced before assignment in SetTbAcountItem
+[00052] sGubun : 1
+[00053] Requesting [7003688572] information
+[00054] [ReceiveMsg]sScrNo : 1000
+[00055] [ReceiveMsg]sRQname : 계좌정보조회
+[00056] [ReceiveMsg]sTrCode : opw30003
+[00057] [ReceiveMsg]sMsg : [0     ] 조회가 완료되었습니다.
+[00058] Finished getting information 7003688572
+[00059] [-1]Seting All item in table
+[00060] [Exception] local variable 'sEvaluationPrice' referenced before assignment in SetTbAcountItem
+[00061] sGubun : 0
+[00062] Requesting [7003688572] information
+
+[Fri Feb  9 22:03:36 2018] Started Program
+[00000] Clicked btnSearchMyAccount
+[00001] Opened Login Pannel
+[00002] Successed login
+[00003] Loading login information
+[00004] Completed Login!
+[00005] Clicked btnSearchMyAccount
+[00006] Requesting [CLH18] information
+[00007] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00008] Finished getting information about [CLH18]
+[00009] Requesting [ESH18] information
+[00010] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00011] Finished getting information about [ESH18]
+[00012] Requesting [GCJ18] information
+[00013] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00014] Finished getting information about [GCJ18]
+[00015] Requesting [6EH18] information
+[00016] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00017] Finished getting information about [6EH18]
+[00018] [-1]Seting All item in table
+[00019] Requesting [7003688572] information
+[00020] [ReceiveMsg]sScrNo : 1000
+[00021] [ReceiveMsg]sRQname : 계좌정보조회
+[00022] [ReceiveMsg]sTrCode : opw30001
+[00023] [ReceiveMsg]sMsg : [0     ] 조회가 완료되었습니다.
+[00024] Finished getting information 7003688572
+[00025] [-1]Seting All item in table
+[00026] Requesting [7003688572] information
+[00027] [ReceiveMsg]sScrNo : 1000
+[00028] [ReceiveMsg]sRQname : 계좌정보조회
+[00029] [ReceiveMsg]sTrCode : opw30003
+[00030] [ReceiveMsg]sMsg : [0     ] 조회가 완료되었습니다.
+[00031] Finished getting information 7003688572
+[00032] [-1]Seting All item in table
+[00033] [Exception] local variable 'sEvaluationPrice' referenced before assignment in SetTbAcountItem
+[00034] Already Connected!!
+[00035] sGubun : 0
+[00036] Requesting [7003688572] information
+[00037] [ReceiveMsg]sScrNo : 1000
+[00038] [ReceiveMsg]sRQname : 계좌정보조회
+[00039] [ReceiveMsg]sTrCode : opw30001
+[00040] [ReceiveMsg]sMsg : [9999  ] 조회내역이 없습니다.
+[00041] Finished getting information 7003688572
+[00042] [-1]Seting All item in table
+[00043] [Exception] local variable 'sEvaluationPrice' referenced before assignment in SetTbAcountItem
+[00044] sGubun : 1
+[00045] Requesting [7003688572] information
+
+[Fri Feb  9 23:35:32 2018] Started Program
+[00000] Clicked btnSearchMyAccount
+[00001] Opened Login Pannel
+[00002] Successed login
+[00003] Loading login information
+[00004] Completed Login!
+[00005] Clicked btnSearchMyAccount
+[00006] Requesting [CLH18] information
+[00007] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 999
+[00008] Finished getting information about [CLH18]
+[00009] Requesting [ESH18] information
+[00010] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 998
+[00011] Finished getting information about [ESH18]
+[00012] Requesting [GCJ18] information
+[00013] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 997
+[00014] [해외옵션선물시세][Exception] 'ESH18' in ReceiveRealData
+[00015] Finished getting information about [GCJ18]
+[00016] Requesting [6EH18] information
+[00017] [Input Value] sRQName = 종목정보조회, sTrCode = opt10001, sScrNo = 996
+[00018] Finished getting information about [6EH18]
+[00019] [-1]Seting All item in table
+[00020] Requesting [7003688572] information
+[00021] [ReceiveMsg]sScrNo : 1000
+[00022] [ReceiveMsg]sRQname : 계좌정보조회
+[00023] [ReceiveMsg]sTrCode : opw30001
+[00024] [ReceiveMsg]sMsg : [9999  ] 조회내역이 없습니다.
+[00025] Finished getting information 7003688572
+[00026] [-1]Seting All item in table
+[00027] Requesting [7003688572] information
+[00028] [ReceiveMsg]sScrNo : 1000
+[00029] [ReceiveMsg]sRQname : 계좌정보조회
+[00030] [ReceiveMsg]sTrCode : opw30003
+[00031] [ReceiveMsg]sMsg : [9999  ] 조회내역이 없습니다.
+[00032] Finished getting information 7003688572
+[00033] [-1]Seting All item in table

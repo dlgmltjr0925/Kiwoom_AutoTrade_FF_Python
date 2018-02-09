@@ -1,17 +1,18 @@
-import threading as tr, time
+class A(object):
+    def __init__(self):
+        self.a = None
+        self.b = 1
 
-count = 0
+class B(object):
+    def __init__(self):
+        self.c = None
+        self.d = 2
 
-def start_timer():
-    for i in range(5):
-        print('{}[before] : {}'.format(i, tr.active_count()))
-        tr.Timer(1, begin_timer).start()
-        print('{}[after] : {}'.format(i, tr.active_count()))
-        print(type(tr.active_count()))
-        time.sleep(0.1)
-        print(i)
-
-def begin_timer():
-    print('timer')
-
-start_timer()
+if __name__ == '__main__':
+    a = A()
+    b = a
+    a.b = 4
+    b.a = 1
+    print(a.b)
+    print(b.b)
+    print(a.a)
